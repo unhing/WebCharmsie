@@ -1,0 +1,161 @@
+<!-- HEADER -->
+<div id="header">
+    <div class="container">
+        <div class="filler"></div>
+        
+        <!-- LOGO -->
+        <div class="logo">
+            <a routerLink=""><img src="/assets/images/logo.png" alt="Logo"></a>
+        </div>
+
+        <!-- ICON -->
+        <!-- <div class="filler header-icon">
+            <ul>
+                <li>
+                    <a routerLink="/login"><i class="fa-solid fa-user"></i></a>
+                    <ul class="subnav">
+                        <li><a routerLink="/login">Log in</a></li>
+                        <li><a routerLink="/signup">Sign up</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
+        </div> -->
+
+        <mat-toolbar class="filler header-icon">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/login">Log in</button>
+                <button mat-menu-item routerLink="/signup">Sign up</button>
+            </mat-menu>
+            <mat-icon class="icon">search</mat-icon>
+            <button mat-icon-button [matMenuTriggerFor]="cartMenu">
+                <mat-icon [matBadge]="2" matBadgeColor="warn" class="icon">shopping_cart</mat-icon>
+            </button>
+            <mat-menu #cartMenu="matMenu">
+                <div class="tw-p-4 tw-divide-y tw-divide-x-0 tw-divide-solid">
+                    <div class="tw-pb-4 tw-flex tw-justify-between">
+                        <span class="tw-mr-16">2 Item(s)</span>
+                        <a routerLink="cart">View Cart</a>
+                    </div>
+                    <div class="tw-py-4">
+                        <div class="tw-flex tw-justify-between tw-font-light tw-mb-2">
+                            Keyboard x 1
+                            <span class="tw-font-bold">{{ '150' | currency: 'VND' }}</span>
+                        </div>
+                        <div class="tw-flex tw-justify-between tw-font-light tw-mb-2">
+                            Keyboard x 1
+                            <span class="tw-font-bold">{{ '150' | currency: 'VND' }}</span>
+                        </div>
+                    </div>
+                    <div class="tw-flex tw-justify-between tw-py-4 tw-font-light">
+                        Total:
+                        <span class="tw-font-bold">{{ '200' | currency: 'VND' }}</span>
+                    </div>
+                    <div class="tw-pt-4 tw-flex tw-justify-between">
+                        <button mat-icon-button class="tw-bg-rose-600 tw-text-white tw-rounded-full tw-w-8 tw-h-8">
+                            <mat-icon class="icon">remove_shopping_cart</mat-icon>
+                        </button>
+                        <button mat-icon-button routerLink="cart" class="tw-bg-rose-600 tw-text-white tw-rounded-full tw-w-8 tw-h-8">
+                            <mat-icon class="icon">shopping_cart_checkout</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </mat-menu>
+        </mat-toolbar>
+    </div>
+
+    <!-- NAV -->
+    <div id="div-nav">
+        <ul id="nav">
+            <li><a routerLink="">HOMEPAGE</a></li>
+            <li><a routerLink="/about">ABOUT US</a></li>
+            <li>
+                <a routerLink="/product">OUR ITEMS</a>
+                <ul class="subnav">
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Promotional Products</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <ul class="subnav-2">
+                        <li><a href="#">Bracelets</a></li>
+                        <li><a href="#">Rings</a></li>
+                        <li><a href="#">Keychains</a></li>
+                        <li><a href="#">Necklaces</a></li>
+                        <li><a href="#">Others</a></li>
+                    </ul>
+                </ul>
+            </li>
+            <li><a href="#">BLOG</a></li>
+            <li><a routerLink="/workshop">WORKSHOP</a></li>
+            <li><a routerLink="/contact">CONTACT</a></li>
+        </ul>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 about-footer">
+                <h6>About</h6>
+                <p>Charmsie is an online store specializing in handmade jewelry and accessories crafted from vibrant decorative beads, catering to Gen Z, especially young creative, lovely, and elegant women.</p>
+            </div>
+    
+            <div class="col-xs-6 col-md-4 quick-access-footer">
+                <h6>Quick Access</h6>
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="footer-links">
+                            <li><a routerLink="">Homepage</a></li>
+                            <li><a routerLink="/about">About us</a></li>
+                            <li><a href="#">Our items</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="footer-links">
+                            <li><a routerLink="/workshop">Workshop</a></li>
+                            <li><a routerLink="/contact">Contact</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-xs-6 col-md-4 subscribe-footer">
+                <h6>STAY CONNECTED</h6>
+                <p>Sign up for our newsletter diccount your first purchase, early access to new collections.</p>
+                <form action="">
+                    <input type="email" name="subscriber" id="subscriber" placeholder="Enter your email address...">
+                    <button type="button">SUBSCRIBE</button>
+                </form>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by Charmsie.</p>
+                </div>
+        
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a href="https://www.facebook.com/charmsie.store" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.instagram.com/charmsie.store/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://www.tiktok.com/@charmsie_store" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
+                        <li><a href="mailto:charmsie.store@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a></li>   
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

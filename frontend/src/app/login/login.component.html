@@ -1,0 +1,24 @@
+<div class="login-box">
+    <h2 id="login-title">LOG IN</h2>
+    <form action="process_signin.php" method="post">
+        <table>
+            <tr>
+                <td colspan="3" id="notemessage"> <p>Please enter your email/phone number and password </p></td>    
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: left;"><label for="username">Email/Phone&nbsp;</label></td>
+                <td><input type="text" name="username" id="username" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: left;"><label for="password">Password&nbsp;</label></td>
+                <td><input type="password" name="password" id="password" required></td>
+            </tr>
+            <tr style="text-align: center;">
+                <td colspan="3"> <button type="submit"> LOG IN </button></td>
+            </tr>
+            <tr style="text-align: center;">
+                <td colspan="3"> Don't have an account? <a routerLink="/signup">Create one</a></td>
+            </tr>
+        </table>
+    </form>
+</div>

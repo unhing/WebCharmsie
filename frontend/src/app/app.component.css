@@ -1,0 +1,268 @@
+/* HEADER */
+.mat-toolbar {
+    background-color: white;
+    color: #EF9595;
+}
+
+#header {
+    height: var(--header-height);
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;     /* để header nổi lên hoàn toàn */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+#header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header .container .filler {
+    width: calc(100% / 3);
+}
+
+.header-icon {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.header-icon ul {
+    list-style: none;
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+
+.header-icon > ul > li {
+    display: inline-block;
+}
+
+.header-icon i {
+    color: #EF9595;
+    margin: 0 8px;
+}
+
+.header-icon i:hover {
+    color: #F7D0D0;
+}
+
+.logo {
+    width: 100%;  
+    text-align: center;
+}
+
+.logo img {
+    height: 100px;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+#nav {
+    display: inline-block;
+    height: var(--height);
+    padding: 0;
+}
+
+#nav, .subnav, .subnav-2 {
+    list-style-type: none;
+}
+
+#nav > li {
+    display: inline-block;
+}
+
+#nav li {
+    /* display: inline-block; */
+    position: relative;
+}
+
+#nav > li > a {
+    color: black;
+    text-transform: uppercase;
+}
+
+#nav li a, .header-icon .subnav li a {
+    text-decoration: none;
+    line-height: var(--height);
+    padding: 2px 24px;
+    display: block;
+}
+
+#nav li:hover .subnav, .header-icon li:hover .subnav {
+    display: block;
+}
+
+.subnav-2 li {
+    padding: 0 30px;
+}
+
+#nav .subnav li:hover a, #nav > li:hover > a, .subnav-2 > li:hover,
+.header-icon .subnav li:hover a, .header-icon > li:hover > a  {
+    color: white;
+    background-color: #EF9595;
+    width: 100%;
+}
+
+#nav .subnav, .header-icon .subnav {
+    display: none;
+    position: absolute;
+    min-width: 250px;
+    background-color: white;
+    text-align: left;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);    /* tạo shadow */
+}
+
+.header-icon .subnav {
+    min-width: 120px !important;
+}
+
+#nav .subnav a,
+.header-icon .subnav a {
+    color: black;
+    padding: 0 16px;
+    line-height: 38px;
+}
+
+ul.subnav, ul.subnav-2 {
+    padding: 0;
+}
+
+/* FOOTER */
+.site-footer {
+    background-color: #F7D0D0;
+    padding:45px 0 20px;
+    font-size:15px;
+    line-height:24px;
+    color:#737373;
+}
+
+.site-footer hr.small {
+    margin:20px 0
+}
+
+.site-footer h6 {
+    color: black;
+    font-size:16px;
+    text-transform:uppercase;
+    margin-top:5px;
+    letter-spacing:2px
+}
+
+.site-footer p {
+    text-align: justify;
+}
+
+.quick-access-footer {
+    padding: 0 20px !important;
+}
+
+.footer-links {
+    padding-left:0;
+    list-style:none
+}
+
+.footer-links li {
+    display:block;
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color:#737373;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color:white;
+    text-decoration: underline;
+}
+
+.site-footer .social-icons {
+    text-align:right
+}
+
+.site-footer .social-icons a {
+    width:40px;
+    height:40px;
+    line-height:40px;
+    margin-left:6px;
+    margin-right:0;
+    border-radius:100%;
+    background-color:#33353d
+}
+
+.site-footer .subscribe-footer input {
+    display: block;
+    height: 35px;
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #EF9595;
+    padding-left: 12px;
+}
+
+.site-footer .subscribe-footer button {
+    display: block;
+    padding: 6px 0;
+    width: 100%;
+    border: 1px solid #EF9595;
+    background-color: #EF9595;
+    color: white;
+    font-weight: bold;
+    font-size: 10pt;
+    margin: 8px 0;
+    -webkit-transition:all .2s linear;
+    -o-transition:all .2s linear;
+    transition:all .2s linear
+}
+
+.site-footer .subscribe-footer button:hover {
+    color: #EF9595;
+    background-color: white;
+    border: 1px solid white;
+}
+
+.copyright-text {
+    margin:0
+}
+
+.social-icons {
+    padding-left:0;
+    margin-bottom:0;
+    list-style:none
+}
+
+.social-icons li {
+    display:inline-block;
+    margin-bottom:4px
+}
+
+.social-icons a {
+    background-color:#eceeef;
+    color:#818a91;
+    font-size:16px;
+    display:inline-block;
+    line-height:44px;
+    width:44px;
+    height:44px;
+    text-align:center;
+    margin-right:8px;
+    border-radius:100%;
+    -webkit-transition:all .2s linear;
+    -o-transition:all .2s linear;
+    transition:all .2s linear
+}
+
+.social-icons a:hover {
+    color:#fff;
+    background-color:#EF9595 !important   /* do nó không chạy nên để cái important vào */
+}
+
+.social-icons.size-sm a {
+    line-height:34px;
+    height:34px;
+    width:34px;
+    font-size:14px
+}

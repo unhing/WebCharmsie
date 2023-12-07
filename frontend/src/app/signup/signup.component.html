@@ -1,0 +1,35 @@
+<div class="signup-box">
+    <h2 id="signup" style="text-align: center;">SIGN UP</h2>
+    <form action="process_signin.php" method="post">
+        <table>
+            <tr>
+                <td colspan="3" style="text-align: center;"> <p> Please fill in the information below</p></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: left;"><label for="username">Email/Phone *&nbsp;</label></td>
+                <td><input type="text" name="username" id="username" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: left;"><label for="password">Password *&nbsp;</label></td>
+                <td><input type="password" name="password" id="password" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: left;"><label for="DoB">Date of Birth *&nbsp;</label></td>
+                <td><input type="date" name="DoB" id="DoB" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: left;"><label for="address">Address *&nbsp;</label></td>
+                <td><input type="text" name="address" id="address" required></td>
+            </tr>
+            <tr style="text-align: center;">
+                <td colspan="3"> <button type="submit"> CREATE MY ACCOUNT </button></td>
+            </tr>
+            <tr style="text-align: center;">
+                <td colspan="3"> </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td colspan="3"> Already have an account? <a routerLink="/login">Log in</a></td>
+            </tr>
+        </table>
+    </form>
+</div>

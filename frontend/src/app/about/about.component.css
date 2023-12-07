@@ -1,0 +1,83 @@
+/* COVER */
+#cover-about {
+    position: relative;
+    margin-top: var(--header-height);
+    /* padding-top: 50%; 50% chiều ngang của chính nó -> đảm bảo cho kích thước luôn đúng tỷ lệ */
+    background: cover no-repeat;
+}
+
+#cover-about > img {
+    width: 100%;
+}
+
+/* ABOUT */
+#about-information {
+    display: flex;
+    max-width: 100%;
+    padding: 20px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+}
+
+.column1 {
+    flex: 30%;
+    text-align: left;
+    padding: 20px;
+    
+}
+
+.cl-left {
+    border: 1px solid #EF9595;
+    padding: 16px;
+    margin: auto; 
+}
+
+.section-heading {
+    color: #EF9595;
+}
+
+.quick-access a {
+    color: #EF9595;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.quick-access a:hover {
+    text-decoration: underline;
+    color: #818a91;
+    cursor: pointer;
+}
+
+.column2 {
+    flex: 70%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    flex-wrap: wrap;
+    padding: 10px;
+    padding-top: 20px;
+}
+
+.cl-right {
+    border: 1px solid #EF9595;
+    padding: 32px;
+    margin: auto; 
+}
+
+.mini-logo {
+    width: 100px;
+    box-sizing: border-box;
+    display: block; 
+    margin: auto; 
+}
+
+.column2 .section-heading {
+    text-align: center;
+}
+
+.column2 p {
+    text-align: justify;
+}
