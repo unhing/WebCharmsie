@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Charmsie | Admin</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description">
+    <link rel="icon" href="assets/images/logo.png" />
+    <script defer src="./assets/plugins/fontawesome/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link id="theme-style" rel="stylesheet" href="./assets/css/portal.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+
+</head>
+
+<body class="app">
+    <header class="app-header fixed-top" style="background: color #ef9595;">
+        <div class="app-header-inner">
+            <div class="container-fluid py-2">
+                <div class="app-header-content">
+                    <div class="row justify-content-between align-items-center">
+
+                        <!-- ĐÂY LÀ NÚT HAMBURGER -->
+                        <div class="col-auto">
+                            <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
+                                    role="img">
+                                    <title>Menu</title>
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
+                                        stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- ĐÂY LÀ CÁI CỤC NOTI VÀ NỘI DUNG CỘT NOTI -->
+                        <div class="app-utilities col-auto">
+
+                            <div class="app-utility-item app-notifications-dropdown dropdown">
+                                <a class="dropdown-toggle no-toggle-arrow" id="notifications-dropdown-toggle" href="#"
+                                    title="Notifications" data-bs-toggle="dropdown" aria-expanded="false">
+
+                                    <!-- ĐÂY LÀ CÁI ICON cái chuông-->
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell icon"
+                                        fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z" />
+                                        <!-- khi có thông báo thì icon cái chuông thay đổi -->
+                                        <path fill-rule="evenodd"
+                                            d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+                                    </svg>
+                                    <!-- hiển thị số lượng thông báo mới -->
+                                    <span class="icon-badge">4</span>
+                                </a>
+
+                                <!-- HIỂN THỊ LIST THÔNG BÁO -->
+                                <div class="dropdown-menu p-0" aria-labelledby="notifications-dropdown-toggle">
+                                    <div class="dropdown-menu-header p-3">
+                                        <h5 class="dropdown-menu-title mb-0">Notifications</h5>
+                                    </div>
+                                    <!-- nội dung chi tiết của mấy cái thông báo -->
+                                    <div class="dropdown-menu-content">
+                                        <div class="item p-3">
+                                            <a class="link-mask" href="notifications.html"></a>
+                                        </div>
+                                    </div>
+                                    <!-- xem tất cả thông báo => move tới cái trang all thông báo -->
+                                    <div class="dropdown-menu-footer p-2 text-center">
+                                        <a href="notifications.html">View all</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- ICON SETTING  -->
+                            <div class="app-utility-item">
+                                <a href="settings.html" title="Settings">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-gear icon"
+                                        fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z" />
+                                        <path fill-rule="evenodd"
+                                            d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z" />
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <!-- PROFILE CỦA ADMIN ĐANG SỬ DỤNG HỆ THỐNG -->
+                            <div class="app-utility-item app-user-dropdown dropdown">
+                                <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                                    <img src="./assets/images/profiles/Ngan.jpg"></a>
+                                <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
+                                    <li><a class="dropdown-item" href="account.html">Account</a></li>
+                                    <li><a class="dropdown-item" href="">Log Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ĐÂY LÀ SIDE PANEL -->
+        <div id="app-sidepanel" class="app-sidepanel">
+            <div id="sidepanel-drop" class="sidepanel-drop"></div>
+            <div class="sidepanel-inner d-flex flex-column">
+                <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
+                <!-- ĐÂY LÀ CÁI LOGO TRÊN CÙNG -->
+                <div class="app-branding">
+                    <span>
+                        <a class="app-logo" href="dashboard.html">
+                            <img src="./assets/images/logo.png" style="width: 5em; height: 5em; margin: 0;">
+                        </a>
+                    </span>
+                    <span style="color: #ef9595; font-weight: bold;">
+                        ADMIN CHARMSIE
+                    </span>
+                </div>
+                <hr>
+
+
+                <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
+                    <ul class="app-menu list-unstyled accordion" id="menu-accordion">
+                        <!-- ADMIN DASHBOARD  -->
+                        <li class="nav-item">
+                            <a class="nav-link " href="dashboard.html">
+                                <!-- ICON -->
+                                <span class="nav-icon">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-columns-gap"
+                                        fill="#EF9595" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z" />
+                                    </svg>
+                                </span>
+                                <span class="nav-link-text">Dashboard</span>
+                            </a>
+                        </li>
+
+
+                        <!-- QUẢN TRỊ SẢN PHẨM  -->
+                        <li class="nav-item has-submenu">
+                            <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse"
+                                data-bs-target="#orderdetails1" aria-expanded="false" aria-controls="orderdetails1">
+                                <!-- ICON -->
+                                <span class="nav-icon">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-files"
+                                        fill="#ef9595">
+                                        <path fill-rule="evenodd"
+                                            d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
+                                        <path fill-rule="evenodd"
+                                            d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z" />
+                                    </svg>
+                                </span>
+                                <span class="nav-link-text">Products</span>
+                                <!-- Sub menu của sản phẩm -->
+                                <!-- cái thanh bên cạnh submenu -->
+                                <span class="submenu-arrow">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down"
+                                        fill="#ef9595" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                </span>
+                            </a>
+                            <!-- LIST SUBMENU CỦA SẢN PHẨM -->
+                            <div id="orderdetails1" class="collapse submenu orderdetails1" data-bs-parent="#menu-accordion">
+                                <ul class="submenu-list list-unstyled">
+                                    <li class="submenu-item"><a class="submenu-link" href="category.html">Category</a></li>
+                                    <li class="submenu-item"><a class="submenu-link" href="products.html">Product</a> </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- QUẢN TRỊ ĐƠN HÀNG-->
+                        <li class="nav-item">
+                            <a class="nav-link " href="listorder.html">
+                                <span class="nav-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ef9595"
+                                        class="bi bi-cart" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                    </svg>
+                                </span>
+                                <span class="nav-link-text ">Order Management</span>
+                            </a>
+                        </li>
+
+                        <!-- QUẢN TRỊ KHÁCH HÀNG-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="customerdetails.html">
+                                <span class="nav-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ef9595"
+                                        class="bi bi-file-earmark-person" viewBox="0 0 16 16">
+                                        <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                        <path
+                                            d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5z" />
+                                    </svg>
+                                </span>
+                                <span class="nav-link-text">Customer Management</span>
+                            </a>
+                        </li>
+
+
+                        <!-- QUẢN TRỊ CONTACT FORM-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactform.html">
+                                <span class="nav-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#EF9595" class="bi bi-chat-text-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M4.5 5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1z"/>
+                                      </svg>
+                                </span>
+                                <span class="nav-link-text">Contact Form</span>
+                            </a>
+                        </li>
+
+                        <!-- QUẢN TRỊ POSTS-->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="posts.html">
+                                <span class="nav-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#EF9595"
+                                        class="bi bi-file-post-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M4.5 3h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1m0 2h7a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5" />
+                                    </svg>
+                                </span>
+                                <span class="nav-link-text">Posts</span>
+                            </a>
+                        </li>
+
+                        <!-- QUẢN TRỊ WORKSHOP-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="workshop.html">
+                                <span class="nav-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ef9595"
+                                        class="bi bi-stars" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z" />
+                                    </svg>
+                                </span>
+                                <span class="nav-link-text">Workshop</span>
+                            </a>
+                        </li>
+
+
+                        <!-- QUẢN TRỊ ADMIN-->
+                        <li class="nav-item has-submenu">
+                            <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse"
+                                data-bs-target="#submenu-4" aria-expanded="false" aria-controls="submenu-4">
+                                <span class="nav-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#EF9595"
+                                        class="bi bi-person-gear" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m.256 7a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1zm3.63-4.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
+                                    </svg>
+                                </span>
+                                <span class="nav-link-text">Admin Management</span>
+                                <span class="submenu-arrow">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down"
+                                        fill="#ef9595" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                </span>
+                            </a>
+
+                            <div id="submenu-4" class="collapse submenu submenu-4" data-bs-parent="#menu-accordion">
+                                <ul class="submenu-list list-unstyled">
+                                    <li class="submenu-item"><a class="submenu-link" href="quanlyuser.html">Admin List</a></li>
+                                    <li class="submenu-item"><a class="submenu-link" href="account.html">Admin Account</a></li>
+                                    <li class="submenu-item"><a class="submenu-link" href="signup.html">Exit</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- FOOTER CHÍNH SÁCH ADMIN -->
+                <div class="app-sidepanel-footer">
+                    <nav class="app-nav app-nav-footer">
+                        <ul class="app-menu footer-menu list-unstyled">
+
+                            <li class="nav-item">
+                                <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                                <a class="nav-link" href="chinhsach.html">
+                                    <span class="nav-icon">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-person"
+                                            fill="#ef9595" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M12 1H4a1 1 0 0 0-1 1v10.755S4 11 8 11s5 1.755 5 1.755V2a1 1 0 0 0-1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z" />
+                                            <path fill-rule="evenodd" d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-text">Admin Policy</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="app-wrapper">
+        <div class="app-content pt-3 p-md-3 p-lg-4">
+            <div class="container-xl">
+                <div class="row g-3 mb-4 align-items-center justify-content-between">
+                    <div class="col-auto">
+                        <h1 class="app-page-title mb-0" style="color: #ef9595;">Post Management</h1>
+                    </div>
+
+                    <div class="col-auto">
+                        <div class="page-utilities">
+                            <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
+                                <div class="app-search-box col-auto btn" >
+                                    <form class="app-search-form">
+                                        <input type="text" placeholder="Search..." name="search"
+                                            class="form-control search-input">
+                                        <button type="submit" class="btn search-btn btn-primary" value="Search" style="color: #ef9595;">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </form>
+                                </div>
+
+                                <div class="col-auto">      
+                                    <button type="submit" class="form-select btn app-btn-secondary"> 
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#EF9595" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                                              </svg>
+                                        </span>
+                                        <span> New Post</span>
+									</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-posttype" id="nav-posttype">
+                    <ul id="nav-posttype">
+                        <li><a href="#">Published</a></li>
+                        <li><a href="#">Draft</a></li>
+                        <li><a href="#">Schedule</a></li>
+                        <li><a href="#">Deleted</a></li>
+                    </ul>
+                    
+                </div>
+                <div class="tab-content" id="orders-table-tab-content">
+                    <div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
+                        <div class="app-card app-card-orders-table shadow-sm mb-5">
+                            <div class="app-card-body">
+                                <div class="table-responsive">
+                                    <table class="table app-table-hover mb-0 text-left">
+                                        <thead>
+                                            <tr id="listpost">
+                                                <th class="listpost" style="color: #ef9595;">No.</th>
+                                                <th class="listpost" style="color: #ef9595;">Post Cover</th>
+                                                <th class="listpost" id="posttitle" style="color: #ef9595;">Post Title</th>
+                                                <th class="listpost" style="color: #ef9595;">Published Date</th>
+                                                <th class="listpost" style="color: #ef9595;">Status</th>
+                                                <th class="listpost" style="color: #ef9595;">Action</th>
+                                                <th class="listpost" style="color: #ef9595;">Detail</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="listpost">01</td>
+                                                <td class="postcover"><img src="assets/images/postcover/postcover1.png" alt="postcover"></td>
+                                                <td class="listpost">VÌ SAO CONCERT THE ERAS TOUR CỦA TAYLOR SWIFT THÀNH CÔNG ĐẾN VẬY</td>
+                                                <td class="listpost"> 30/11/2023</td>
+                                                <td class="listpost"><span class="badge bg-success">Published</span></td>
+                                                <td class="cell">
+                                                    <a class="btn-sm app-btn-secondary" href="#"> Delete
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#ef9595" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
+                                                        </svg>
+                                                    </a>
+                                                    <br>
+                                                    <a class="btn-sm app-btn-secondary" href="#"> Edit
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#ef9595" class="bi bi-pen" viewBox="0 0 16 16">
+                                                            <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
+                                                          </svg>
+                                                    </a>
+                                                </td>
+                                                <td class="listpost"> 
+                                                    <a href="#">
+                                                        <span>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#ef9595" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                                                              </svg>
+                                                        </span>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!--//table-responsive-->
+
+                            </div>
+                            <!--//app-card-body-->
+                        </div>
+                        <!--//app-card-->
+                        <nav class="app-pagination">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Back</a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!--//app-pagination-->
+
+                    </div>
+                    <!--//tab-pane-->
+
+                </div>
+                <!--//tab-content-->
+
+
+
+            </div>
+            <!--//container-fluid-->
+        </div>
+        <!--//app-content-->
+
+        <footer class="app-footer">
+            <div class="container text-center py-3">
+
+
+            </div>
+        </footer>
+        <!--//app-footer-->
+
+    </div>
+    <!--//app-wrapper-->
+
+
+    <!-- Javascript -->
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <!-- Page Specific JS -->
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
