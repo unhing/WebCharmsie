@@ -1,0 +1,80 @@
+<div class="main-content">
+    <mat-card class="tw-max-w-7xl tw-mx-auto" *ngIf="cart.items.length">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 tw-w-full">
+            <ng-container matColumnDef="product">
+                <th mat-header-cell *matHeaderCellDef>Product</th>
+                <td mat-cell *matCellDef="let element">
+                    <img src="{{element.product}}" alt="product" class="tw-w-[100px] tw-my-5">
+                </td>
+                <td mat-footer-cell *matFooterCellDef>
+                    <button mat-raised-button routerLink="/product">Continue shopping</button>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let element">
+                    <span class="tw-truncate tw-max-w-xs tw-block">{{element.name}}</span>
+                </td>
+                <td mat-footer-cell *matFooterCellDef></td>
+            </ng-container>
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef>Price</th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.price | currency: 'VND'}}
+                </td>
+                <td mat-footer-cell *matFooterCellDef></td>
+            </ng-container>
+            <ng-container matColumnDef="quantity">
+                <th mat-header-cell *matHeaderCellDef>Quantity</th>
+                <td mat-cell *matCellDef="let element">
+                    <button (click)="onRemoveQuantity(element)" mat-icon-button>
+                        <mat-icon>remove</mat-icon>
+                    </button>
+                    <span>{{element.quantity}}</span>
+                    <button (click)="onAddQuantity(element)" mat-icon-button>
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </td>
+                <td mat-footer-cell *matFooterCellDef></td>
+            </ng-container>
+            <ng-container matColumnDef="total">
+                <th mat-header-cell *matHeaderCellDef>Total</th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.quantity * element.price | currency: 'VND'}}
+                </td>
+                <td mat-footer-cell *matFooterCellDef>
+                    <span class="tw-font-bold tw-py-5 tw-block">
+                        {{getTotal(cart.items) | currency: 'VND'}}
+                    </span>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>
+                    <button (click)="onClearCart()" mat-raised-button color="warn" class="tw-float-right">
+                        Clear All
+                    </button>
+                </th>
+                <td mat-cell *matCellDef="let element">
+                    <button (click)="onRemoveFromCart(element)" mat-icon-button class="tw-float-right">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </td>
+                <td mat-footer-cell *matFooterCellDef>
+                    <button mat-raised-button color="primary" class="tw-float-right">Check Out</button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+        </table>
+    </mat-card>
+
+    <div *ngIf="!cart.items.length" class="tw-flex tw-items-center tw-flex-col tw-justify-center tw-h-full">
+        <div>
+            <p class="tw-text-center">Your cart is empty</p>
+            <img src="assets/images/cart/mini-empty-cart.png" alt="Empty cart" height="150px">
+        </div>
+        <button mat-raised-button routerLink="/product" class="tw-mt-8 start-shopping-button">Start shopping</button>
+    </div>
+</div>

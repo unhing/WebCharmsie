@@ -1,16 +1,16 @@
-<mat-card [ngClass]="{'tw-text-center': !fullWidthMode}">
+<mat-card *ngIf="product" [ngClass]="{'tw-text-center': !fullWidthMode}">
     <mat-card-content>
         <div [ngClass]="{'tw-flex': fullWidthMode}">
-            <img mat-card-image class="tw-mb-1 tw-mx-auto tw-h-[200px]" [ngClass]="{'tw-h-[200px]': !fullWidthMode, 'tw-h-[250px]': fullWidthMode}" src="https://via.placeholder.com/150">
+            <img mat-card-image class="tw-mb-1 tw-mx-auto tw-h-[200px]" [ngClass]="{'tw-h-[200px]': !fullWidthMode, 'tw-h-[150px] tw-w-[150px]': fullWidthMode}" [src]="product.image">
             <div class="tw-w-full" [ngClass]="{'tw-px-8 tw-flex tw-flex-col tw-justify-between': fullWidthMode}">
                 <div>
-                    <h6>Shoes</h6>
-                    <p class="tw-truncate tw-hover:tw-whitespace-normal">Snickers</p>
-                    <p *ngIf="fullWidthMode">Description</p>
+                    <h6>{{product.category}}</h6>
+                    <p class="tw-truncate tw-hover:tw-whitespace-normal">{{product.title}}</p>
+                    <p *ngIf="fullWidthMode">{{product.description}}</p>
                 </div>
                 <div class="tw-flex tw-justify-between">
-                    <span class="tw-text-red-400">{{ '150' | currency }}</span>
-                    <button>
+                    <span class="tw-text-red-400">{{ product.price | currency: 'VND' }}</span>
+                    <button (click)="onAddToCart()">
                         <mat-icon class="tw-text-gray-500">add_shopping_cart</mat-icon>
                     </button>
                 </div>
