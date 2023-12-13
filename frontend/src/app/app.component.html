@@ -33,30 +33,26 @@
             </mat-menu>
             <mat-icon class="icon">search</mat-icon>
             <button mat-icon-button [matMenuTriggerFor]="cartMenu">
-                <mat-icon [matBadge]="2" matBadgeColor="warn" class="icon">shopping_cart</mat-icon>
+                <mat-icon [matBadge]="itemsQuantity" [matBadgeHidden]="!itemsQuantity" matBadgeColor="warn" class="icon">shopping_cart</mat-icon>
             </button>
             <mat-menu #cartMenu="matMenu">
                 <div class="tw-p-4 tw-divide-y tw-divide-x-0 tw-divide-solid">
                     <div class="tw-pb-4 tw-flex tw-justify-between">
-                        <span class="tw-mr-16">2 Item(s)</span>
+                        <span class="tw-mr-16">{{itemsQuantity}} Item(s)</span>
                         <a routerLink="cart">View Cart</a>
                     </div>
-                    <div class="tw-py-4">
-                        <div class="tw-flex tw-justify-between tw-font-light tw-mb-2">
-                            Keyboard x 1
-                            <span class="tw-font-bold">{{ '150' | currency: 'VND' }}</span>
-                        </div>
-                        <div class="tw-flex tw-justify-between tw-font-light tw-mb-2">
-                            Keyboard x 1
-                            <span class="tw-font-bold">{{ '150' | currency: 'VND' }}</span>
+                    <div *ngIf="cart.items.length" class="tw-py-4">
+                        <div *ngFor="let item of cart.items" class="tw-flex tw-justify-between tw-font-light tw-mb-2">
+                            {{item.name}} x {{item.quantity}}
+                            <span class="tw-font-bold">{{ item.price | currency: 'VND' }}</span>
                         </div>
                     </div>
                     <div class="tw-flex tw-justify-between tw-py-4 tw-font-light">
                         Total:
-                        <span class="tw-font-bold">{{ '200' | currency: 'VND' }}</span>
+                        <span class="tw-font-bold">{{ getTotal(cart.items) | currency: 'VND' }}</span>
                     </div>
                     <div class="tw-pt-4 tw-flex tw-justify-between">
-                        <button mat-icon-button class="tw-bg-rose-600 tw-text-white tw-rounded-full tw-w-8 tw-h-8">
+                        <button (click)="onClearCart()" mat-icon-button class="tw-bg-rose-600 tw-text-white tw-rounded-full tw-w-8 tw-h-8">
                             <mat-icon class="icon">remove_shopping_cart</mat-icon>
                         </button>
                         <button mat-icon-button routerLink="cart" class="tw-bg-rose-600 tw-text-white tw-rounded-full tw-w-8 tw-h-8">

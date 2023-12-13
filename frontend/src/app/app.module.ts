@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
@@ -9,8 +10,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +32,7 @@ import { FiltersComponent } from './filters/filters.component';
 import { ProductBoxComponent } from './product-box/product-box.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -40,14 +46,16 @@ import { BlogPostComponent } from './blog-post/blog-post.component';
     ProductComponent,
     ProductHeaderComponent,
     FiltersComponent,
-    ProductBoxComponent
+    ProductBoxComponent,
     BlogListComponent,
     BlogPostComponent
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatBadgeModule,
     MatButtonModule,
     MatCardModule,
@@ -56,8 +64,11 @@ import { BlogPostComponent } from './blog-post/blog-post.component';
     MatIconModule,
     MatListModule,
     MatMenuModule,
+    MatPaginatorModule,
+    MatTableModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

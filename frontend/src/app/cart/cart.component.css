@@ -1,0 +1,9 @@
+.main-content {
+    margin-top: calc(var(--header-height) + 32px);
+    margin-bottom: 64px;
+    height: 100%;
+}
+
+.start-shopping-button {
+    border-radius: 0;
+}
