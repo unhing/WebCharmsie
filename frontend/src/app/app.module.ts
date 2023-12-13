@@ -30,6 +30,8 @@ import { ProductComponent } from './product/product.component';
 import { ProductHeaderComponent } from './product-header/product-header.component';
 import { FiltersComponent } from './filters/filters.component';
 import { ProductBoxComponent } from './product-box/product-box.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
+import { BlogPostComponent } from './blog-post/blog-post.component';
 import { CartComponent } from './cart/cart.component';
 
 @NgModule({
@@ -45,6 +47,8 @@ import { CartComponent } from './cart/cart.component';
     ProductHeaderComponent,
     FiltersComponent,
     ProductBoxComponent,
+    BlogListComponent,
+    BlogPostComponent
     CartComponent
   ],
   imports: [
