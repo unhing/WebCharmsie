@@ -8,11 +8,13 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'about', component: AboutComponent },
   { path: 'product', component: ProductComponent },
+  { path: 'blog', component: BlogListComponent },
   { path: 'workshop', component: WorkshopComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },

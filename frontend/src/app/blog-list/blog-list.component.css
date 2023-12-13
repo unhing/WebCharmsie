@@ -1,11 +1,10 @@
-*{margin: 0;
-    padding: 0;
-    font-family: Nunito;
-}
 #main{
+    margin-top: var(--header-height);
+    margin-bottom: 64px;
     max-width: 100%;
     font-family: sans-serif;
 }
+
 .flexone{flex: 1;}
 
 #cover > img {
@@ -46,6 +45,7 @@
     box-shadow: 0 4px 14px 0 #0005;}
 .groups .card{
     overflow: hidden;
+    cursor: pointer;
     display: block;}
 .groups .image-session{
     float: left;
