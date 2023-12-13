@@ -48,7 +48,7 @@ import { CartComponent } from './cart/cart.component';
     FiltersComponent,
     ProductBoxComponent,
     BlogListComponent,
-    BlogPostComponent
+    BlogPostComponent,
     CartComponent
   ],
   imports: [
