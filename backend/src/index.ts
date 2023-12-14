@@ -1,9 +1,12 @@
 import express, { Express } from "express";
 import mongoose from "mongoose";
+import cors from "cors";
 import { DB_CONNECT_STRING, PORT } from "./config";
 import router from "./routers";
 
 const app: Express = express();
+
+app.use(cors());
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 app.use(express.json({ limit: "50mb" }));

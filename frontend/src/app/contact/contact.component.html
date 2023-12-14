@@ -1,26 +1,27 @@
 <div class="contact-content">
+    <p>{{errMessage}}</p>
     <div class="information">
         <h1 id="info">INFORMATION</h1>
         <p class="form-text">Please fill in this form if you have any questions.</p>
-        <form method="post">
+        <form>
             <p>
-                <label for="name">Name</label>
-                <input type="text" name="" id="name">
+                <label for="_name">Name</label>
+                <input type="text" name="_name" id="name" [(ngModel)]="contactForm.name">
             </p>
             <p>
                 <label for="phone">Phone Number</label>
-                <input type="tel" name="phone" id="phone">
+                <input type="tel" name="phone" id="phone" [(ngModel)]="contactForm.phoneNumber">
             </p>
             <p>
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" [(ngModel)]="contactForm.email">
             </p>    
             <p>
                 <label for="comment">Comment</label>
-                <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                <textarea name="comment" id="comment" cols="30" rows="10" [(ngModel)]="contactForm.comment"></textarea>
             </p>
             <div class="form-button">
-                <button type="button">SUBMIT</button>
+                <button (click)="onSubmit()">SUBMIT</button>
             </div>
         </form>
     </div>

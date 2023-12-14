@@ -1,7 +1,8 @@
 <div id="main">
     <figure id="coversite">
     </figure>  
-    <div id="workshopoverall"> 
+    <div id="workshopoverall">
+        <p>{{errMessage}}</p>
         <div id="headline">
             <h1>
                 <strong>
@@ -14,20 +15,20 @@
                 <div id="workshopregister">
                     <div class="input_field">
                         <label for="input_name">Name</label> 
-                        <input type="text" class="input" id="input_name"> 
+                        <input type="text" class="input" id="input_name" [(ngModel)]="workshopForm.name"> 
                     </div> 
                     <div class="input_field">
                         <label for="input_pn">Phone Number</label>
-                        <input type="tel" class="input" id="input_pn"> 
+                        <input type="tel" class="input" id="input_pn" [(ngModel)]="workshopForm.phoneNumber"> 
                     </div>
                     <div class="input_field">
                         <label for="input_email">Email</label>
-                        <input type="email" class="input" id="input_email">
+                        <input type="email" class="input" id="input_email" [(ngModel)]="workshopForm.email">
                     </div>
                     <div class="input_field">
                         <label class for="input_file">Image of bill</label>
                         <div class="custom_choice">
-                            <input type="file" id="input_file" name="file" label="Upload image" accept="image*/" class="custom_file">
+                            <input type="file" id="input_file" name="file" label="Upload image" accept="image*/" class="custom_file" [(ngModel)]="workshopForm.billImage" (change)="onFileSelected($event,workshopForm)">
                             <!-- <label for="input_file" class="custom_file_label">
                                 Choose a file</label> -->
                         </div>
@@ -37,7 +38,7 @@
                         <textarea class="textarea" id="input_note"></textarea>
                     </div> 
                     <div class="input_field">
-                            <button type="submit">SUBMIT</button>
+                            <button (click)="onSubmit()">SUBMIT</button>
                     </div>
                 </div>
             </li> 
