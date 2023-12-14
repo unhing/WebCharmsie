@@ -3,6 +3,6 @@ import { create } from "../controllers/contact-form.controller";
 
 const router: Router = express.Router();
 
-router.post("/contact-forms", create);
+router.post("/contact", create);
 
 export default router;
