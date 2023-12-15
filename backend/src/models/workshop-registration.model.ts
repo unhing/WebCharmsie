@@ -15,6 +15,10 @@ const workshopRegistration = new Schema({
     type: String,
     required: true,
   },
+  date: {
+    type: String,
+    required: true,
+  },
   billImage: {
     type: String,
     required: true,
