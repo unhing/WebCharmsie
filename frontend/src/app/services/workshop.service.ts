@@ -20,9 +20,11 @@ export class WorkshopService {
       headers:headers,
       responseType:"text"
     }
+
     return this.http.post<any>("http://localhost:3001/workshop-registrations",JSON.stringify(aForm),requestOptions).pipe(
       map(res=>JSON.parse(res) as WorkshopForm),
       retry(3),
-      catchError(this.handleError))
-    }
+      catchError(this.handleError)
+    )
+  }
 }

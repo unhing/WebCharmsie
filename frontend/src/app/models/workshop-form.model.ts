@@ -3,6 +3,8 @@ export class WorkshopForm {
         public name:string="",
         public phoneNumber:string="",
         public email:string="",
-        public billImage:string=""
+        public date:string = new Date().toLocaleDateString(),
+        public billImage:string="",
+        public note:string=""
     ) { }
 }
