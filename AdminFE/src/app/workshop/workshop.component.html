@@ -89,7 +89,7 @@
                                 <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#">
                                     <img src="./assets/images/profiles/Ngan.jpg"></a>
                                 <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-                                    <li><a class="dropdown-item"  routerLink="/account" >Account</a></li>
+                                    <li><a class="dropdown-item" routerLink="/account">Account</a></li>
                                     <li><a class="dropdown-item" href="">Log Out</a></li>
                                 </ul>
                             </div>
@@ -316,138 +316,94 @@
                         <h1 class="app-page-title mb-0" style="color: #ef9595;">Workshop</h1>
                     </div>
 
-                    <div class="col-auto">
-                        <div class="page-utilities">
-                            <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
-                                <div class="app-search-box col-auto btn" >
-                                    <form class="app-search-form">
-                                        <input type="text" placeholder="Search Workshop" name="search"
-                                            class="form-control search-input">
-                                        <button type="submit" class="btn search-btn btn-primary" value="Search" style="color: #ef9595;">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </form>
-                                </div>
 
-                                <div class="col-auto">      
-                                    <button type="submit" class="form-select btn app-btn-secondary"> 
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#EF9595" class="bi bi-plus-circle" viewBox="0 0 16 16">
-                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
-                                              </svg>
-                                        </span>
-                                        <span> New workshop</span>
-									</button>
+                    <div class="tab-content" id="orders-table-tab-content">
+                        <div class="tab-pane fade show active" id="orders-all" role="tabpanel"
+                            aria-labelledby="orders-all-tab">
+                            <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card-body">
+                                    <div class="table-responsive">
+                                        <table class="table app-table-hover mb-0 text-left" id="listworkshop">
+                                            <thead>
+                                                <tr>
+                                                    <th class="listworkshop" style="color: #ef9595;">No.</th>
+                                                    <th class="listworkshop" style="color: #ef9595;">Name</th>
+                                                    <th class="listworkshop" style="color: #ef9595;">Phone Number</th>
+                                                    <th class="listworkshop" style="color: #ef9595;">Email</th>
+                                                    <th class="listworkshop" style="color: #ef9595;">Date</th>
+                                                    <th class="listworkshop" style="color: #ef9595;">Bill Image</th>                                                    
+                                                    <th class="listworkshop" style="color: #ef9595;">Note</th>
+                                                    <th class="listworkshop" style="color: #ef9595;">Status</th>
+                                                    <th class="listworkshop" style="color: #ef9595;">Action</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>day la name</td>
+                                                    <td>d012345678</td>
+                                                    <td>thaongan@gmail.com</td>
+                                                    <td>1/12/2023</td>
+                                                    <td>day la anh bill</td>
+                                                    <td>day la note cho wk</td>
+                                                    <td class=" btn-sm  selectoption" > 
+                                                            <select id="confirmationStatus" name="confirmationStatus">
+                                                                <option value="unconfirmed">Unconfirmed</option>
+                                                                <option value="confirm">Confirm
+                                                                </option>
+                                                            </select>
+                                                    </td>
+                                                    <td class="cell">
+                                                        <a class="btn-sm app-btn-secondary" href="#"> View Details
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#ef9595"
+                                                                    class="bi bi-arrow-right-circle-fill"
+                                                                    viewBox="0 0 16 16">
+                                                                    <path
+                                                                        d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+                                                            </svg> 
+                                                        </a>
+                                                    </td>
+                                                    <td class="cell">
+                                                        <a href="#">
+                                                            <span>
+                                                                
+                                                            </span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!--//table-responsive-->
+
                                 </div>
+                                <!--//app-card-body-->
                             </div>
+                            <!--//app-card-->
+                            <nav class="app-pagination">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Back</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
-
-                <div class="nav-posttype" id="nav-posttype">
-                    <ul id="nav-posttype">
-                        <li><a href="#">Published</a></li>
-                        <li><a href="#">Draft</a></li>
-                        <li><a href="#">Schedule</a></li>
-                        <li><a href="#">Deleted</a></li>
-                    </ul>
-                    
-                </div>
-                <div class="tab-content" id="orders-table-tab-content">
-                    <div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
-                        <div class="app-card app-card-orders-table shadow-sm mb-5">
-                            <div class="app-card-body">
-                                <div class="table-responsive">
-                                    <table class="table app-table-hover mb-0 text-left"  id="listworkshop">
-                                        <thead>
-                                            <tr>
-                                                <th class="listworkshop" style="color: #ef9595;">No.</th>
-                                                <th class="listworkshop" style="color: #ef9595;">Workshop Name</th>
-                                                <th class="listworkshop" style="color: #ef9595;">Description</th>
-                                                <th class="listworkshop" style="color: #ef9595;">Action</th>
-                                                <th class="listworkshop" style="color: #ef9595;">Detail</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Lap Lanh Vong Xinh</td>
-                                                <td>1</td>
-                                                <td class="cell">
-                                                        <a class="btn-sm app-btn-secondary" href="#"> Delete
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#ef9595" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
-                                                            </svg>
-                                                        </a>
-                                                        <a class="btn-sm app-btn-secondary" href="#"> Edit
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#ef9595" class="bi bi-pen" viewBox="0 0 16 16">
-                                                                <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
-                                                              </svg>
-                                                        </a>
-                                        
-                                                </td>
-                                                <td class="cell"> 
-                                                    <a href="#">
-                                                        <span>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#ef9595" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
-                                                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
-                                                              </svg>
-                                                        </span>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!--//table-responsive-->
-
-                            </div>
-                            <!--//app-card-body-->
-                        </div>
-                        <!--//app-card-->
-                        <nav class="app-pagination">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Back</a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <!--//app-pagination-->
-
-                    </div>
-                    <!--//tab-pane-->
-
-                </div>
-                <!--//tab-content-->
-
-
-
             </div>
-            <!--//container-fluid-->
         </div>
-        <!--//app-content-->
-
-        <footer class="app-footer">
-            <div class="container text-center py-3">
-
-
-            </div>
-        </footer>
-        <!--//app-footer-->
-
     </div>
-    <!--//app-wrapper-->
-        <script src="assets/plugins/popper.min.js"></script>
-        <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/app.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

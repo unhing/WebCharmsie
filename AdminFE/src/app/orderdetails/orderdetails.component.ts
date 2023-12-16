@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  selector: 'app-orderdetails',
+  templateUrl: './orderdetails.component.html',
+  styleUrls: ['./orderdetails.component.css']
 })
-export class CategoryComponent {
+export class OrderdetailsComponent {
   isClickedOption1 = false;
   isClickedOption2 = false;
 

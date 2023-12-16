@@ -13682,3 +13682,39 @@ input:checked+.slider:before {
     border: 1px solid #FF6969;
     background: #fff
 }
+
+.tableedit{
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.tableedit th{
+    color: #ef9595;
+    text-align: left;
+    padding: 25px 5px 20px 20px ;
+    
+}
+
+.tableedit th, .tableedit td {
+    border: 1px solid #dddddd; /* Change the color as needed */
+    padding: 8px;
+    text-align: left;
+}
+
+.tableedit tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.tableedit tr:nth-child(even) {
+    background-color: #fbeded;
+}
+
+.tableedit .btn{
+    width: 100%;
+    margin: 5px 0;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.tableedit .btn:hover {
+    font-size: la;
+}

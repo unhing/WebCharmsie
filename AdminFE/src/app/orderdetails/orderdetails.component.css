@@ -5,14 +5,14 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
- .divide{
+.divide {
     background-color: #EF9595;
     padding-top: 1px;
     padding-bottom: 1px;
     margin-bottom: 0;
 }
 
- .nav-link-text {
+.nav-link-text {
     color: #ef9595;
     font-weight: bold;
 }
@@ -3394,10 +3394,12 @@ fieldset:disabled .btn {
     margin-top: 0.5em;
 
 }
-.btn-addnew{
-        -webkit-flex-wrap: nowrap !important;
+
+.btn-addnew {
+    -webkit-flex-wrap: nowrap !important;
     flex-wrap: nowrap !important;
 }
+
 .btn-success {
     color: #000;
     background-color: #5cb377;
@@ -12447,7 +12449,7 @@ button.close:focus {
     text-align: center
 }
 
-.notidropdown{
+.notidropdown {
     width: 50px;
 }
 
@@ -12552,7 +12554,7 @@ button.close:focus {
         float: right;
         position: absolute;
         left: -250px;
-        
+
     }
 }
 
@@ -13664,21 +13666,78 @@ input:checked+.slider:before {
 /* đây là cái nút bật tắt */
 
 .selectoption {
-    padding: 10px; /* Adjust the padding as needed */
+    padding: 10px;
+    /* Adjust the padding as needed */
 }
 
 .selectoption select {
-    padding: 0.5px 2px 2px ;
+    padding: 0.5px 2px 2px;
     font-weight: bold;
     font-size: 13px;
     color: #5d6778;
-    border: 1px solid #ef9595; /* Add a border for better visual separation */
-    border-radius: 4px; /* Optional: Add rounded corners */
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    border: 1px solid #ef9595;
+    /* Add a border for better visual separation */
+    border-radius: 4px;
+    /* Optional: Add rounded corners */
+    box-sizing: border-box;
+    /* Ensure padding is included in the width */
 }
 
 .selectoption select:hover {
     color: #ef9595;
     border: 1px solid #FF6969;
     background: #fff
+}
+
+.tableedit {
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.tableedit th {
+    color: #ef9595;
+    text-align: left;
+    padding: 25px 5px 20px 20px;
+
+}
+
+.tableedit th,
+.tableedit td {
+    border: 1px solid #dddddd;
+    /* Change the color as needed */
+    padding: 8px;
+    text-align: left;
+}
+
+.tableedit tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.tableedit tr:nth-child(even) {
+    background-color: #fbeded;
+}
+
+.tableedit .btn {
+    width: 100%;
+    margin: 5px 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tableedit .btn:hover {
+    font-size: la;
+}
+
+.detailstable {
+    margin-top: 0;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.totaltable {
+    float: right;
+    margin-right: 50px;
+}
+
+.totaltable th {
+    column-width: 150px ;
 }

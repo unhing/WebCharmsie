@@ -11,6 +11,13 @@ import { PostComponent } from './post/post.component';
 import { WorkshopComponent } from './workshop/workshop.component';
 import { PolicyComponent } from './policy/policy.component';
 import { AdminComponent } from './admin/admin.component';
+import { CategorynewComponent } from './categorynew/categorynew.component';
+import { CategorydetailsComponent } from './categorydetails/categorydetails.component';
+import { CategoryupdateComponent } from './categoryupdate/categoryupdate.component';
+import { ProductnewComponent } from './productnew/productnew.component';
+import { ProductupdateComponent } from './productupdate/productupdate.component';
+import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/dashboard", pathMatch: "full" },
@@ -24,7 +31,15 @@ const routes: Routes = [
   {path: 'post', component: PostComponent},
   {path: 'workshop', component: WorkshopComponent},
   {path:'contactform', component: ContactformComponent},
-  {path: 'policy', component: PolicyComponent}
+  {path: 'policy', component: PolicyComponent},
+  {path: 'categorynew', component: CategorynewComponent},
+  {path:'categorydetails', component: CategorydetailsComponent},
+  {path: 'categoryupdate', component: CategoryupdateComponent},
+  {path: 'productnew', component: ProductnewComponent},
+  {path:'productupdate', component: ProductupdateComponent},
+  {path:'orderdetails', component: OrderdetailsComponent},
+  {path: 'productdetails', component: ProductdetailsComponent}
+
 ];
 
 @NgModule({
