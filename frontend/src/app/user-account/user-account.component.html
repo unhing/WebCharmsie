@@ -1,0 +1,72 @@
+<!-- user-account.component.html -->
+<div class="page-container">
+  <div class="user-profile">
+    <div class="avatar-container">
+      <div class="avatar">
+        <img src="/assets/images/account/avatar.jpg" alt="User Avatar">
+      </div>
+      <div class="avatar-info">
+        <h3>{{ user.name }}</h3>
+        <button (click)="toggleEditMode()">EDIT PROFILE</button>
+      </div>
+    </div>
+    <div class="user-info">
+      <h2>My Information</h2>
+      <div class="info-field">
+        <label for="name"><strong>Name:</strong></label>
+        <ng-container *ngIf="!isEditMode; else nameEditMode">
+          <input type="text" id="name" [value]="user.name" readonly>
+        </ng-container>
+        <ng-template #nameEditMode>
+          <input type="text" id="name" [(ngModel)]="editedUser.name" class="edit-mode">
+        </ng-template>
+      </div>
+      <div class="info-field">
+        <label for="dob"><strong>Date of Birth:</strong></label>
+        <ng-container *ngIf="!isEditMode; else dobEditMode">
+          <input type="date" id="dob" [value]="user.dob" readonly>
+        </ng-container>
+        <ng-template #dobEditMode>
+          <input type="date" id="dob" [(ngModel)]="editedUser.dob" class="edit-mode">
+        </ng-template>
+      </div>
+      <div class="info-field">
+        <label for="email"><strong>Email:</strong></label>
+        <ng-container *ngIf="!isEditMode; else emailEditMode">
+          <input type="email" id="email" [value]="user.email" readonly>
+        </ng-container>
+        <ng-template #emailEditMode>
+          <input type="email" id="email" [(ngModel)]="editedUser.email" class="edit-mode">
+        </ng-template>
+      </div>
+      <div class="info-field">
+        <label for="address"><strong>Address:</strong></label>
+        <ng-container *ngIf="!isEditMode; else addressEditMode">
+          <input type="text" id="address" [value]="user.address" readonly>
+        </ng-container>
+        <ng-template #addressEditMode>
+          <input type="text" id="address" [(ngModel)]="editedUser.address" class="edit-mode">
+        </ng-template>
+      </div>
+      <div class="info-field">
+        <label for="occupation"><strong>Occupation:</strong></label>
+        <ng-container *ngIf="!isEditMode; else occupationEditMode">
+          <input type="text" id="occupation" [value]="user.occupation" readonly>
+        </ng-container>
+        <ng-template #occupationEditMode>
+          <input type="text" id="occupation" [(ngModel)]="editedUser.occupation" class="edit-mode">
+        </ng-template>
+      </div>
+      <div class="info-field">
+        <label for="phone"><strong>Phone:</strong></label>
+        <ng-container *ngIf="!isEditMode; else phoneEditMode">
+          <input type="tel" id="phone" [value]="user.phone" readonly>
+        </ng-container>
+        <ng-template #phoneEditMode>
+          <input type="tel" id="phone" [(ngModel)]="editedUser.phone" class="edit-mode">
+        </ng-template>
+      </div>
+      <button (click)="saveChanges()" [ngClass]="{'edit-mode': isEditMode}">Save Changes</button>
+    </div>
+  </div>
+</div>

@@ -33,6 +33,10 @@ import { ProductBoxComponent } from './product-box/product-box.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { CartComponent } from './cart/cart.component';
+import { UserAccountComponent } from './user-account/user-account.component';
+import { UserOrdersComponent } from './user-orders/user-orders.component';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -49,7 +53,9 @@ import { CartComponent } from './cart/cart.component';
     ProductBoxComponent,
     BlogListComponent,
     BlogPostComponent,
-    CartComponent
+    CartComponent,
+    UserAccountComponent,
+    UserOrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +74,8 @@ import { CartComponent } from './cart/cart.component';
     MatTableModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
