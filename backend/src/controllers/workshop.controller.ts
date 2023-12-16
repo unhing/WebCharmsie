@@ -10,6 +10,6 @@ export async function create(
     const workshop = await Workshop.create(newWorkshop);
     return response.status(204).json(workshop);
   } catch (error) {
-    return response.status(500).json(error);
+    return response.status(500).json({ message: (error as Error).message });
   }
 }
