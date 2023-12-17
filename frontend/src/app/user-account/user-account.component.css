@@ -1,0 +1,119 @@
+/* user-account.component.css */
+body {
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 2;
+}
+
+.avatar-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 2px solid #FE9595;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+button {
+  background-color: #FE9595;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FFEEEE;
+  color: #FE9595;
+  border: 1px solid #FE9595;
+}
+
+.user-info {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.user-profile {
+  flex: 1;
+}
+
+.user-info {
+  flex: 3; 
+}
+
+h2 {
+  color: #FE9595;
+}
+
+.info-field {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #FE9595;
+}
+
+input {
+  width: calc(100% - 16px);
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #FE9595;
+  border-radius: 4px;
+}
+
+input:read-only {
+  background-color: #f4f4f4;
+}
+
+/* Add styles for edit mode */
+input.edit-mode {
+  border: 1px solid #FE9595;
+}
+
+button.edit-mode {
+  background-color: #FE9595;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -37,6 +37,8 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { UserAccountComponent } from './user-account/user-account.component';
+import { UserOrdersComponent } from './user-orders/user-orders.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     BlogListComponent,
     BlogPostComponent,
     CartComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    UserAccountComponent,
+    UserOrdersComponent
   ],
   imports: [
     BrowserModule,
