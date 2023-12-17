@@ -6,8 +6,9 @@ export async function paginate(
   response: Response
 ): Promise<Response> {
   try {
-    const { page, size, limitPrice, category } = request.query;
+    const { page, size, limitPrice, category, sort } = request.query;
     const filter: Record<string, unknown> = {};
+    const sortDirection = sort === "asc" ? 1 : -1;
 
     if (limitPrice) {
       filter["price"] = { $lte: parseInt(limitPrice as string) };
@@ -19,7 +20,13 @@ export async function paginate(
 
     const skip = (parseInt(page as string) - 1) * parseInt(size as string);
     const limit = parseInt(size as string);
-    const productsPromise = Product.find(filter).skip(skip).limit(limit).exec();
+    const productsPromise = Product.find(filter)
+      .skip(skip)
+      .limit(limit)
+      .sort({
+        price: sortDirection,
+      })
+      .exec();
     const totalCountPromise = Product.countDocuments(filter);
     const [products, totalCount] = await Promise.all([
       productsPromise,

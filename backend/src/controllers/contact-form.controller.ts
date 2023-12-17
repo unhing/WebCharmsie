@@ -13,3 +13,15 @@ export async function create(
     return response.status(500).json(error);
   }
 }
+
+export async function list(
+  request: Request,
+  response: Response
+): Promise<Response> {
+  try {
+    const contactForms = await ContactForm.find();
+    return response.status(200).json(contactForms);
+  } catch (error) {
+    return response.status(500).json(error);
+  }
+}
