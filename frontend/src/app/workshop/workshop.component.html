@@ -1,7 +1,8 @@
 <div id="main">
     <figure id="coversite">
     </figure>  
-    <div id="workshopoverall"> 
+    <div id="workshopoverall">
+        <p>{{errMessage}}</p>
         <div id="headline">
             <h1>
                 <strong>
@@ -14,30 +15,34 @@
                 <div id="workshopregister">
                     <div class="input_field">
                         <label for="input_name">Name</label> 
-                        <input type="text" class="input" id="input_name"> 
+                        <input type="text" class="input" id="input_name" [(ngModel)]="workshopForm.name"> 
                     </div> 
                     <div class="input_field">
                         <label for="input_pn">Phone Number</label>
-                        <input type="tel" class="input" id="input_pn"> 
+                        <input type="tel" class="input" id="input_pn" [(ngModel)]="workshopForm.phoneNumber"> 
                     </div>
                     <div class="input_field">
                         <label for="input_email">Email</label>
-                        <input type="email" class="input" id="input_email">
+                        <input type="email" class="input" id="input_email" [(ngModel)]="workshopForm.email">
+                    </div>
+                    <div class="input_field">
+                        <label for="input_email">Date</label>
+                        <input type="date"  class="input" [(ngModel)]="workshopForm.date" [min]="minDate()" />
                     </div>
                     <div class="input_field">
                         <label class for="input_file">Image of bill</label>
                         <div class="custom_choice">
-                            <input type="file" id="input_file" name="file" label="Upload image" accept="image*/" class="custom_file">
+                            <input type="file" id="input_file" name="file" label="Upload image" accept="image/*" class="custom_file" [(ngModel)]="workshopForm.billImage" (change)="onFileSelected($event,workshopForm)">
                             <!-- <label for="input_file" class="custom_file_label">
                                 Choose a file</label> -->
                         </div>
                     </div> 
                     <div class="input_field">
                         <label for="input_note">Note</label>
-                        <textarea class="textarea" id="input_note"></textarea>
+                        <textarea class="textarea" id="input_note" [(ngModel)]="workshopForm.note" rows="3"></textarea>
                     </div> 
                     <div class="input_field">
-                            <button type="submit">SUBMIT</button>
+                            <button (click)="onSubmit()">SUBMIT</button>
                     </div>
                 </div>
             </li> 
@@ -48,7 +53,7 @@
                         <div class="picture_workshop"></div> 
                         <div class="info_workshop"> 
                             <p> 
-                                <b>Time:</b>  11/19/2023 (Sunday) | 2:00 PM - 5:00 PM <br>
+                                <b>Time:</b>  Everyday | 2:00 PM - 5:00 PM <br>
                                 <b> Participation fee:</b>  75,000 VND per person <br>
                                 (2 products: 1 bracelet, 1 medium-sized necklace + 1 beverage) <br>
                                 <b>Workshop category:</b>  Handmade bracelet and necklace <br>
@@ -62,7 +67,7 @@
             </li>
         </ul>        
     </div>
-    <div id="collection">
+    <!-- <div id="collection">
         <h1>WORKSHOP RECAP</h1>
         <ul>    
             <li>
@@ -90,5 +95,5 @@
                 </div>
             </li>
         </ul>
-    </div>  
+    </div>   -->
 </div>

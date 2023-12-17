@@ -7,6 +7,7 @@ export async function create(
 ): Promise<Response> {
   try {
     const newWorkshopRegistration = request.body;
+    console.log(newWorkshopRegistration);
     const workshopRegistration = await WorkshopRegistration.create(
       newWorkshopRegistration
     );
