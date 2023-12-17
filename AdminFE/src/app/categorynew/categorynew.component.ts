@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  selector: 'app-categorynew',
+  templateUrl: './categorynew.component.html',
+  styleUrls: ['./categorynew.component.css']
 })
-export class CategoryComponent {
+export class CategorynewComponent {
   isClickedOption1 = false;
   isClickedOption2 = false;
 
@@ -16,5 +16,4 @@ export class CategoryComponent {
   toggleSubmenuOption2() {
     this.isClickedOption2 = !this.isClickedOption2;
   }
-
 }
