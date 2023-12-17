@@ -8,20 +8,7 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
-  cart: Cart = { items: [{
-    product: 'https://via.placeholder.com/150',
-    name: 'snickers',
-    price: 150,
-    quantity: 1,
-    id: 1,
-  },
-  {
-    product: 'https://via.placeholder.com/150',
-    name: 'snickers',
-    price: 150,
-    quantity: 2,
-    id: 2,
-  }]};
+  cart: Cart = { items: []};
 
   dataSource: Array<CartItem> = [];
   displayedColumns: Array<string> = [
@@ -40,6 +27,11 @@ export class CartComponent {
       this.cart = _cart;
       this.dataSource = this.cart.items;
     })
+
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+      this.cartService.cart.next(JSON.parse(storedCart));
+    }
   }
 
   getTotal(items: Array<CartItem>): number {
