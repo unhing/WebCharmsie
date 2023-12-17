@@ -7,9 +7,21 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root'
 })
 export class CartService {
+  private cartKey = 'cart';
   cart = new BehaviorSubject<Cart>({items: []})
 
-  constructor(private _snackBar: MatSnackBar) { }
+  constructor(private _snackBar: MatSnackBar) {
+    // Retrieve cart data from local storage on service initialization
+    const storedCart = localStorage.getItem(this.cartKey);
+    if (storedCart) {
+      this.cart.next(JSON.parse(storedCart));
+    }
+  }
+
+  private saveCartToLocalStorage(cart: Cart): void {
+    // Save cart data to local storage
+    localStorage.setItem(this.cartKey, JSON.stringify(cart));
+  }
 
   addToCart(item: CartItem): void {
     const items = [...this.cart.value.items];
@@ -23,6 +35,7 @@ export class CartService {
     }
 
     this.cart.next({ items });
+    this.saveCartToLocalStorage({ items });
     this._snackBar.open('1 item added to cart.', 'Ok', { duration: 3000 })
   }
 
@@ -34,6 +47,7 @@ export class CartService {
 
   clearCart(): void {
     this.cart.next({ items: [] });
+    this.saveCartToLocalStorage({ items: [] });
     this._snackBar.open('Cart is cleared', 'Ok', { duration: 3000 });
   }
 
