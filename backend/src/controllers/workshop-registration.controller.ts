@@ -7,12 +7,11 @@ export async function create(
 ): Promise<Response> {
   try {
     const newWorkshopRegistration = request.body;
-    console.log(newWorkshopRegistration);
     const workshopRegistration = await WorkshopRegistration.create(
       newWorkshopRegistration
     );
     return response.status(204).json(workshopRegistration);
   } catch (error) {
-    return response.status(500).json(error);
+    return response.status(500).json({ message: (error as Error).message });
   }
 }
