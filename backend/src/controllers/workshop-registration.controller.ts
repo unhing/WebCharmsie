@@ -15,3 +15,15 @@ export async function create(
     return response.status(500).json({ message: (error as Error).message });
   }
 }
+
+export async function list(
+  request: Request,
+  response: Response
+): Promise<Response> {
+  try {
+    const workshopRegistrations = await WorkshopRegistration.find();
+    return response.status(200).json(workshopRegistrations);
+  } catch (error) {
+    return response.status(500).json({ message: (error as Error).message });
+  }
+}

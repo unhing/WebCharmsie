@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { EWorkshopRegistrationStatus } from "../enums/workshop-registration";
 
 const Schema = mongoose.Schema;
 
@@ -25,6 +26,12 @@ const workshopRegistration = new Schema({
   },
   note: {
     type: String,
+  },
+  status: {
+    type: String,
+    required: true,
+    enum: EWorkshopRegistrationStatus,
+    default: EWorkshopRegistrationStatus.UNCONFIRMED,
   },
   workshopId: {
     type: Schema.Types.ObjectId,
