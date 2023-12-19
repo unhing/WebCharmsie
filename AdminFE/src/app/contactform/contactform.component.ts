@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContactAdminService } from '../services/contact-admin.service';
 
 @Component({
   selector: 'app-contactform',
@@ -6,16 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./contactform.component.css']
 })
 export class ContactformComponent {
-
-  isClickedOption1 = false;
-  isClickedOption2 = false;
-
-  toggleSubmenuOption1() {
-    this.isClickedOption1 = !this.isClickedOption1;
+  contactForms:any;
+  errMessage:string=''
+  constructor(public _service: ContactAdminService){
+    this._service.getContactForm().subscribe({
+      next:(data)=>{this.contactForms=data},
+      error:(err)=>{this.errMessage=err}
+    })
   }
-
-  toggleSubmenuOption2() {
-    this.isClickedOption2 = !this.isClickedOption2;
-  }
-
 }

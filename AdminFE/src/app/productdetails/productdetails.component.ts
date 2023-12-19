@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ProductAdminService } from '../services/product-admin.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-productdetails',
@@ -6,14 +8,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./productdetails.component.css']
 })
 export class ProductdetailsComponent {
-  isClickedOption1 = false;
-  isClickedOption2 = false;
+  product:any;
+  _id: string='';
+  errMessage:string=''
+  sharedContent: string = '';
 
-  toggleSubmenuOption1() {
-    this.isClickedOption1 = !this.isClickedOption1;
+  constructor(private activateRoute:ActivatedRoute,private _service:ProductAdminService,private router:Router) {
+    activateRoute.paramMap.subscribe(
+      (param)=>{
+        let id=param.get('id')
+        if(id!=null) {
+          this._id = id;
+        }
+      }
+    )
   }
 
-  toggleSubmenuOption2() {
-    this.isClickedOption2 = !this.isClickedOption2;
+  ngOnInit() {
+    this.selectProduct(this._id);
+  }
+
+  selectProduct(_id:string) {
+    this._service.getProductDetail(_id).subscribe({
+      next:(data)=>{this.product=data},
+      error:(err)=>{this.errMessage=err}
+    })
   }
 }

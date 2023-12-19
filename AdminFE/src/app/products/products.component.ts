@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductAdminService } from '../services/product-admin.service';
 
 @Component({
   selector: 'app-products',
@@ -6,15 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
-  isClickedOption1 = false;
-  isClickedOption2 = false;
-
-  toggleSubmenuOption1() {
-    this.isClickedOption1 = !this.isClickedOption1;
+  _id: string=''
+  products:any;
+  errMessage:string=''
+  constructor(public _service: ProductAdminService){
+    this._service.getProduct().subscribe({
+      next:(data)=>{this.products=data},
+      error:(err)=>{this.errMessage=err}
+    })
   }
-
-  toggleSubmenuOption2() {
-    this.isClickedOption2 = !this.isClickedOption2;
-  }
-
 }
