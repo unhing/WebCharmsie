@@ -10,6 +10,7 @@ import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { BlogPostComponent } from './blog-post/blog-post.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'productdetail', component: ProductDetailComponent },
   { path: 'blog', component: BlogListComponent },
+  { path: 'blogpost', component: BlogPostComponent },
   { path: 'workshop', component: WorkshopComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },

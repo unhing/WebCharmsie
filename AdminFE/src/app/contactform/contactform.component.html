@@ -7,6 +7,7 @@
                     <h1 class="app-page-title mb-0">Contact Forms Management</h1>
                 </div>
                 <hr class="divide">
+                <p>{{errMessage}}</p>
                 <div class="col-auto">
                     <div class="page-utilities">
                         <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
@@ -36,33 +37,23 @@
                                         <tr>
                                             <th class="cell" style="color: #ef9595;">No.</th>
                                             <th class="cell" style="color: #ef9595;">User Name</th>
-                                            <th class="cell" style="color: #ef9595;">User Email</th>
-                                            <th class="cell" style="color: #ef9595; width: 100px;">Email Title</th>
+                                            <th class="cell" style="color: #ef9595;">Phone number</th>
+                                            <th class="cell" style="color: #ef9595;">Email</th>
                                             <th class="cell" style="color: #ef9595;">Description</th>
                                             <th class="cell" style="color: #ef9595;">Received Date</th>
                                             <th class="cell" style="color: #ef9595;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr *ngFor="let contactForm of contactForms">
                                             <td class="cell">01</td>
-                                            <td class="cell">Milkyway</td>
-                                            <td class="cell">thngann1106@gmail.com</td>
-                                            <td class="cell">Questions about product warranty service</td>
-                                            <td class="cell shorten">
-                                                <p>
-                                                    I recently purchased a beautiful bead bracelet from your store
-                                                    and wanted to inquire about the warranty service associated with
-                                                    this particular product. I appreciate the craftsmanship of your
-                                                    bracelets and would like to ensure that I fully understand the
-                                                    terms of the warranty coverage. Could you please provide
-                                                    information on the duration of the warranty for my bead
-                                                    bracelet?
-                                                </p>
-                                            </td>
+                                            <td class="cell">{{contactForm.name}}</td>
+                                            <td class="cell">{{contactForm.phoneNumber}}</td>
+                                            <td class="cell">{{contactForm.email}}</td>
+                                            <td class="cell shorten">{{contactForm.comment}}</td>
                                             <td class="cell">01/11/2023</td>
                                             <td class="cell" style="width: 100px;">
-                                                <a class="btn-sm app-btn-secondary" href="#">Reply
+                                                <a class="btn-sm app-btn-secondary" [href]="'mailto:' + contactForm.email">Reply
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
                                                         fill="#EF9595" class="bi bi-chat-left-text-fill" viewBox="0 0 16 16">
                                                         <path

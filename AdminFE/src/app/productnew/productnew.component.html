@@ -17,6 +17,9 @@
                 </div>
                 <hr class="divide">
             </div>
+
+            <p>{{errMessage}}</p>
+
             <div class="col-auto"> <a routerLink="/products">
                     <button type="submit" class="btn app-btn-secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#EF9595" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
@@ -30,39 +33,48 @@
                 <form>
                     <table class=" tableedit table mb-0 text-left">
                         <tr class="cell">
-                            <th class="cell">SKU</th>
+                            <th class="cell"><label for="product-sku">SKU</label></th>
                             <td>
-                                <input type="text" class="form-control" name="category" id="category" placeholder="Enter SKU" />
+                                <input type="text" class="form-control" name="product-sku" id="product-sku" placeholder="Enter SKU" [(ngModel)]="product.sku"/>
                             </td>
                         </tr>
                         <tr class="cell">
-                            <th>Product Name</th>
+                            <th><label for="product-name">Product Name</label></th>
                             <td>
-                                <input type="text" class="form-control" name="category" id="category" placeholder="Enter Product Name" />
+                                <input type="text" class="form-control" name="product-name" id="product-name" placeholder="Enter Product Name" [(ngModel)]="product.name"/>
                             </td>
                         </tr>
                         <tr class="cell">
-                            <th>Stock</th>
-                            <td>
-                                <input type="number" class="form-control" name="category" id="category" placeholder="Stock" />
-                            </td>
-                        </tr>
-                        <tr class="cell">
-                            <th>Category</th>
+                            <th><label for="displaypage">Category</label></th>
                             <td class=" btn-sm  selectoption">
-                                <select id="displaypage" name="displaypage">
-                                    <option value="Rings">Rings</option>
-                                    <option value="Bracelets">Bracelets</option>
+                                <select id="displaypage" name="displaypage"  [(ngModel)]="product.category">
+                                    <option value="bracelet">Bracelets</option>
+                                    <option value="ring">Rings</option>
+                                    <option value="key-chain">Key chains</option>
+                                    <option value="necklace">Necklaces</option>
+                                    <option value="other">Others</option>
                                 </select>
                             </td>
                         </tr>
                         <tr class="cell">
-                            <th>Category Image</th>
+                            <th><label for="product-price">Price</label></th>
                             <td>
-                                <input type="file" class="file-input" name="category_image" id="category_image" accept="image/*" multiple/>
+                                <input type="number" class="form-control" name="product-price" id="product-price" placeholder="Enter Product Price" [(ngModel)]="product.price"/>
                             </td>
                         </tr>
                         <tr class="cell">
+                            <th><label for="product-image">Image</label></th>
+                            <td>
+                                <input type="file" class="file-input" name="product-image" id="product-image" accept="image/*" [(ngModel)]="product.image" (change)="onFileSelected($event,product)"/>
+                            </td>
+                        </tr>
+                        <tr class="cell">
+                            <th><label for="description">Description</label></th>
+                            <td>
+                                <input type="textarea" class="form-control" name="description" id="description" placeholder="Enter Product Description" [(ngModel)]="product.description"/>
+                            </td>
+                        </tr>
+                        <!-- <tr class="cell">
                             <th>Status</th>
                             <td class=" btn-sm  selectoption">
                                 <select id="statuslist" name="statuslist">
@@ -70,7 +82,7 @@
                                     <option value="UnAvailable">UnAvailable</option>
                                 </select>
                             </td>
-                        </tr>
+                        </tr> -->
                         <tr class="cell">
                             <td>
                                 <button type="reset" class="btn app-btn-secondary">Cancel
@@ -84,7 +96,7 @@
                                 </button>
                             </td>
                             <td>
-                                <button type="submit" class="btn app-btn-secondary">Create New
+                                <button (click)="onSubmit()" class="btn app-btn-secondary">Create New
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
                                             fill="#EF9595" class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -100,12 +112,6 @@
                     </table>
                 </form>
             </div>
-            <!-- <div class="container">
-                    <p>
-                        {{errMessage}}
-                    </p>
-            </div> -->
-
         </div>
     </div>
 </div>

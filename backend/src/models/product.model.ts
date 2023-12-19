@@ -4,6 +4,9 @@ import { EProductCategory } from "../enums/product";
 const Schema = mongoose.Schema;
 
 const product = new Schema({
+  sku: {
+    type: String,
+  },
   name: {
     type: String,
     required: true,
@@ -18,9 +21,6 @@ const product = new Schema({
     required: true,
   },
   image: {
-    type: String,
-  },
-  sku: {
     type: String,
   },
   description: {

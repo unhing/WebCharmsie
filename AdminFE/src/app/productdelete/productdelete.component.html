@@ -12,7 +12,7 @@
                             <path fill-rule="evenodd"
                                 d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
                         </svg>
-                        Details
+                        Delete
                     </h1>
                 </div>
                 <hr class="divide">
@@ -29,39 +29,15 @@
 
             <p>{{errMessage}}</p>
 
-            <div class="w-100">     
-                <table class=" tableedit table mb-0 text-left">
-                    <tr class="cell">
-                        <th class="cell">SKU</th>
-                        <td>
-                            {{product.sku}}
-                        </td>
-                    </tr>
-                    <tr class="cell">
-                        <th>Product Name</th>
-                        <td>
-                           {{product.name}}
-                        </td>
-                    </tr>
-                    <tr class="cell">
-                        <th>Category</th>
-                        <td>
-                           {{product.category}} 
-                        </td>
-                    </tr>
-                    <tr class="cell">
-                        <th>Price</th>
-                        <td>
-                            {{product.price}}
-                        </td>
-                    </tr>
-                    <tr class="cell">
-                        <th>Product Image</th>
-                        <td>
-                            <img src="{{product.image}}" alt="Product Image" height="300">
-                        </td>
-                    </tr>
-                </table>
+            <div class="main-content">
+                <h1>Delete product</h1>
+                <p>
+                    Would you like to delete product {{product.sku}}?
+                </p>
+                <div>
+                    <button>No</button>
+                    <button (click)="deleteProduct(_id)">Ok</button>
+                </div>
             </div>
         </div>
     </div>

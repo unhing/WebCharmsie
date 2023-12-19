@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WorkshopAdminService } from '../services/workshop-admin.service';
 
 @Component({
   selector: 'app-workshop',
@@ -6,14 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./workshop.component.css']
 })
 export class WorkshopComponent {
-  isClickedOption1 = false;
-  isClickedOption2 = false;
-
-  toggleSubmenuOption1() {
-    this.isClickedOption1 = !this.isClickedOption1;
-  }
-
-  toggleSubmenuOption2() {
-    this.isClickedOption2 = !this.isClickedOption2;
+  workshopForms:any;
+  errMessage:string=''
+  constructor(public _service: WorkshopAdminService){
+    this._service.getWorkshopForm().subscribe({
+      next:(data)=>{this.workshopForms=data},
+      error:(err)=>{this.errMessage=err}
+    })
   }
 }

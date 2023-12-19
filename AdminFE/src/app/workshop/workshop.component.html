@@ -6,6 +6,7 @@
                     <h1 class="app-page-title mb-0" style="color: #ef9595;">Workshop</h1>
                 </div>
 
+                <p>{{errMessage}}</p>
 
                 <div class="tab-content" id="orders-table-tab-content">
                     <div class="tab-pane fade show active" id="orders-all" role="tabpanel"
@@ -29,19 +30,20 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>day la name</td>
-                                                <td>d012345678</td>
-                                                <td>thaongan@gmail.com</td>
-                                                <td>1/12/2023</td>
-                                                <td>day la anh bill</td>
-                                                <td>day la note cho wk</td>
+                                            <tr *ngFor="let workshopForm of workshopForms">
+                                                <td>{{workshopForm.name}}</td>
+                                                <td>{{workshopForm.name}}</td>
+                                                <td>{{workshopForm.phoneNumber}}</td>
+                                                <td>{{workshopForm.email}}</td>
+                                                <td>{{workshopForm.date}}</td>
+                                                <td>
+                                                    <img src="{{workshopForm.billImage}}" alt="Bill Image" width="100px">
+                                                </td>
+                                                <td>{{workshopForm.note}}</td>
                                                 <td class=" btn-sm  selectoption" > 
                                                         <select id="confirmationStatus" name="confirmationStatus">
                                                             <option value="unconfirmed">Unconfirmed</option>
-                                                            <option value="confirm">Confirm
-                                                            </option>
+                                                            <option value="confirmed">Confirmed</option>
                                                         </select>
                                                 </td>
                                                 <td class="cell">

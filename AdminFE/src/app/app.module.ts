@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +24,8 @@ import { ProductnewComponent } from './productnew/productnew.component';
 import { ProductupdateComponent } from './productupdate/productupdate.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductdeleteComponent } from './productdelete/productdelete.component';
 
 @NgModule({
   declarations: [
@@ -43,15 +47,19 @@ import { ProductdetailsComponent } from './productdetails/productdetails.compone
     ProductnewComponent,
     ProductupdateComponent,
     OrderdetailsComponent,
-    ProductdetailsComponent
+    ProductdetailsComponent,
+    ProductdeleteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,]
 })
 export class AppModule { }

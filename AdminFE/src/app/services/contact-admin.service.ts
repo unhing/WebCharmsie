@@ -6,7 +6,7 @@ import { ContactForm } from '../models/contact-form.model';
 @Injectable({
   providedIn: 'root'
 })
-export class ContactService {
+export class ContactAdminService {
 
   constructor(private http: HttpClient) {}
 
@@ -14,15 +14,17 @@ export class ContactService {
     return throwError(()=>new Error(error.message))
   }
 
-  postContactForm(aForm:any):Observable<any> {
+  getContactForm():Observable<any> {
     const headers=new HttpHeaders().set("Content-Type","application/json;charset=utf-8")
     const requestOptions:Object={
       headers:headers,
       responseType:"text"
     }
-    return this.http.post<any>("http://localhost:3001/contacts",JSON.stringify(aForm),requestOptions).pipe(
-      map(res=>JSON.parse(res) as ContactForm),
+
+    return this.http.get<any>("http://localhost:3001/contacts",requestOptions).pipe(
+      map(res=>JSON.parse(res) as Array<ContactForm>),
       retry(3),
-      catchError(this.handleError))
+      catchError(this.handleError)
+    )
   }
 }
