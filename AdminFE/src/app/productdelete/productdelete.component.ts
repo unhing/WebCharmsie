@@ -11,7 +11,6 @@ export class ProductdeleteComponent {
   _id: string='';
   products:any;
   product: any;
-  isYesButtonClicked: boolean = false;
   errMessage:string=''
   
   constructor(private activateRoute:ActivatedRoute,private _service:ProductAdminService,private router:Router) {
@@ -27,10 +26,13 @@ export class ProductdeleteComponent {
 
   deleteProduct(_id:any) {
     this._service.deleteProduct(_id).subscribe({
-      next:(data)=>{this.products=data, this.isYesButtonClicked = true;},
+      next:(data)=>{this.products=data},
       error:(err)=>{this.errMessage=err}
     })
+    this.navigateToProductPage();
+  }
 
-    alert("Delete product " + _id + " successfully!")
+  navigateToProductPage() {
+    this.router.navigate(['/product']);
   }
 }

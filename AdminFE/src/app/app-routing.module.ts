@@ -19,28 +19,36 @@ import { ProductupdateComponent } from './productupdate/productupdate.component'
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { ProductdeleteComponent } from './productdelete/productdelete.component';
+import { PostnewComponent } from './postnew/postnew.component';
+import { PostdetailComponent } from './postdetail/postdetail.component';
+import { PostupdateComponent } from './postupdate/postupdate.component';
+import { PostdeleteComponent } from './postdelete/postdelete.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/dashboard", pathMatch: "full" },
   {path: 'dashboard', component: DashboardComponent },
-  {path: 'products', component: ProductsComponent},
+  {path: 'product', component: ProductsComponent},
   {path: 'category', component: CategoryComponent},
   {path: 'account', component: AccountComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'customer', component: CustomerComponent},
   {path: 'order', component: OrderComponent},
   {path: 'post', component: PostComponent},
+  {path: 'post/new', component: PostnewComponent},
+  {path: 'post/:id', component: PostdetailComponent},
+  {path: 'post/update/:id', component: PostupdateComponent},
+  {path: 'post/delete/:id', component: PostdeleteComponent},
   {path: 'workshop', component: WorkshopComponent},
   {path: 'contactform', component: ContactformComponent},
   {path: 'policy', component: PolicyComponent},
   {path: 'categorynew', component: CategorynewComponent},
   {path: 'categorydetails', component: CategorydetailsComponent},
   {path: 'categoryupdate', component: CategoryupdateComponent},
-  {path: 'productnew', component: ProductnewComponent},
+  {path: 'product/new', component: ProductnewComponent},
   {path: 'orderdetails', component: OrderdetailsComponent},
-  {path: 'products/:id', component: ProductdetailsComponent},
-  {path: 'products/delete/:id', component: ProductdeleteComponent},
-  {path: 'products/update/:id', component: ProductupdateComponent},
+  {path: 'product/:id', component: ProductdetailsComponent},
+  {path: 'product/delete/:id', component: ProductdeleteComponent},
+  {path: 'product/update/:id', component: ProductupdateComponent},
 ];
 
 @NgModule({

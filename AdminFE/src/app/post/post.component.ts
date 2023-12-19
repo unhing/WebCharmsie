@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BlogAdminService } from '../services/blog-admin.service';
 
 @Component({
   selector: 'app-post',
@@ -6,14 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent {
-  isClickedOption1 = false;
-  isClickedOption2 = false;
-
-  toggleSubmenuOption1() {
-    this.isClickedOption1 = !this.isClickedOption1;
-  }
-
-  toggleSubmenuOption2() {
-    this.isClickedOption2 = !this.isClickedOption2;
+  _id: string=''
+  blogs:any;
+  errMessage:string=''
+  constructor(public _service: BlogAdminService){
+    this._service.getBlog().subscribe({
+      next:(data)=>{this.blogs=data},
+      error:(err)=>{this.errMessage=err}
+    })
   }
 }

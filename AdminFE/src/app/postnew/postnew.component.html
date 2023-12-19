@@ -4,7 +4,7 @@
             <div class="row g-3 mb-4 align-items-center justify-content-between">
                 <!-- header của nội dung -->
                 <div class="col-auto">
-                    <h1 class="app-page-title mb-0"> List Products
+                    <h1 class="app-page-title mb-0"> Post Management
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
                             class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -12,7 +12,7 @@
                             <path fill-rule="evenodd"
                                 d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
                         </svg>
-                        New Product
+                        New Post
                     </h1>
                 </div>
                 <hr class="divide">
@@ -20,7 +20,7 @@
 
             <p>{{errMessage}}</p>
 
-            <div class="col-auto"> <a routerLink="/product">
+            <div class="col-auto"> <a routerLink="/post">
                     <button type="submit" class="btn app-btn-secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#EF9595" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
@@ -33,56 +33,42 @@
                 <form>
                     <table class=" tableedit table mb-0 text-left">
                         <tr class="cell">
-                            <th class="cell"><label for="product-sku">SKU</label></th>
+                            <th class="cell"><label for="blog-title">Title</label></th>
                             <td>
-                                <input type="text" class="form-control" name="product-sku" id="product-sku" placeholder="Enter SKU" [(ngModel)]="product.sku"/>
+                                <input type="text" class="form-control" name="blog-title" id="blog-title" placeholder="Enter Title" [(ngModel)]="blog.title"/>
                             </td>
                         </tr>
                         <tr class="cell">
-                            <th><label for="product-name">Product Name</label></th>
+                            <th><label for="author-name">Author Name</label></th>
                             <td>
-                                <input type="text" class="form-control" name="product-name" id="product-name" placeholder="Enter Product Name" [(ngModel)]="product.name"/>
+                                <input type="text" class="form-control" name="author-name" id="author-name" placeholder="Enter Author Name" [(ngModel)]="blog.author"/>
                             </td>
                         </tr>
                         <tr class="cell">
-                            <th><label for="displaypage">Category</label></th>
-                            <td class=" btn-sm  selectoption">
-                                <select id="displaypage" name="displaypage"  [(ngModel)]="product.category">
-                                    <option value="bracelet">Bracelets</option>
-                                    <option value="ring">Rings</option>
-                                    <option value="key-chain">Key chains</option>
-                                    <option value="necklace">Necklaces</option>
-                                    <option value="other">Others</option>
-                                </select>
+                            <th><label for="blog-image">Cover Image</label></th>
+                            <td>
+                                <input type="file" class="file-input" name="blog-image" id="blog-image" accept="image/*" [(ngModel)]="blog.coverImage" (change)="onFileSelected($event,blog)"/>
                             </td>
                         </tr>
                         <tr class="cell">
-                            <th><label for="product-price">Price</label></th>
+                            <th><label for="post-content">Content</label></th>
                             <td>
-                                <input type="number" class="form-control" name="product-price" id="product-price" placeholder="Enter Product Price" [(ngModel)]="product.price"/>
+                                <editor apiKey="av6ui9athnbv6403hkbjr36g508ukjfbz3obdxw34iqsd89x"
+                                    name="post-content"
+                                    [(ngModel)]="blog.content"
+                                    [init]="{
+                                        plugins: 'tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
+                                        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                                        tinycomments_mode: 'embedded',
+                                        tinycomments_author: 'Author name',
+                                        mergetags_list: [
+                                        { value: 'First.Name', title: 'First Name' },
+                                        { value: 'Email', title: 'Email' },
+                                        ],  
+                                    }"
+                                    ></editor>
                             </td>
                         </tr>
-                        <tr class="cell">
-                            <th><label for="product-image">Image</label></th>
-                            <td>
-                                <input type="file" class="file-input" name="product-image" id="product-image" accept="image/*" [(ngModel)]="product.image" (change)="onFileSelected($event,product)"/>
-                            </td>
-                        </tr>
-                        <tr class="cell">
-                            <th><label for="description">Description</label></th>
-                            <td>
-                                <input type="textarea" class="form-control" name="description" id="description" placeholder="Enter Product Description" [(ngModel)]="product.description"/>
-                            </td>
-                        </tr>
-                        <!-- <tr class="cell">
-                            <th>Status</th>
-                            <td class=" btn-sm  selectoption">
-                                <select id="statuslist" name="statuslist">
-                                    <option value="Available">Available</option>
-                                    <option value="UnAvailable">UnAvailable</option>
-                                </select>
-                            </td>
-                        </tr> -->
                         <tr class="cell">
                             <td>
                                 <button type="reset" class="btn app-btn-secondary">Cancel

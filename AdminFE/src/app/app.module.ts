@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
+import { EditorModule } from '@tinymce/tinymce-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -26,6 +27,10 @@ import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductdeleteComponent } from './productdelete/productdelete.component';
+import { PostnewComponent } from './postnew/postnew.component';
+import { PostdetailComponent } from './postdetail/postdetail.component';
+import { PostupdateComponent } from './postupdate/postupdate.component';
+import { PostdeleteComponent } from './postdelete/postdelete.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,11 @@ import { ProductdeleteComponent } from './productdelete/productdelete.component'
     ProductupdateComponent,
     OrderdetailsComponent,
     ProductdetailsComponent,
-    ProductdeleteComponent
+    ProductdeleteComponent,
+    PostnewComponent,
+    PostdetailComponent,
+    PostupdateComponent,
+    PostdeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +66,8 @@ import { ProductdeleteComponent } from './productdelete/productdelete.component'
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent,]
