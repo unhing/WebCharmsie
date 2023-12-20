@@ -31,6 +31,9 @@
                                     </span>
                                     <span> New Post</span>
                                 </button>
+                                <span>
+                                    Posts: {{ blogs?.length || 0 }}
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -53,7 +56,6 @@
                                 <table class="table app-table-hover mb-0 text-left">
                                     <thead>
                                         <tr id="listpost">
-                                            <th class="listpost" style="color: #ef9595;">No.</th>
                                             <th class="listpost" style="color: #ef9595;">Post Cover</th>
                                             <th class="listpost" id="posttitle" style="color: #ef9595;">Post Title</th>
                                             <th class="listpost" style="color: #ef9595;">Published Date</th>
@@ -64,7 +66,6 @@
                                     </thead>
                                     <tbody>
                                         <tr *ngFor="let blog of blogs">
-                                            <td class="listpost">01</td>
                                             <td class="postcover"><img src="{{blog.coverImage}}" alt="postcover" width="200"></td>
                                             <td class="listpost">{{blog.title}}</td>
                                             <td class="listpost">{{blog.date}}</td>

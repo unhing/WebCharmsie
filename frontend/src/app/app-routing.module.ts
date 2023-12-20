@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'productdetail', component: ProductDetailComponent },
   { path: 'blog', component: BlogListComponent },
-  { path: 'blogpost', component: BlogPostComponent },
+  { path: 'blog/:id', component: BlogPostComponent },
   { path: 'workshop', component: WorkshopComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
