@@ -2,84 +2,29 @@
     <div class="cover-page">
         <div class="container-bg"></div>
         <div class="title-cover-page">CHARMSIE BLOG</div> 
-        <div class="title-text">Where we will tell you some stories</div>
+        <div class="title-text">Where we will tell you the stories</div>
     </div>
     <div class="article-contener">
         <ul class="groups">
-            <li>
+            <li *ngFor="let blog of blogs">
                 <div class="card">
                     <div class="image-session">
-                        <span class="image" style="background-image: url('assets/blog/pic1.jpg');"></span>
+                        <img class="image" src="{{blog.coverImage}}">
                     </div>
                     <div class="meta-sission">
                         <div class="head">
-                            <a href="#" class="date-article">03/11/2023</a>
+                            <span href="#" class="date-article">{{blog.date}}</span>
                             <span class="flexone"></span>
                         </div>
                         <div class="body">
-                            <h2 class="title">Sweetest Friendship Bracelet Moments at Taylor Swift’s Eras Tour</h2>
-                            <p class="desc">If you’re going to SoFi Stadium to see Taylor Swift this week, chances are that you’ll also encounter thousands of people with arms adorned with friendship bracelets.
-                                The inspiration for the bracelets comes from the lyrics to Swift’s song “You’re on Your Own, Kid” from her “Midnights” album..</p>
+                            <h2 class="title">{{blog.title}}</h2>
+                            <p class="desc" [innerHTML]="sanitizer.bypassSecurityTrustHtml(blog.content)"></p>
                         </div>
                         <div class="footer">
-                            <a href="#" class="button">Read more →</a>
+                            <a [routerLink]="['/blog/', blog._id]" class="button">Read more →</a>
                         </div>
                     </div>
                 </div>
-            </li>
-            <li>
-                <div class="card">
-                    <div class="image-session">
-                        <span class="image" style="background-image: url('assets/blog/pic1.jpg');"></span>
-                    </div>
-                    <div class="meta-sission">
-                        <div class="head">
-                            <a href="#" class="date-article">02/11/2023</a>
-                            <span class="flexone"></span>
-                        </div>
-                        <div class="body">
-                            <h2 class="title">Swifties are making and trading friendship bracelets. Here’s what to know</h2>
-                            <p class="desc">If you’re going to SoFi Stadium to see Taylor Swift this week, chances are that you’ll also encounter thousands of people with arms adorned with friendship bracelets.</p>
-                        </div>
-                        <div class="footer">
-                            <a href="#" class="button">Read more →</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="card">
-                    <div class="image-session">
-                        <span class="image" style="background-image: url('assets/blog/pic1.jpg');"></span>
-                    </div>
-                    <div class="meta-sission">
-                        <div class="head">
-                            <a href="#" class="date-article">01/11/2023</a>
-                            <span class="flexone"></span>
-                        </div>
-                        <div class="body">
-                            <h2 class="title">Why Taylor Swift Fans Are Making Friendship Bracelets for the Eras Tour</h2>
-                            <p class="desc">If you weren’t already aware, yes, Taylor Swift fans are indeed making a thing of wearing, trading, and, in at least some cases, even gifting old-school, look-like-they-were-made-at-eighth-grade-summer-camp.</p>
-                        </div>
-                        <div class="footer">
-                            <a href="#" class="button">Read more →</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="page">
-        <ul> 
-            <li>
-                <a href="#"><</a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">...</a></li> 
-            <li>
-                <a href="#">></a>
             </li>
         </ul>
     </div>

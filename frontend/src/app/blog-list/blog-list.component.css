@@ -69,24 +69,30 @@
     text-decoration: none;
     font-size: 14px;
 }
+.groups .body {
+    height: 112px;
+    display: flex;
+    flex-direction: column;
+}
 .groups .body .title{
-    height: 60px;
+    /* height: 60px; */
     overflow: hidden;
     font-size: 24px;
     color: #EF9595;
 }
 .groups .body .desc{
-    height: 45px;
+    /* height: 45px; */
     overflow: hidden;
     margin-top: 4px;
     margin-bottom: 4px;
     font-size: 12px;
     text-align: justify;
+    flex: 1
 }
 .groups .footer .button{
     position: absolute;
     bottom: 20px;
-    right: 25px;
+    right: 24px;
     background: #FEE;
     color: #EF9595;
     font-weight: bold;

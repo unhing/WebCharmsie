@@ -49,11 +49,17 @@ main{
     margin-right: 10px;
   }
   
-  .sub-heading span {
+  .sub-heading .published-date {
     color: #555;
     font-weight: 300;
     border-right: 1px solid #ccc;
     padding-right: 10px;
+  }
+
+  .sub-heading .author {
+    color: #555;
+    font-weight: 300;
+    padding-left: 10px;
   }
   
   .sub-heading .importent {
@@ -62,26 +68,21 @@ main{
     font-weight: 300;
   }
   .list {
-    display: grid;
+    display: grid !important;
     grid-template-columns: 1fr 3fr;
     gap: 10px;
     margin-bottom: 10px;
+    text-decoration: none;
+    color:#555
   }
-  
+  .list:hover {
+    color:#EF9595;
+    text-decoration: underline;
+  }
   .list img {
-    width: 100%;
     height: 80px;
   }
   
-  article > p {
-    font-size: 20px;
-    text-align: justify;
-  }
-  
-  article p:first-child::first-line {
-    font-weight: 700;
-    font-size: 24px;
-  }
 #collection{
     max-width: 100%; 
     padding:0 8em 0 8em ;
@@ -153,18 +154,3 @@ main{
 .button-submit{
     text-align: center;
 } 
-.comment{
-    max-width: 100%; 
-    padding: 4%; 
-    text-align: center;
-} 
-.comment p{ 
-    padding-left: 6%;
-    text-align: left; 
-    font-size: 24px;
-    color: #EF9595;
-}
-.comment textarea{
-    width: 88%;
-    border: 1px solid #EF9595;
-}
