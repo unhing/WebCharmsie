@@ -9,7 +9,7 @@ const user = new Schema({
     required: true,
   },
   dateOfBirth: {
-    type: Date,
+    type: String,
     required: true,
   },
   email: {
@@ -19,9 +19,6 @@ const user = new Schema({
   address: {
     type: String,
     required: true,
-  },
-  occupation: {
-    type: String,
   },
   phoneNumber: {
     type: String,

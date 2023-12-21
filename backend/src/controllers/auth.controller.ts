@@ -42,7 +42,6 @@ export async function signup(request: Request, response: Response) {
       dateOfBirth,
       email,
       address,
-      occupation,
       phoneNumber,
       password,
     } = request.body;
@@ -58,7 +57,6 @@ export async function signup(request: Request, response: Response) {
       dateOfBirth,
       email,
       address,
-      occupation,
       phoneNumber,
       password: hashedPassword,
     });
