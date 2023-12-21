@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'about', component: AboutComponent },
   { path: 'product', component: ProductComponent },
-  { path: 'productdetail', component: ProductDetailComponent },
+  { path: 'product/:id', component: ProductDetailComponent },
   { path: 'blog', component: BlogListComponent },
   { path: 'blog/:id', component: BlogPostComponent },
   { path: 'workshop', component: WorkshopComponent },

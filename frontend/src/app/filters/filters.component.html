@@ -1,6 +1,6 @@
 <mat-card *ngIf="categories">
     <mat-card-header>
-        <mat-panel-title class="tw-font-bold">CATEGORIES</mat-panel-title>
+        <mat-panel-title class="tw-font-bold"  style="color: #ef9595">CATEGORIES</mat-panel-title>
     </mat-card-header>
     <mat-selection-list [multiple]="false">
         <mat-list-option *ngFor="let category of categories" [value]="category" (click)="onShowCategory(category)">
