@@ -1,6 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Cart, CartItem } from './models/cart.model';
 import { CartService } from './services/cart.service';
+import { AuthService } from './services/auth.service';
+import { User } from './models/user.model';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +16,8 @@ export class AppComponent implements OnInit {
   
   private _cart: Cart = { items: [] };
   itemsQuantity = 0;
+
+  isLoggedIn: boolean = false;
 
   @Input() 
   get cart(): Cart {
@@ -25,7 +31,11 @@ export class AppComponent implements OnInit {
       .reduce((prev, current) => prev + current, 0);
   }
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private authService: AuthService, private router: Router, private matSnackBar: MatSnackBar) {
+    this.authService.isLoggedIn.subscribe((status) => {
+      this.isLoggedIn = status;
+    });
+  }
 
   ngOnInit() {
     this.cartService.cart.subscribe((_cart) => {
@@ -40,4 +50,10 @@ export class AppComponent implements OnInit {
   onClearCart() {
     this.cartService.clearCart();
   }
+
+  logout() {
+    this.authService.logout();
+    this.matSnackBar.open('Log out successful', 'Ok', { duration: 3000 })
+    this.router.navigate(['/login']);
+}
 }

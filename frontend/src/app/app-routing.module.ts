@@ -11,6 +11,8 @@ import { CartComponent } from './cart/cart.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
+import { UserAccountComponent } from './user-account/user-account.component';
+import { UserOrdersComponent } from './user-orders/user-orders.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -23,7 +25,9 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'cart', component: CartComponent}
+  { path: 'cart', component: CartComponent },
+  { path: 'customerinfo', component: UserAccountComponent },
+  { path: 'myorder', component: UserOrdersComponent }
 ];
 
 @NgModule({
