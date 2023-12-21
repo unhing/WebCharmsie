@@ -1,11 +1,11 @@
 <mat-card *ngIf="product" [ngClass]="{'tw-text-center': !fullWidthMode}">
     <mat-card-content>
         <div [ngClass]="{'tw-flex': fullWidthMode}">
-            <img mat-card-image class="tw-mb-1 tw-mx-auto tw-h-[200px]" [ngClass]="{'tw-h-[200px]': !fullWidthMode, 'tw-h-[150px] tw-w-[150px]': fullWidthMode}" [src]="product.image">
+            <img mat-card-image [routerLink]="['/product/', product._id]" class="tw-mb-1 tw-mx-auto tw-h-[200px]" [ngClass]="{'tw-h-[200px]': !fullWidthMode, 'tw-h-[150px] tw-w-[150px]': fullWidthMode}" [src]="product.image">
             <div class="tw-w-full" [ngClass]="{'tw-px-8 tw-flex tw-flex-col tw-justify-between': fullWidthMode}">
-                <div>
+                <div [routerLink]="['/product/', product._id]">
                     <h6>{{product.category}}</h6>
-                    <p class="tw-truncate tw-hover:tw-whitespace-normal">{{product.title}}</p>
+                    <p class="tw-truncate tw-hover:tw-whitespace-normal">{{product.name}}</p>
                     <p *ngIf="fullWidthMode">{{product.description}}</p>
                 </div>
                 <div class="tw-flex tw-justify-between">

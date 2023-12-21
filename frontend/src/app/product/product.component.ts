@@ -3,9 +3,8 @@ import { CartService } from '../services/cart.service';
 import { Product } from '../models/product.model';
 import { Subscription } from 'rxjs';
 import { StoreService } from '../services/store.service';
-import { PageEvent } from '@angular/material/paginator';
 
-const ROWS_HEIGHT: { [id: number]: number } = { 1: 300, 3: 350, 4: 350 };
+const ROWS_HEIGHT: { [id: number]: number } = { 1: 200, 3: 350, 4: 350 };
 
 @Component({
   selector: 'app-product',
@@ -18,7 +17,7 @@ export class ProductComponent {
   category: string | undefined;
   products: Array<Product> | undefined;
   sort = 'desc';
-  count = '12';
+  // count = '12';
   productsSubcription: Subscription | undefined;
 
   constructor(private cartService: CartService, private storeService: StoreService) { }
@@ -28,7 +27,7 @@ export class ProductComponent {
   }
 
   getProducts(): void {
-    this.storeService.getAllProducts(this.count, this.sort, this.category)
+    this.storeService.getProduct(this.category, this.sort)  //this.count, this.sort, this.category
       .subscribe((_products) => {
         this.products = _products
       });
@@ -47,17 +46,17 @@ export class ProductComponent {
   onAddToCart(product: Product): void {
     this.cartService.addToCart({
       product: product.image,
-      name: product.title,
+      name: product.name,
       price: product.price,
       quantity: 1,
-      id: product.id
+      sku: product.sku
     });
   }
 
-  onItemsCountChange(newCount: number): void {
-    this.count = newCount.toString();
-    this.getProducts();
-  }
+  // onItemsCountChange(newCount: number): void {
+  //   this.count = newCount.toString();
+  //   this.getProducts();
+  // }
 
   onSortChange(newSort: string): void {
     this.sort = newSort;

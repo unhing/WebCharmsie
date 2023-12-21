@@ -2,16 +2,16 @@
     <div class="tw-flex tw-justify-between">
         <div>
             <button mat-button [matMenuTriggerFor]="sortByMenu">
-                Sort by {{ sort }}
+                Sort by Price {{sort}}
                 <mat-icon iconPositionEnd>expand_more</mat-icon>
             </button>
             <mat-menu #sortByMenu="matMenu">
-                <button (click)="onSortUpdated('desc')" mat-menu-item>Desc</button>
-                <button (click)="onSortUpdated('asc')" mat-menu-item>Asc</button>
+                <button (click)="onSortUpdated('desc')" mat-menu-item>Price ↓ (descending)</button>
+                <button (click)="onSortUpdated('asc')" mat-menu-item>Price ↑ (ascending)</button>
             </mat-menu>
         </div>
-        <div class="tw-flex tw-items-center">
-            <div>
+        <div class="tw-flex">
+            <!-- <div>
                 <button mat-button [matMenuTriggerFor]="menu">
                     Show {{ itemsShowCount }}
                     <mat-icon iconPositionEnd>expand_more</mat-icon>
@@ -20,15 +20,15 @@
                     <button (click)="onItemsUpdated(12)" mat-menu-item>12</button>
                     <button (click)="onItemsUpdated(24)" mat-menu-item>24</button>
                 </mat-menu>
-            </div>
-            <div>
-                <button (click)="onColumnsUpdated(1)">
+            </div> -->
+            <div class="tw-mr-4 tw-flex tw-items-end">
+                <button (click)="onColumnsUpdated(1)" style="color: #ef9595">
                     <mat-icon>view_list</mat-icon>
                 </button>
-                <button (click)="onColumnsUpdated(3)">
+                <button (click)="onColumnsUpdated(3)" style="color: #ef9595">
                     <mat-icon>view_module</mat-icon>
                 </button>
-                <button (click)="onColumnsUpdated(4)">
+                <button (click)="onColumnsUpdated(4)" style="color: #ef9595">
                     <mat-icon>view_comfy</mat-icon>
                 </button>
             </div>

@@ -31,6 +31,9 @@
                                         <span> New Product</span>
                                     </button>
                                 </a>
+                                <span>
+                                    Products: {{ products?.length || 0 }}
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -47,11 +50,11 @@
                                     <thead>
                                         <tr>
                                             <th class="cell" style="color: #ef9595;">SKU</th>
-                                            <th class="cell" style="color: #ef9595;">Name</th>
+                                            <th class="cell" style="color: #ef9595; width: 200px">Name</th>
                                             <th class="cell" style="color: #ef9595;">Categories</th>
                                             <th class="cell" style="color: #ef9595;">Price</th>
                                             <th class="cell" style="color: #ef9595;">Image</th>
-                                            <th class="cell" style="color: #ef9595;">Description</th>
+                                            <th class="cell" style="color: #ef9595; width: 300px">Description</th>
                                             <th class="cell" style="color: #ef9595;">Action</th>
                                             <th class="cell" style="color: #ef9595;">Details</th>
                                         </tr>
