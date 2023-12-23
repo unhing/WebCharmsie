@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { Request as RequestWithCredential } from "express-jwt";
 import jwt from "jsonwebtoken";
 import { compare, genSalt, hash } from "bcryptjs";
 import { AUTH_EXPIRE_TIME, AUTH_SECRET_KEY } from "../config";
@@ -37,14 +38,8 @@ export async function login(request: Request, response: Response) {
 
 export async function signup(request: Request, response: Response) {
   try {
-    const {
-      name,
-      dateOfBirth,
-      email,
-      address,
-      phoneNumber,
-      password,
-    } = request.body;
+    const { name, dateOfBirth, email, address, phoneNumber, password } =
+      request.body;
     const foundUser = await User.findOne({ email });
     if (foundUser) {
       return response
@@ -60,6 +55,20 @@ export async function signup(request: Request, response: Response) {
       phoneNumber,
       password: hashedPassword,
     });
+    response.status(204).end();
+  } catch (error) {
+    response.status(500).json({ message: (error as Error).message });
+  }
+}
+
+export async function editProfile(
+  request: RequestWithCredential,
+  response: Response
+) {
+  try {
+    const id = request.auth?.id ?? "";
+    const newInformation = request.body;
+    await User.findByIdAndUpdate(id, newInformation);
     response.status(204).end();
   } catch (error) {
     response.status(500).json({ message: (error as Error).message });
