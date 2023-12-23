@@ -28,10 +28,10 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe(
         (response) => {
-          localStorage.setItem('token', response.token);
+          localStorage.setItem('token', response);
           this.authService.setLoggedIn(true);
           // Redirect to the desired page
-          this.router.navigate(['/customerinfo']);
+          this.router.navigate(['/']);
           this.matSnackBar.open('Log in successful', 'Ok', { duration: 3000 })
         },
         (error) => {

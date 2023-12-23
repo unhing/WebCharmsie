@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { BrowserModule } from '@angular/platform-browser';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { AppRoutingModule } from './app-routing.module';
@@ -31,6 +32,10 @@ import { PostnewComponent } from './postnew/postnew.component';
 import { PostdetailComponent } from './postdetail/postdetail.component';
 import { PostupdateComponent } from './postupdate/postupdate.component';
 import { PostdeleteComponent } from './postdelete/postdelete.component';
+import { CustomerdetailComponent } from './customerdetail/customerdetail.component';
+import { CustomerupdateComponent } from './customerupdate/customerupdate.component';
+import { CustomerdeleteComponent } from './customerdelete/customerdelete.component';
+import { ContactformdeleteComponent } from './contactformdelete/contactformdelete.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +62,11 @@ import { PostdeleteComponent } from './postdelete/postdelete.component';
     PostnewComponent,
     PostdetailComponent,
     PostupdateComponent,
-    PostdeleteComponent
+    PostdeleteComponent,
+    CustomerdetailComponent,
+    CustomerupdateComponent,
+    CustomerdeleteComponent,
+    ContactformdeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +76,7 @@ import { PostdeleteComponent } from './postdelete/postdelete.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatButtonModule,
     EditorModule
   ],
   providers: [],

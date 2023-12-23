@@ -27,4 +27,16 @@ export class ContactAdminService {
       catchError(this.handleError)
     )
   }
+
+  deleteContactForm(_id:string):Observable<any> {
+    const headers=new HttpHeaders().set("Content-Type","application/json;charset=utf-8")
+    const requestOptions:Object={
+      headers:headers,
+      responseType:"text"
+    }
+    return this.http.delete<any>("http://localhost:3001/contacts/"+_id,requestOptions).pipe(
+      map(res=>JSON.parse(res) as ContactForm),
+      retry(3),
+      catchError(this.handleError))
+  }
 }

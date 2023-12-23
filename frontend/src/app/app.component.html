@@ -40,7 +40,7 @@
                 </ng-container>
                 <ng-template #loggedInMenu>
                     <!-- Display these items when the user is logged in -->
-                    <button mat-menu-item routerLink="/customerinfo">Customer Info</button>
+                    <button mat-menu-item [routerLink]="['/customer/', _id]">Customer Info</button>
                     <button mat-menu-item routerLink="/myorder">My orders</button>
                     <button mat-menu-item (click)="logout()">Log out</button>
                 </ng-template>

@@ -49,15 +49,6 @@
         </ng-template>
       </div>
       <div class="info-field">
-        <label for="occupation"><strong>Occupation:</strong></label>
-        <ng-container *ngIf="!isEditMode; else occupationEditMode">
-          <input type="text" id="occupation" [value]="user.occupation" readonly>
-        </ng-container>
-        <ng-template #occupationEditMode>
-          <input type="text" id="occupation" [(ngModel)]="editedUser.occupation" class="edit-mode">
-        </ng-template>
-      </div>
-      <div class="info-field">
         <label for="phone"><strong>Phone:</strong></label>
         <ng-container *ngIf="!isEditMode; else phoneEditMode">
           <input type="tel" id="phone" [value]="user.phone" readonly>
@@ -66,7 +57,7 @@
           <input type="tel" id="phone" [(ngModel)]="editedUser.phone" class="edit-mode">
         </ng-template>
       </div>
-      <button (click)="saveChanges()" [ngClass]="{'edit-mode': isEditMode}">Save Changes</button>
+      <button [ngClass]="{'edit-mode': isEditMode}">Save Changes</button>
     </div>
   </div>
 </div>

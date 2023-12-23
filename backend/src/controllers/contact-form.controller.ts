@@ -25,3 +25,16 @@ export async function list(
     return response.status(500).json(error);
   }
 }
+
+export async function remove(
+  request: Request,
+  response: Response
+): Promise<void> {
+  try {
+    const { id } = request.params;
+    await ContactForm.findByIdAndDelete(id);
+    response.status(204).end();
+  } catch (error) {
+    response.status(500).json({ message: (error as Error).message });
+  }
+}

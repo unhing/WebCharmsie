@@ -1,0 +1,74 @@
+<div class="app-wrapper">
+    <div class="app-content pt-3 p-md-3 p-lg-4">
+        <div class="container-xl">
+            <div class="row g-3 mb-4 align-items-center justify-content-between">
+                <!-- header của nội dung -->
+                <div class="col-auto">
+                    <h1 class="app-page-title mb-0"> Customer
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                            class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+                            <path fill-rule="evenodd"
+                                d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                        Details
+                    </h1>
+                </div>
+                <hr class="divide">
+            </div>
+            <div class="col-auto"> <a routerLink="/customer">
+                    <button type="submit" class="btn app-btn-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#EF9595" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                          </svg>
+                        Back
+                    </button>
+                </a>
+            </div>
+
+            <p>{{errMessage}}</p>
+
+            <div class="w-100">     
+                <table class=" tableedit table mb-0 text-left">
+                    <tr class="cell">
+                        <th class="cell">Customer ID</th>
+                        <td>
+                            {{customer._id}}
+                        </td>
+                    </tr>
+                    <tr class="cell">
+                        <th>Customer Name</th>
+                        <td>
+                           {{customer.name}}
+                        </td>
+                    </tr>
+                    <tr class="cell">
+                        <th>Date of Birth</th>
+                        <td>
+                           {{customer.dateOfBirth}} 
+                        </td>
+                    </tr>
+                    <tr class="cell">
+                        <th>Email</th>
+                        <td>
+                            <a href="mailto:{{customer.email}}" style="padding: 0;">{{customer.email}}</a>
+                        </td>
+                    </tr>
+                    <tr class="cell">
+                        <th>Address</th>
+                        <td>
+                            {{customer.address}}
+                        </td>
+                    </tr>
+                    <tr class="cell">
+                        <th>Phone number</th>
+                        <td>
+                            {{customer.phoneNumber}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

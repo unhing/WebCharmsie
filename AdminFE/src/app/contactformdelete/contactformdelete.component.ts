@@ -1,22 +1,20 @@
 import { Component, Inject, Optional } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ProductAdminService } from '../services/product-admin.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Product } from '../models/product.model';
+import { ContactForm } from '../models/contact-form.model';
 
 @Component({
-  selector: 'app-productdelete',
-  templateUrl: './productdelete.component.html',
-  styleUrls: ['./productdelete.component.css']
+  selector: 'app-contactformdelete',
+  templateUrl: './contactformdelete.component.html',
+  styleUrls: ['./contactformdelete.component.css']
 })
-export class ProductdeleteComponent {
+export class ContactformdeleteComponent {
   action:string;
   local_data:any;
 
   constructor(
-    public dialogRef: MatDialogRef<ProductdeleteComponent>,
+    public dialogRef: MatDialogRef<ContactformdeleteComponent>,
     //@Optional() is used to prevent error if no data is passed
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: Product) {
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: ContactForm) {
     console.log(data);
     this.local_data = {...data};
     this.action = this.local_data.action;
