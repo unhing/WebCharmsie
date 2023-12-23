@@ -66,7 +66,7 @@ export async function editProfile(
   response: Response
 ) {
   try {
-    const { id } = request.auth?.id ?? "";
+    const id = request.auth?.id ?? "";
     const newInformation = request.body;
     await User.findByIdAndUpdate(id, newInformation);
     response.status(204).end();
