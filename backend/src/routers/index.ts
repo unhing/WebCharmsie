@@ -6,6 +6,7 @@ import authRouter from "./auth.router";
 import productRouter from "./product.router";
 import customerRouter from "./customer.router";
 import blogRouter from "./blog.router";
+import orderRouter from "./order.router";
 
 const router: Router = express.Router();
 router.use(contactFormRouter);
@@ -15,5 +16,6 @@ router.use(authRouter);
 router.use(productRouter);
 router.use(customerRouter);
 router.use(blogRouter);
+router.use(orderRouter);
 
 export default router;
