@@ -40,6 +40,7 @@ import { CartComponent } from './cart/cart.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { UserOrdersComponent } from './user-orders/user-orders.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { UserOrdersComponent } from './user-orders/user-orders.component';
     CartComponent,
     ProductDetailComponent,
     UserAccountComponent,
-    UserOrdersComponent
+    UserOrdersComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

@@ -64,6 +64,16 @@ export class AppComponent implements OnInit {
     this.cartService.clearCart();
   }
 
+  onCheckOut() {
+    if (this.cart.items.length === 0) {
+      // Cart is empty, navigate to the cart page
+      this.router.navigate(['/cart']);
+    } else {
+      // Cart is not empty, navigate to the checkout page
+      this.router.navigate(['/checkout']);
+    }
+  }
+
   logout() {
     this.authService.logout();
     this.matSnackBar.open('Log out successful', 'Ok', { duration: 3000 })

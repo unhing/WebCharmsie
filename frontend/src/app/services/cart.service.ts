@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, filter } from 'rxjs';
+import { BehaviorSubject, Observable, filter } from 'rxjs';
 import { Cart, CartItem } from '../models/cart.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -84,5 +84,9 @@ export class CartService {
 
     this.cart.next({ items: filteredItems });
     this._snackBar.open('1 item removed from cart.', 'Ok', { duration: 3000 });
+  }
+
+  getCart(): Observable<Cart> {
+    return this.cart.asObservable();
   }
 }

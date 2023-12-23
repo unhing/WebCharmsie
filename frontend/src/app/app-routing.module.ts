@@ -13,6 +13,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { UserOrdersComponent } from './user-orders/user-orders.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'cart', component: CartComponent },
   { path: 'customer/:id', component: UserAccountComponent },
-  { path: 'myorder', component: UserOrdersComponent }
+  { path: 'myorder', component: UserOrdersComponent },
+  { path: 'checkout', component: CheckoutComponent }
 ];
 
 @NgModule({
