@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { CustomerAdminService } from '../services/customer-admin.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { CustomerdeleteComponent } from '../customerdelete/customerdelete.component';
 
 @Component({
   selector: 'app-customer',
@@ -6,16 +10,41 @@ import { Component } from '@angular/core';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent {
-  isClickedOption1 = false;
-  isClickedOption2 = false;
+  _id: string=''
+  customers:any;
+  errMessage:string=''
+  constructor(public _service: CustomerAdminService, private activateRoute: ActivatedRoute, private router: Router, public dialog: MatDialog){
+    this._service.getCustomer().subscribe({
+      next:(data)=>{this.customers=data},
+      error:(err)=>{this.errMessage=err}
+    })
 
-  toggleSubmenuOption1() {
-    this.isClickedOption1 = !this.isClickedOption1;
+    this.activateRoute.paramMap.subscribe((param) => {
+      let id = param.get('id');
+      if (id != null) {
+        this._id = id;
+      }
+    });
   }
 
-  toggleSubmenuOption2() {
-    this.isClickedOption2 = !this.isClickedOption2;
+  openDialog(action: any,obj: { action: any; }) {
+    obj.action = action;
+
+    const dialogRef = this.dialog.open(CustomerdeleteComponent, {
+      width: '250px',
+      data: obj,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.deleteRowData(result.data);
+      window.location.reload();
+    });
   }
 
-
+  deleteRowData(data_obj: { _id: string; }){
+    this._service.deleteCustomer(data_obj._id).subscribe({
+      next:(data)=>{this.customers=data},
+      error:(err)=>{this.errMessage=err}
+    })
+  }
 }

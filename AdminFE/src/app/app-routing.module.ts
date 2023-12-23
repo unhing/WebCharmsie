@@ -23,6 +23,8 @@ import { PostnewComponent } from './postnew/postnew.component';
 import { PostdetailComponent } from './postdetail/postdetail.component';
 import { PostupdateComponent } from './postupdate/postupdate.component';
 import { PostdeleteComponent } from './postdelete/postdelete.component';
+import { CustomerdetailComponent } from './customerdetail/customerdetail.component';
+import { CustomerupdateComponent } from './customerupdate/customerupdate.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/dashboard", pathMatch: "full" },
@@ -32,6 +34,8 @@ const routes: Routes = [
   {path: 'account', component: AccountComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'customer', component: CustomerComponent},
+  {path: 'customer/:id', component: CustomerdetailComponent},
+  {path: 'customer/update/:id', component: CustomerupdateComponent},
   {path: 'order', component: OrderComponent},
   {path: 'post', component: PostComponent},
   {path: 'post/new', component: PostnewComponent},

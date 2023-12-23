@@ -5,6 +5,7 @@ import { AuthService } from './services/auth.service';
 import { User } from './models/user.model';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CustomerService } from './services/customer.service';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,9 @@ export class AppComponent implements OnInit {
 
   isLoggedIn: boolean = false;
 
+  _id: string='';
+  customers: any;
+
   @Input() 
   get cart(): Cart {
     return this._cart;
@@ -31,16 +35,25 @@ export class AppComponent implements OnInit {
       .reduce((prev, current) => prev + current, 0);
   }
 
-  constructor(private cartService: CartService, private authService: AuthService, private router: Router, private matSnackBar: MatSnackBar) {
+  constructor(private cartService: CartService, private authService: AuthService, private customerService: CustomerService, private router: Router, private matSnackBar: MatSnackBar) {
     this.authService.isLoggedIn.subscribe((status) => {
       this.isLoggedIn = status;
     });
+
+    this.customerService.getCustomer().subscribe({
+      next:(data)=>{this.customers=data}
+    })
   }
 
   ngOnInit() {
     this.cartService.cart.subscribe((_cart) => {
       this.cart = _cart;
     })
+
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.isLoggedIn = true;
+    }
   }
 
   getTotal(items: Array<CartItem>): number {
@@ -55,5 +68,5 @@ export class AppComponent implements OnInit {
     this.authService.logout();
     this.matSnackBar.open('Log out successful', 'Ok', { duration: 3000 })
     this.router.navigate(['/login']);
-}
+  }
 }
