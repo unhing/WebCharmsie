@@ -52,27 +52,27 @@
                                     </div>
                                 </div>
                                 <div class="col-12 panel-body creditcard-body">
-                                    <form action="#" method="post" target="_self">
+                                    <form>
                                         <fieldset>
-                                            <label for="card-name">Name</label><br>
-                                            <i class="fa fa-user-o" aria-hidden="true"></i><input type='text' id='card-name' name='card-name' placeholder='John Doe' title='Name on the Card'>
+                                            <label for="full-name">Name</label><br>
+                                            <i class="fa fa-user-o" aria-hidden="true"></i><input [(ngModel)]="order.name" type='text' id='full-name' name='full-name' placeholder='John Doe' title='Name'>
                                         </fieldset>
                                         <fieldset>
-                                            <label for="card-number">Address</label><br>
-                                            <i class="fa fa-credit-card" aria-hidden="true"></i><input type='text' id='card-number' name='card-number' placeholder='1234 5678 9123 4567' title='Card Number'>
+                                            <label for="address">Address</label><br>
+                                            <i class="fa fa-credit-card" aria-hidden="true"></i><input [(ngModel)]="order.address" type='text' id='address' name='address' placeholder='1234 5678 9123 4567' title='Address'>
                                         </fieldset>
                                         <fieldset>
-                                            <label for="card-expiration">Email</label><br>
-                                            <i class="fa fa-calendar" aria-hidden="true"></i><input type='email' id='card-expiration' name='card-expiration' placeholder='YY/MM' title='Expiration' class="card-expiration">
+                                            <label for="email">Email</label><br>
+                                            <i class="fa fa-calendar" aria-hidden="true"></i><input [(ngModel)]="order.email" type='email' id='email' name='email' placeholder='YY/MM' title='Expiration' class="card-expiration">
                                         </fieldset>
                                         <fieldset>
-                                            <label for="card-expiration">Phone Number</label><br>
-                                            <i class="fa fa-calendar" aria-hidden="true"></i><input type='tel' id='card-expiration' name='card-expiration' placeholder='YY/MM' title='Expiration' class="card-expiration">
+                                            <label for="phone">Phone Number</label><br>
+                                            <i class="fa fa-calendar" aria-hidden="true"></i><input [(ngModel)]="order.phoneNumber" type='tel' id='phone' name='phone' placeholder='YY/MM' title='Expiration' class="card-expiration">
                                         </fieldset>
                                         <fieldset class="payment-method-fieldset">
                                             <label for="paymentMethod">Payment Method</label>
                                             <div>
-                                                <input type="radio" id="cashOnDelivery" name="paymentMethod" value="cashOnDelivery" checked>
+                                                <input [(ngModel)]="order.paymentMethod" type="radio" id="cashOnDelivery" name="paymentMethod" value="Cash-On-Delivery" checked>
                                                 <span><label class="label-radio" for="cashOnDelivery">Cash On Delivery</label></span>
                                             </div>
                                         </fieldset>
@@ -80,7 +80,14 @@
                                 </div>
                                 <div class="col-12 panel-footer creditcard-footer">
                                     <div class="row">
-                                        <div class="col-12 align-right"><button class="cancel" (click)="onCancel()">Cancel</button>&nbsp;<button class="confirm" (click)="onSubmit()">Confirm & Pay</button></div>
+                                        <div class="col-12 align-right">
+                                            <button class="cancel" (click)="onCancel()" [disabled]="isSubmitting">Cancel</button>
+                                            &nbsp;
+                                            <button class="confirm" (click)="onSubmit()" [disabled]="isSubmitting">
+                                                <span *ngIf="!isSubmitting">Confirm & Pay</span>
+                                                <span *ngIf="isSubmitting">Submitting...</span>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -91,3 +98,4 @@
         </div>
     </div>
 </div>
+<p>{{errMessage}}</p>

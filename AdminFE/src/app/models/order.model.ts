@@ -19,7 +19,6 @@ export class Order {
         public totalValue: number=0,
         public orderDate: string=new Date().toLocaleDateString(),
         public paymentMethod: string="",
-        public status: string="",
-        public cartOrder: Array<CartItem>
+        public cartOrder: Array<CartItem>=[]
     ) { }
 }
