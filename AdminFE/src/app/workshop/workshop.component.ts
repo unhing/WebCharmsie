@@ -17,4 +17,15 @@ export class WorkshopComponent {
       error:(err)=>{this.errMessage=err}
     })
   }
+
+  getStatusStyles(status: string): any {
+    switch (status) {
+      case 'unconfirmed':
+        return { backgroundColor: 'gray', color: 'black' };
+      case 'confirmed':
+        return { backgroundColor: 'green', color: 'white' }; 
+      default:
+        return { backgroundColor: 'gray', color: 'black' };
+    }
+  }
 }

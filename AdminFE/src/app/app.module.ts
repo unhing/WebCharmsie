@@ -34,6 +34,9 @@ import { CustomerdeleteComponent } from './customerdelete/customerdelete.compone
 import { ContactformdeleteComponent } from './contactformdelete/contactformdelete.component';
 import { OrderupdateComponent } from './orderupdate/orderupdate.component';
 import { OrderdeleteComponent } from './orderdelete/orderdelete.component';
+import { WorkshopdetailComponent } from './workshopdetail/workshopdetail.component';
+import { WorkshopupdateComponent } from './workshopupdate/workshopupdate.component';
+import { WorkshopdeleteComponent } from './workshopdelete/workshopdelete.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,10 @@ import { OrderdeleteComponent } from './orderdelete/orderdelete.component';
     CustomerdeleteComponent,
     ContactformdeleteComponent,
     OrderupdateComponent,
-    OrderdeleteComponent
+    OrderdeleteComponent,
+    WorkshopdetailComponent,
+    WorkshopupdateComponent,
+    WorkshopdeleteComponent
   ],
   imports: [
     BrowserModule,

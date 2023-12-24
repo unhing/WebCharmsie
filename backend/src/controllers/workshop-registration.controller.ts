@@ -27,3 +27,50 @@ export async function list(
     return response.status(500).json({ message: (error as Error).message });
   }
 }
+
+export async function detail(
+  request: Request,
+  response: Response
+): Promise<Response> {
+  try {
+    const { id } = request.params;
+    const workshopRegistration = await WorkshopRegistration.findById(id);
+    return response.status(200).json(workshopRegistration);
+  } catch (error) {
+    return response.status(500).json({ message: (error as Error).message });
+  }
+}
+
+export async function update(
+  request: Request,
+  response: Response
+): Promise<void> {
+  try {
+      const { id } = request.params;
+      const updatedFields = request.body;
+
+      const workshopForm = await WorkshopRegistration.findByIdAndUpdate(id, { $set: updatedFields }, { new: true });
+
+      if (!workshopForm) {
+          response.status(404).json({ message: "Workshop form not found" });
+          return;
+      }
+
+      response.status(200).json(workshopForm);
+  } catch (error) {
+      response.status(500).json({ message: (error as Error).message });
+  }
+}
+
+export async function remove(
+  request: Request,
+  response: Response
+): Promise<void> {
+  try {
+    const { id } = request.params;
+    await WorkshopRegistration.findByIdAndDelete(id);
+    response.status(204).end();
+  } catch (error) {
+    response.status(500).json({ message: (error as Error).message });
+  }
+}
