@@ -15,6 +15,7 @@ import { UserAccountComponent } from './user-account/user-account.component';
 import { UserOrdersComponent } from './user-orders/user-orders.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { Page404notfoundComponent } from './page404notfound/page404notfound.component';
+import { PolicyTermsComponent } from './policy-terms/policy-terms.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'customer', component: UserAccountComponent },
   { path: 'myorder', component: UserOrdersComponent },
   { path: 'checkout', component: CheckoutComponent },
+  { path: 'policy', component: PolicyTermsComponent },
   { path: '**', component: Page404notfoundComponent }
 ];
 
