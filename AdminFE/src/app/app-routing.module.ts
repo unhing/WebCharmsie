@@ -1,29 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProductsComponent } from './products/products.component';
-import { AccountComponent } from './account/account.component';
-import { ContactformComponent } from './contactform/contactform.component';
-import { CustomerComponent } from './customer/customer.component';
-import { OrderComponent } from './order/order.component';
-import { PostComponent } from './post/post.component';
-import { WorkshopComponent } from './workshop/workshop.component';
-import { PolicyComponent } from './policy/policy.component';
-import { AdminComponent } from './admin/admin.component';
-import { ProductnewComponent } from './productnew/productnew.component';
-import { ProductupdateComponent } from './productupdate/productupdate.component';
-import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
-import { ProductdetailsComponent } from './productdetails/productdetails.component';
-import { ProductdeleteComponent } from './productdelete/productdelete.component';
-import { PostnewComponent } from './postnew/postnew.component';
-import { PostdetailComponent } from './postdetail/postdetail.component';
-import { PostupdateComponent } from './postupdate/postupdate.component';
-import { PostdeleteComponent } from './postdelete/postdelete.component';
-import { CustomerdetailComponent } from './customerdetail/customerdetail.component';
-import { CustomerupdateComponent } from './customerupdate/customerupdate.component';
-import { OrderupdateComponent } from './orderupdate/orderupdate.component';
-import { WorkshopdetailComponent } from './workshopdetail/workshopdetail.component';
-import { WorkshopupdateComponent } from './workshopupdate/workshopupdate.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProductsComponent } from './components/products/products.component';
+import { AccountComponent } from './components/account/account.component';
+import { ContactformComponent } from './components/contactform/contactform.component';
+import { CustomerComponent } from './components/customer/customer.component';
+import { OrderComponent } from './components/order/order.component';
+import { PostComponent } from './components/post/post.component';
+import { WorkshopComponent } from './components/workshop/workshop.component';
+import { PolicyComponent } from './components/policy/policy.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { ProductnewComponent } from './components/productnew/productnew.component';
+import { ProductupdateComponent } from './components/productupdate/productupdate.component';
+import { OrderdetailsComponent } from './components/orderdetails/orderdetails.component';
+import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
+import { ProductdeleteComponent } from './components/productdelete/productdelete.component';
+import { PostnewComponent } from './components/postnew/postnew.component';
+import { PostdetailComponent } from './components/postdetail/postdetail.component';
+import { PostupdateComponent } from './components/postupdate/postupdate.component';
+import { PostdeleteComponent } from './components/postdelete/postdelete.component';
+import { CustomerdetailComponent } from './components/customerdetail/customerdetail.component';
+import { CustomerupdateComponent } from './components/customerupdate/customerupdate.component';
+import { OrderupdateComponent } from './components/orderupdate/orderupdate.component';
+import { WorkshopdetailComponent } from './components/workshopdetail/workshopdetail.component';
+import { WorkshopupdateComponent } from './components/workshopupdate/workshopupdate.component';
+import { Page404notfoundComponent } from './components/page404notfound/page404notfound.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/dashboard", pathMatch: "full" },
@@ -51,6 +52,7 @@ const routes: Routes = [
   {path: 'product/:id', component: ProductdetailsComponent},
   {path: 'product/delete/:id', component: ProductdeleteComponent},
   {path: 'product/update/:id', component: ProductupdateComponent},
+  {path: '**', component: Page404notfoundComponent}
 ];
 
 @NgModule({
