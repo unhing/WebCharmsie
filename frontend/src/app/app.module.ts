@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
@@ -41,6 +42,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { UserAccountComponent } from './user-account/user-account.component';
 import { UserOrdersComponent } from './user-orders/user-orders.component';
 import { PolicyTermsComponent } from './policy-terms/policy-terms.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+
 
 @NgModule({
   declarations: [
@@ -61,7 +64,8 @@ import { PolicyTermsComponent } from './policy-terms/policy-terms.component';
     ProductDetailComponent,
     UserAccountComponent,
     UserOrdersComponent,
-    PolicyTermsComponent
+    PolicyTermsComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -80,6 +84,7 @@ import { PolicyTermsComponent } from './policy-terms/policy-terms.component';
     MatListModule,
     MatMenuModule,
     MatPaginatorModule,
+    MatProgressSpinnerModule,
     MatTableModule,
     MatToolbarModule,
     MatSelectModule,

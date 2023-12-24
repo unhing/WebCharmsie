@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerAdminService } from '../services/customer-admin.service';
+import { slideInOutAnimation } from '../services/slide-in-out.animation';
 
 @Component({
   selector: 'app-customerdetail',
   templateUrl: './customerdetail.component.html',
-  styleUrls: ['./customerdetail.component.css']
+  styleUrls: ['./customerdetail.component.css'],
+  animations: [slideInOutAnimation],
 })
 export class CustomerdetailComponent {
   customer:any;

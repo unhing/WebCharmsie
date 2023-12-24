@@ -1,0 +1,101 @@
+<div class="container-fluid background">
+    <div class="row padding-top-20 justify-content-center">
+        <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-8 padding-horizontal-40">
+            <div class="row">
+                <div class="col-12 main-wrapper">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                            <div id="template" class="row panel-wrapper">
+                                <div class="col-12 panel-header basket-header">
+                                    <div class="row">
+                                        <div class="col-6 basket-title">
+                                            <span class="description">review your</span><br><span class="very emphasized">Cart Summary</span>
+                                        </div>
+                                    </div>
+                                    <div class="row column-titles padding-top-10">
+                                        <div class="col-2 align-center"><span>Photo</span></div>
+                                        <div class="col-5 align-center"><span>Name</span></div>
+                                        <div class="col-2 align-center"><span>Quantity</span></div>
+                                        <div class="col-3 align-right"><span>Price</span></div>
+                                    </div>                                    
+                                </div>
+                                <div class="col-12 panel-body basket-body">
+                                    <div class="row product align-items-center" *ngFor="let element of cart.items">
+                                        <div class="col-2 product-image"><img src="{{element.product}}"></div>
+                                        <div class="col-5">{{element.name}}</div>
+                                        <div class="col-2 align-right"><span class="sub">x {{element.quantity}}</span><br>{{element.price | currency: 'VND'}}</div>
+                                        <div class="col-3 align-right">{{element.quantity * element.price | currency: 'VND'}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-12 panel-footer basket-footer">
+                                    <div class="row">
+                                        <div class="col-8 align-right description"><div class="dive">Subtotal</div></div>
+                                        <div class="col-4 align-right"><span class="emphasized">{{subtotal | currency: 'VND'}}</span></div>
+                                        <div class="col-8 align-right description"><div class="dive">Shipping</div></div>
+                                        <div class="col-4 align-right"><span class="emphasized">{{shippingCost | currency: 'VND'}}</span></div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-8 align-right description"><div class="very dive">Total</div></div>
+                                        <div class="col-4 align-right"><span class="very emphasized">{{total | currency: 'VND'}}</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div class="row panel-wrapper">
+                                <div class="col-12 panel-header creditcard-header">
+                                    <div class="row">
+                                        <div class="col-12 creditcard-title">
+                                            <span class="description">please confirm your</span><br><span class="very emphasized">Personal Information</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 panel-body creditcard-body">
+                                    <form>
+                                        <fieldset>
+                                            <label for="full-name">Name</label><br>
+                                            <i class="fa fa-user-o" aria-hidden="true"></i><input [(ngModel)]="order.name" type='text' id='full-name' name='full-name' placeholder='Your Name' title='Name'>
+                                        </fieldset>
+                                        <fieldset>
+                                            <label for="address">Address</label><br>
+                                            <i class="fa fa-building" aria-hidden="true"></i><input [(ngModel)]="order.address" type='text' id='address' name='address' placeholder='Your Address' title='Address'>
+                                        </fieldset>
+                                        <fieldset>
+                                            <label for="email">Email</label><br>
+                                            <i class="fa fa-envelope" aria-hidden="true"></i><input [(ngModel)]="order.email" type='email' id='email' name='email' placeholder='Your Email' title='Email' class="card-expiration">
+                                        </fieldset>
+                                        <fieldset>
+                                            <label for="phone">Phone Number</label><br>
+                                            <i class="fa fa-phone" aria-hidden="true"></i><input [(ngModel)]="order.phoneNumber" type='tel' id='phone' name='phone' placeholder='Your Phone Number' title='Phone Number' class="card-expiration">
+                                        </fieldset>
+                                        <fieldset class="payment-method-fieldset">
+                                            <label for="paymentMethod">Payment Method</label>
+                                            <div>
+                                                <input [(ngModel)]="order.paymentMethod" type="radio" id="cashOnDelivery" name="paymentMethod" value="Cash-On-Delivery" checked>
+                                                <span><label class="label-radio" for="cashOnDelivery">Cash On Delivery</label></span>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div class="col-12 panel-footer creditcard-footer">
+                                    <div class="row">
+                                        <div class="col-12 align-right">
+                                            <button class="cancel" (click)="onCancel()" [disabled]="isSubmitting">Cancel</button>
+                                            &nbsp;
+                                            <button class="confirm" (click)="onSubmit()" [disabled]="isSubmitting">
+                                                <span *ngIf="!isSubmitting">Confirm & Pay</span>
+                                                <span *ngIf="isSubmitting">Submitting...</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>{{errMessage}}</p>

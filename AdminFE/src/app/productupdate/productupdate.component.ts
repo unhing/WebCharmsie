@@ -2,27 +2,19 @@ import { Component } from '@angular/core';
 import { Product } from '../models/product.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductAdminService } from '../services/product-admin.service';
+import { fadeInOutAnimation } from '../services/fade-in-out.animation';
 
 @Component({
   selector: 'app-productupdate',
   templateUrl: './productupdate.component.html',
-  styleUrls: ['./productupdate.component.css']
+  styleUrls: ['./productupdate.component.css'],
+  animations: [fadeInOutAnimation],
 })
 export class ProductupdateComponent {
   product = new Product();
   errMessage:string=''
   _id: string='';
-  constructor(private activateRoute:ActivatedRoute,private _service:ProductAdminService,private router:Router) {
-    // activateRoute.paramMap.subscribe(
-    //   (param)=>{
-    //     let id=param.get('id')
-    //     if(id!=null) {
-    //       this._id = id;
-    //       this.loadProductDetails(id)
-    //     }
-    //   }
-    // )
-  }
+  constructor(private activateRoute:ActivatedRoute,private _service:ProductAdminService,private router:Router) { }
 
   ngOnInit() {
     this.activateRoute.paramMap.subscribe((param) => {

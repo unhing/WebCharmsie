@@ -1,4 +1,4 @@
-<div class="app-wrapper">
+<div class="app-wrapper" [@fadeInOut]>
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
             <div class="row g-3 mb-4 align-items-center justify-content-between">
@@ -31,7 +31,7 @@
             </div>
             <div class="w-100">
                 <form>
-                    <table class=" tableedit table mb-0 text-left">
+                    <table class="tableedit table mb-0 text-left">
                         <tr class="cell">
                             <th class="cell"><label for="product-sku">SKU</label></th>
                             <td>
@@ -46,7 +46,7 @@
                         </tr>
                         <tr class="cell">
                             <th><label for="displaypage">Category</label></th>
-                            <td class=" btn-sm  selectoption">
+                            <td class="selectoption">
                                 <select id="displaypage" name="displaypage"  [(ngModel)]="product.category">
                                     <option value="bracelet">Bracelets</option>
                                     <option value="ring">Rings</option>
@@ -74,15 +74,6 @@
                                 <input type="textarea" class="form-control" name="description" id="description" placeholder="Enter Product Description" [(ngModel)]="product.description"/>
                             </td>
                         </tr>
-                        <!-- <tr class="cell">
-                            <th>Status</th>
-                            <td class=" btn-sm  selectoption">
-                                <select id="statuslist" name="statuslist">
-                                    <option value="Available">Available</option>
-                                    <option value="UnAvailable">UnAvailable</option>
-                                </select>
-                            </td>
-                        </tr> -->
                         <tr class="cell">
                             <td>
                                 <button type="reset" class="btn app-btn-secondary">Cancel

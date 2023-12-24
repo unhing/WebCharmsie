@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { Product } from '../models/product.model';
 import { ProductAdminService } from '../services/product-admin.service';
+import { fadeInOutAnimation } from '../services/fade-in-out.animation';
 
 @Component({
   selector: 'app-productnew',
   templateUrl: './productnew.component.html',
-  styleUrls: ['./productnew.component.css']
+  styleUrls: ['./productnew.component.css'],
+  animations: [fadeInOutAnimation],
 })
 export class ProductnewComponent {
   product = new Product;

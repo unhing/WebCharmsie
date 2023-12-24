@@ -3,11 +3,13 @@ import { CustomerAdminService } from '../services/customer-admin.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { CustomerdeleteComponent } from '../customerdelete/customerdelete.component';
+import { slideInOutAnimation } from '../services/slide-in-out.animation';
 
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
-  styleUrls: ['./customer.component.css']
+  styleUrls: ['./customer.component.css'],
+  animations: [slideInOutAnimation],
 })
 export class CustomerComponent {
   _id: string=''

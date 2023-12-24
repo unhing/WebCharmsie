@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { slideInOutAnimation } from '../services/slide-in-out.animation';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  animations: [slideInOutAnimation],
 })
 export class DashboardComponent {
   isClickedOption1 = false;
@@ -16,5 +18,6 @@ export class DashboardComponent {
   toggleSubmenuOption2() {
     this.isClickedOption2 = !this.isClickedOption2;
   }
+  
 
 }

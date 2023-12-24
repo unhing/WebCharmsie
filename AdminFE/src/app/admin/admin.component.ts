@@ -1,19 +1,12 @@
 import { Component } from '@angular/core';
+import { slideInOutAnimation } from '../services/slide-in-out.animation';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  styleUrls: ['./admin.component.css'],
+  animations: [slideInOutAnimation],
 })
 export class AdminComponent {
-  isClickedOption1 = false;
-  isClickedOption2 = false;
 
-  toggleSubmenuOption1() {
-    this.isClickedOption1 = !this.isClickedOption1;
-  }
-
-  toggleSubmenuOption2() {
-    this.isClickedOption2 = !this.isClickedOption2;
-  }
 }

@@ -40,8 +40,7 @@
                 </ng-container>
                 <ng-template #loggedInMenu>
                     <!-- Display these items when the user is logged in -->
-                    <button mat-menu-item [routerLink]="['/customer/', _id]">Customer Info</button>
-                    <button mat-menu-item routerLink="/myorder">My orders</button>
+                    <button mat-menu-item routerLink="/customer">Customer Info</button>
                     <button mat-menu-item (click)="logout()">Log out</button>
                 </ng-template>
             </mat-menu>
@@ -69,7 +68,7 @@
                         <button (click)="onClearCart()" mat-icon-button class="tw-bg-rose-600 tw-text-white tw-rounded-full tw-w-8 tw-h-8">
                             <mat-icon class="icon">remove_shopping_cart</mat-icon>
                         </button>
-                        <button mat-icon-button routerLink="cart" class="tw-bg-rose-600 tw-text-white tw-rounded-full tw-w-8 tw-h-8">
+                        <button (click)="onCheckOut()" mat-icon-button routerLink="cart" class="tw-bg-rose-600 tw-text-white tw-rounded-full tw-w-8 tw-h-8">
                             <mat-icon class="icon">shopping_cart_checkout</mat-icon>
                         </button>
                     </div>
@@ -85,7 +84,7 @@
             <li><a routerLink="/about">ABOUT US</a></li>
             <li>
                 <a routerLink="/product">OUR ITEMS</a>
-                <ul class="subnav">
+                <!-- <ul class="subnav">
                     <li><a href="#">New Arrivals</a></li>
                     <li><a href="#">Best Sellers</a></li>
                     <li><a href="#">Promotional Products</a></li>
@@ -97,7 +96,7 @@
                         <li><a href="#">Necklaces</a></li>
                         <li><a href="#">Others</a></li>
                     </ul>
-                </ul>
+                </ul> -->
             </li>
             <li><a routerLink="/blog">BLOG</a></li>
             <li><a routerLink="/workshop">WORKSHOP</a></li>

@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductsComponent } from './products/products.component';
-import { CategoryComponent } from './category/category.component';
 import { ContactformComponent } from './contactform/contactform.component';
 import { OrderComponent } from './order/order.component';
 import { PostComponent } from './post/post.component';
@@ -19,9 +18,6 @@ import { WorkshopComponent } from './workshop/workshop.component';
 import { AccountComponent } from './account/account.component';
 import { CustomerComponent } from './customer/customer.component';
 import { PolicyComponent } from './policy/policy.component';
-import { CategorynewComponent } from './categorynew/categorynew.component';
-import { CategorydetailsComponent } from './categorydetails/categorydetails.component';
-import { CategoryupdateComponent } from './categoryupdate/categoryupdate.component';
 import { ProductnewComponent } from './productnew/productnew.component';
 import { ProductupdateComponent } from './productupdate/productupdate.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
@@ -36,13 +32,17 @@ import { CustomerdetailComponent } from './customerdetail/customerdetail.compone
 import { CustomerupdateComponent } from './customerupdate/customerupdate.component';
 import { CustomerdeleteComponent } from './customerdelete/customerdelete.component';
 import { ContactformdeleteComponent } from './contactformdelete/contactformdelete.component';
+import { OrderupdateComponent } from './orderupdate/orderupdate.component';
+import { OrderdeleteComponent } from './orderdelete/orderdelete.component';
+import { WorkshopdetailComponent } from './workshopdetail/workshopdetail.component';
+import { WorkshopupdateComponent } from './workshopupdate/workshopupdate.component';
+import { WorkshopdeleteComponent } from './workshopdelete/workshopdelete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     ProductsComponent,
-    CategoryComponent,
     ContactformComponent,
     OrderComponent,
     PostComponent,
@@ -51,9 +51,6 @@ import { ContactformdeleteComponent } from './contactformdelete/contactformdelet
     AccountComponent,
     CustomerComponent,
     PolicyComponent,
-    CategorynewComponent,
-    CategorydetailsComponent,
-    CategoryupdateComponent,
     ProductnewComponent,
     ProductupdateComponent,
     OrderdetailsComponent,
@@ -66,7 +63,12 @@ import { ContactformdeleteComponent } from './contactformdelete/contactformdelet
     CustomerdetailComponent,
     CustomerupdateComponent,
     CustomerdeleteComponent,
-    ContactformdeleteComponent
+    ContactformdeleteComponent,
+    OrderupdateComponent,
+    OrderdeleteComponent,
+    WorkshopdetailComponent,
+    WorkshopupdateComponent,
+    WorkshopdeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -80,6 +82,6 @@ import { ContactformdeleteComponent } from './contactformdelete/contactformdelet
     EditorModule
   ],
   providers: [],
-  bootstrap: [AppComponent,]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

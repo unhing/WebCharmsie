@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -17,4 +17,5 @@ export class AppComponent {
   toggleSubmenuOption2() {
     this.isClickedOption2 = !this.isClickedOption2;
   }
+
 }

@@ -1,13 +1,12 @@
-<div class="app-wrapper">
+<div class="app-wrapper" [@slideInOut]>
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
-
             <div class="row g-3 mb-4 align-items-center justify-content-between">
                 <div class="col-auto">
                     <h1 class="app-page-title mb-0">Contact Forms Management</h1>
                 </div>
                 <hr class="divide">
-                <p>{{errMessage}}</p>
+                
                 <div class="col-auto">
                     <div class="page-utilities">
                         <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
@@ -41,12 +40,12 @@
                                             <th class="cell" style="color: #ef9595;">Email</th>
                                             <th class="cell" style="color: #ef9595;">Description</th>
                                             <th class="cell" style="color: #ef9595;">Received Date</th>
-                                            <th class="cell" style="color: #ef9595;">Action</th>
+                                            <th class="cell" style="color: #ef9595; width: 150px; text-align: center;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let contactForm of contactForms">
-                                            <td class="cell">01</td>
+                                        <tr *ngFor="let contactForm of contactForms; let i = index">
+                                            <td class="cell">{{ i + 1 }}</td>
                                             <td class="cell">{{contactForm.name}}</td>
                                             <td class="cell">{{contactForm.phoneNumber}}</td>
                                             <td class="cell">{{contactForm.email}}</td>
@@ -60,15 +59,15 @@
                                                             d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z" />
                                                     </svg>
                                                 </a>
-                                                <button class="btn-sm app-btn-secondary" style="height: auto; margin-top: 8px;" (click)="openDialog('Delete', contactForm)">Delete 
+                                                <a class="btn-sm app-btn-secondary" style="height: auto; margin-top: 8px;" (click)="openDialog('Delete', contactForm)">Del
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"  fill="#EF9595" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                         <path
                                                             d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5" />
                                                     </svg>
-                                                </button>
+                                                </a>
                                             </td>
                                         </tr>
-
+                                        <p>{{errMessage}}</p>
                                     </tbody>
                                 </table>
                             </div>

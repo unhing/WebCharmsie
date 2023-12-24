@@ -39,10 +39,6 @@ export class AppComponent implements OnInit {
     this.authService.isLoggedIn.subscribe((status) => {
       this.isLoggedIn = status;
     });
-
-    this.customerService.getCustomer().subscribe({
-      next:(data)=>{this.customers=data}
-    })
   }
 
   ngOnInit() {
@@ -62,6 +58,16 @@ export class AppComponent implements OnInit {
 
   onClearCart() {
     this.cartService.clearCart();
+  }
+
+  onCheckOut() {
+    if (this.cart.items.length === 0) {
+      // Cart is empty, navigate to the cart page
+      this.router.navigate(['/cart']);
+    } else {
+      // Cart is not empty, navigate to the checkout page
+      this.router.navigate(['/checkout']);
+    }
   }
 
   logout() {

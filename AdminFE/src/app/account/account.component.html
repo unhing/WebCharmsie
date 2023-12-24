@@ -1,5 +1,4 @@
-<div class="app-wrapper">
-
+<div class="app-wrapper" [@slideInOut]>
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
             <h1 class="app-page-title">My Account</h1>
@@ -11,9 +10,9 @@
                                 <a class="nav-link">
                                     <span class="nav-icon app-icon-holder ">
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person"
-                                        fill="#EF9595" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                                            fill="#EF9595" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
                                         </svg>
                                     </span>
                                     <span class="nav-link-text"> Personal Information</span>
@@ -25,16 +24,20 @@
                                 <div class="row justify-content-between align-items-center">
                                     <div class="col-auto">
                                         <div class="item-label mb-2"><strong>Avatar</strong></div>
-                                        <div class="item-data"><img class="profile-image" src="./assets/images/profiles/Ngan.jpg" alt="Avatar">
+                                        <div class="item-data"><img class="profile-image"
+                                                src="./assets/images/profiles/Ngan.jpg" alt="Avatar">
                                         </div>
                                     </div>
                                     <div class="col text-end">
                                         <a class="btn-sm " href="#">
                                             <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#ef9595" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                                                  </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19"
+                                                    fill="#ef9595" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                                </svg>
                                             </span>
                                         </a>
                                     </div>
@@ -50,10 +53,13 @@
                                     <div class="col text-end">
                                         <a class="btn-sm " href="#">
                                             <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#ef9595" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                                                  </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19"
+                                                    fill="#ef9595" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                                </svg>
                                             </span>
                                         </a>
                                     </div>
@@ -70,10 +76,13 @@
                                     <div class="col text-end">
                                         <a class="btn-sm " href="#">
                                             <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#ef9595" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                                                  </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19"
+                                                    fill="#ef9595" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                                </svg>
                                             </span>
                                         </a>
                                     </div>
@@ -113,18 +122,18 @@
                                     <div class="col text-end">
                                         <a class="btn-sm " href="#">
                                             <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#ef9595" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                                                  </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19"
+                                                    fill="#ef9595" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                                </svg>
                                             </span>
                                         </a>
                                     </div>
-                                    <!--//col-->
                                 </div>
-                                <!--//row-->
                             </div>
-                            <!--//item-->
 
                             <div class="item border-bottom py-3">
                                 <div class="row justify-content-between align-items-center">
@@ -132,36 +141,23 @@
                                         <div class="item-label"><strong>Unit</strong></div>
                                         <div class="item-data">VND ( Việt Nam Đồng )</div>
                                     </div>
-                                    <!--//col-->
-
                                 </div>
-                                <!--//row-->
                             </div>
-                            <!--//item-->
                             <div class="item border-bottom py-3">
                                 <div class="row justify-content-between align-items-center">
                                     <div class="col-auto">
                                         <div class="item-label"><strong>SMS notifications</strong></div>
                                         <div class="item-data"><label class="switch">
-                                            <input type="checkbox" checked>
-                                            <span class="slider round"></span>
-                                          </label></div>
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label></div>
                                     </div>
-                                    <!--//col-->
-                                    
-                                    <!--//col-->
+
                                 </div>
-                                <!--//row-->
                             </div>
-                            <!--//item-->
                         </div>
-                        <!--//app-card-body-->
-
-
                     </div>
-                    <!--//app-card-->
                 </div>
-                <!--//col-->
                 <div class="col-12 col-lg-6">
                     <div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
                         <div class="app-card-header p-3 border-bottom-0">
@@ -180,7 +176,6 @@
                                 </a>
                             </div>
                         </div>
-                        <!--//app-card-header-->
                         <div class="app-card-body px-4 w-100">
 
                             <div class="item border-bottom py-3">
@@ -189,50 +184,36 @@
                                         <div class="item-label"><strong>Password</strong></div>
                                         <div class="item-data">••••••••</div>
                                     </div>
-                                    <!--//col-->
                                     <div class="col text-end">
                                         <a class="btn-sm " href="#">
                                             <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#ef9595" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                                                  </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19"
+                                                    fill="#ef9595" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                                </svg>
                                             </span>
                                         </a>
                                     </div>
-                                    <!--//col-->
                                 </div>
-                                <!--//row-->
                             </div>
-                            <!--//item-->
                             <div class="item border-bottom py-3">
                                 <div class="row justify-content-between align-items-center">
                                     <div class="col-auto">
                                         <div class="item-label"><strong>SMS</strong></div>
                                         <div class="item-data">Receive a secure SMS code for each login</div>
                                     </div>
-                                    <!--//col-->
                                     <div class="col text-end">
                                         <a class="btn-sm app-btn-secondary" href="#">Setting</a>
                                     </div>
-                                    <!--//col-->
                                 </div>
-                                <!--//row-->
                             </div>
-                            <!--//item-->
                         </div>
-                        <!--//app-card-body-->
                     </div>
-                    <!--//app-card-->
                 </div>
-
-
-
-
             </div>
-            <!--//app-card-->
         </div>
-    </div>
-    <!--//row-->
 
-</div>
+    </div>

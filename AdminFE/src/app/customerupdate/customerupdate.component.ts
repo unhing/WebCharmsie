@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { User } from '../models/customer.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerAdminService } from '../services/customer-admin.service';
+import { fadeInOutAnimation } from '../services/fade-in-out.animation';
 
 @Component({
   selector: 'app-customerupdate',
   templateUrl: './customerupdate.component.html',
-  styleUrls: ['./customerupdate.component.css']
+  styleUrls: ['./customerupdate.component.css'],
+  animations: [fadeInOutAnimation],
 })
 export class CustomerupdateComponent {
   customer = new User();
