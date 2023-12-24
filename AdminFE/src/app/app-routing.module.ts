@@ -22,6 +22,8 @@ import { PostdeleteComponent } from './postdelete/postdelete.component';
 import { CustomerdetailComponent } from './customerdetail/customerdetail.component';
 import { CustomerupdateComponent } from './customerupdate/customerupdate.component';
 import { OrderupdateComponent } from './orderupdate/orderupdate.component';
+import { WorkshopdetailComponent } from './workshopdetail/workshopdetail.component';
+import { WorkshopupdateComponent } from './workshopupdate/workshopupdate.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/dashboard", pathMatch: "full" },
@@ -41,6 +43,8 @@ const routes: Routes = [
   {path: 'post/update/:id', component: PostupdateComponent},
   {path: 'post/delete/:id', component: PostdeleteComponent},
   {path: 'workshop', component: WorkshopComponent},
+  {path: 'workshop/:id', component: WorkshopdetailComponent},
+  {path: 'workshop/update/:id', component: WorkshopupdateComponent},
   {path: 'contactform', component: ContactformComponent},
   {path: 'policy', component: PolicyComponent},
   {path: 'product/new', component: ProductnewComponent},
