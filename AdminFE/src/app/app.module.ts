@@ -8,35 +8,36 @@ import { BrowserModule } from '@angular/platform-browser';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProductsComponent } from './products/products.component';
-import { ContactformComponent } from './contactform/contactform.component';
-import { OrderComponent } from './order/order.component';
-import { PostComponent } from './post/post.component';
-import { AdminComponent } from './admin/admin.component';
-import { WorkshopComponent } from './workshop/workshop.component';
-import { AccountComponent } from './account/account.component';
-import { CustomerComponent } from './customer/customer.component';
-import { PolicyComponent } from './policy/policy.component';
-import { ProductnewComponent } from './productnew/productnew.component';
-import { ProductupdateComponent } from './productupdate/productupdate.component';
-import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
-import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ContactformComponent } from './components/contactform/contactform.component';
+import { OrderComponent } from './components/order/order.component';
+import { PostComponent } from './components/post/post.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { WorkshopComponent } from './components/workshop/workshop.component';
+import { AccountComponent } from './components/account/account.component';
+import { CustomerComponent } from './components/customer/customer.component';
+import { PolicyComponent } from './components/policy/policy.component';
+import { ProductnewComponent } from './components/productnew/productnew.component';
+import { ProductupdateComponent } from './components/productupdate/productupdate.component';
+import { OrderdetailsComponent } from './components/orderdetails/orderdetails.component';
+import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductdeleteComponent } from './productdelete/productdelete.component';
-import { PostnewComponent } from './postnew/postnew.component';
-import { PostdetailComponent } from './postdetail/postdetail.component';
-import { PostupdateComponent } from './postupdate/postupdate.component';
-import { PostdeleteComponent } from './postdelete/postdelete.component';
-import { CustomerdetailComponent } from './customerdetail/customerdetail.component';
-import { CustomerupdateComponent } from './customerupdate/customerupdate.component';
-import { CustomerdeleteComponent } from './customerdelete/customerdelete.component';
-import { ContactformdeleteComponent } from './contactformdelete/contactformdelete.component';
-import { OrderupdateComponent } from './orderupdate/orderupdate.component';
-import { OrderdeleteComponent } from './orderdelete/orderdelete.component';
-import { WorkshopdetailComponent } from './workshopdetail/workshopdetail.component';
-import { WorkshopupdateComponent } from './workshopupdate/workshopupdate.component';
-import { WorkshopdeleteComponent } from './workshopdelete/workshopdelete.component';
+import { ProductdeleteComponent } from './components/productdelete/productdelete.component';
+import { PostnewComponent } from './components/postnew/postnew.component';
+import { PostdetailComponent } from './components/postdetail/postdetail.component';
+import { PostupdateComponent } from './components/postupdate/postupdate.component';
+import { PostdeleteComponent } from './components/postdelete/postdelete.component';
+import { CustomerdetailComponent } from './components/customerdetail/customerdetail.component';
+import { CustomerupdateComponent } from './components/customerupdate/customerupdate.component';
+import { CustomerdeleteComponent } from './components/customerdelete/customerdelete.component';
+import { ContactformdeleteComponent } from './components/contactformdelete/contactformdelete.component';
+import { OrderupdateComponent } from './components/orderupdate/orderupdate.component';
+import { OrderdeleteComponent } from './components/orderdelete/orderdelete.component';
+import { WorkshopdetailComponent } from './components/workshopdetail/workshopdetail.component';
+import { WorkshopupdateComponent } from './components/workshopupdate/workshopupdate.component';
+import { WorkshopdeleteComponent } from './components/workshopdelete/workshopdelete.component';
+import { Page404notfoundComponent } from './components/page404notfound/page404notfound.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { WorkshopdeleteComponent } from './workshopdelete/workshopdelete.compone
     OrderdeleteComponent,
     WorkshopdetailComponent,
     WorkshopupdateComponent,
-    WorkshopdeleteComponent
+    WorkshopdeleteComponent,
+    Page404notfoundComponent
   ],
   imports: [
     BrowserModule,
