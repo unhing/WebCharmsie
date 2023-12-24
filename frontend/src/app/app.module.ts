@@ -43,6 +43,7 @@ import { UserAccountComponent } from './user-account/user-account.component';
 import { UserOrdersComponent } from './user-orders/user-orders.component';
 import { PolicyTermsComponent } from './policy-terms/policy-terms.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { Page404notfoundComponent } from './page404notfound/page404notfound.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     UserAccountComponent,
     UserOrdersComponent,
     PolicyTermsComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    Page404notfoundComponent
   ],
   imports: [
     BrowserModule,

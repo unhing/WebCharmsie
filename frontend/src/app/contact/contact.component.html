@@ -6,19 +6,19 @@
         <form>
             <p>
                 <label for="_name">Name</label>
-                <input type="text" name="_name" id="name" [(ngModel)]="contactForm.name">
+                <input type="text" name="_name" placeholder="Enter your Name" title="Name" id="name" [(ngModel)]="contactForm.name">
             </p>
             <p>
                 <label for="phone">Phone Number</label>
-                <input type="tel" name="phone" id="phone" [(ngModel)]="contactForm.phoneNumber">
+                <input type="tel" name="phone" id="phone" placeholder="Enter your Phone number" title="Phone number" [(ngModel)]="contactForm.phoneNumber">
             </p>
             <p>
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" [(ngModel)]="contactForm.email">
+                <input type="email" name="email" id="email" placeholder="Enter your Email" title="Email" [(ngModel)]="contactForm.email">
             </p>    
             <p>
                 <label for="comment">Comment</label>
-                <textarea name="comment" id="comment" cols="30" rows="10" [(ngModel)]="contactForm.comment"></textarea>
+                <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Leave a comment" title="Note" [(ngModel)]="contactForm.comment"></textarea>
             </p>
             <div class="form-button">
                 <button (click)="onSubmit()">SUBMIT</button>
