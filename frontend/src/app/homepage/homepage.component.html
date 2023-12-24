@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <button type="button">OUR NEW ITEMS</button>
+    <button type="button" (click)="navigateToProducts()">OUR ITEMS</button>
 </div>
 
 <!-- ABOUT -->
@@ -32,13 +32,12 @@
         <div class="about-content">
             <h3>ABOUT CHARMSIE</h3>
             <p>Charmsie is an online store specializing in handmade jewelry and accessories crafted from vibrant decorative beads, catering to Gen Z, especially young creative, lovely, and elegant women.</p>
-            <button type="button">SEE MORE</button>
+            <button type="button" (click)="navigateToAboutUs()">SEE MORE</button>
         </div>
     </div>
 </div>
 
-<!-- BEST SELLER -->
-<div id="best-seller">
+<!-- <div>
     <h2 class="section-heading">BEST SELLER</h2>
     <div class="row-list">
         <div class="row-element button-overlay">
@@ -55,7 +54,25 @@
             <img src="/assets/images/homepage/best-seller-3.png" alt="New Item" class="best-seller-img">
             <button type="button">See more</button>
         </div>
+    </div> -->
+<!-- NEW POSTS -->
+<div id="new-posts">
+    <h2 class="section-heading">NEW POSTS</h2>
+    <div class="row-list">
+        <div class="row-element">
+            <img src="/assets/images/homepage/post_1.png" alt="New post" class="new-post-img">
+        </div>
+
+        <div class="row-element">
+            <img src="/assets/images/homepage/post_2.png" alt="New post" class="new-post-img">
+        </div>
+
+        <div class="row-element">
+            <img src="/assets/images/homepage/post_3.png" alt="New post" class="new-post-img">
+        </div>
     </div>
+
+    <button type="button" (click)="navigateToBlogs()">OUR POSTS</button>
 </div>
 
 <!-- SUBSCRIBE -->
@@ -77,7 +94,7 @@
         <div class="workshop-content">
             <h3>WORKSHOP</h3>
             <p>Join us for a hands-on experience that will teach you the art of bracelet design, from selecting the finest materials to mastering various techniques. Our experienced instructors will guide you through the process, sharing tips and tricks to ensure your creations are not only beautiful but also a true expression of your personality. Unleash your imagination, experiment with colors and textures, and leave with one-of-a-kind bracelets.</p>
-            <button type="button">REGISTER NOW</button>
+            <button type="button" (click)="navigateToWorkshop()">REGISTER NOW</button>
         </div>
     </div>
     <div class="column img-col">
@@ -90,18 +107,18 @@
     <h2 class="section-heading">CUSTOMERS' FEEDBACK</h2>
     <div class="row-list">
         <div class="row-element">
-            <img src="/assets/images/homepage/customer.png" alt="Customer" class="new-item-img">
+            <img src="/assets/images/homepage/customer_1.png" alt="Customer" class="new-item-img">
             <p>I absolutely adore the bracelet! It fits comfortably on my wrist and adds a touch of elegance to my outfits.</p>
         </div>
 
         <div class="row-element">
-            <img src="/assets/images/homepage/customer.png" alt="Customer" class="new-item-img">
-            <p>I absolutely adore the bracelet! It fits comfortably on my wrist and adds a touch of elegance to my outfits.</p>
+            <img src="/assets/images/homepage/customer_2.jpg" alt="Customer" class="new-item-img">
+            <p>The quality is exceptional, and it has a lovely, unique charm to it. I've been wearing it daily, and it has held up remarkably well.</p>
         </div>
 
         <div class="row-element">
-            <img src="/assets/images/homepage/customer.png" alt="Customer" class="new-item-img">
-            <p>I absolutely adore the bracelet! It fits comfortably on my wrist and adds a touch of elegance to my outfits.</p>
+            <img src="/assets/images/homepage/customer_3.jpg" alt="Customer" class="new-item-img">
+            <p>The variety of products available and the friendly, helpful staff made my visit enjoyable. I will definitely be returning to your store.</p>
         </div>
     </div>
 </div>

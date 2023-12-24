@@ -11,7 +11,7 @@
 }
 
 /* NEW ITEMS */
-#new-items, #best-seller, #feedback {
+#new-items, #new-posts, #feedback {
     width: 1000px;
     max-width: 100%;
     padding: 64px 16px;
@@ -24,7 +24,7 @@
     color: #EF9595;
 }
 
-.new-item-img {
+.new-item-img, .new-post-img {
     width: 200px;
 }
 
@@ -38,7 +38,7 @@
     margin: 48px -8px 0px;
 }
 
-#new-items button, #about button, #workshop button {
+#new-items button, #about button, #workshop button, #new-posts button {
     padding: 16px 80px;
     border: 1px solid #EF9595;
     background-color: #FFEEEE;
@@ -50,11 +50,11 @@
     transition:all .2s linear
 }
 
-#new-items button {
+#new-items button, #new-posts button {
     margin-top: 48px;
 }
 
-#new-items button:hover, #about button:hover, #workshop button:hover {
+#new-items button:hover, #about button:hover, #workshop button:hover, #new-posts button:hover {
     color: white;
     background-color: #EF9595;
 }

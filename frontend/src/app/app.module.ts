@@ -42,6 +42,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { UserAccountComponent } from './user-account/user-account.component';
 import { UserOrdersComponent } from './user-orders/user-orders.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { Page404notfoundComponent } from './page404notfound/page404notfound.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     ProductDetailComponent,
     UserAccountComponent,
     UserOrdersComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    Page404notfoundComponent
   ],
   imports: [
     BrowserModule,
