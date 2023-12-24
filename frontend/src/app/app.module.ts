@@ -41,7 +41,9 @@ import { CartComponent } from './cart/cart.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { UserOrdersComponent } from './user-orders/user-orders.component';
+import { PolicyTermsComponent } from './policy-terms/policy-terms.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+
 
 @NgModule({
   declarations: [
@@ -62,6 +64,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     ProductDetailComponent,
     UserAccountComponent,
     UserOrdersComponent,
+    PolicyTermsComponent,
     CheckoutComponent
   ],
   imports: [
