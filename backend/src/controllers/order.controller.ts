@@ -40,19 +40,26 @@ export async function create(
     }
   }
 
-export async function update(
+  export async function update(
     request: Request,
     response: Response
-  ): Promise<void> {
+): Promise<void> {
     try {
-      const { id } = request.params;
-      const newOrder = request.body;
-      await Order.findByIdAndUpdate(id, newOrder);
-      response.status(204).end();
+        const { id } = request.params;
+        const updatedFields = request.body;
+
+        const order = await Order.findByIdAndUpdate(id, { $set: updatedFields }, { new: true });
+
+        if (!order) {
+            response.status(404).json({ message: "Order not found" });
+            return;
+        }
+
+        response.status(200).json(order);
     } catch (error) {
-      response.status(500).json({ message: (error as Error).message });
+        response.status(500).json({ message: (error as Error).message });
     }
-  }
+}
 
   export async function remove(
     request: Request,
