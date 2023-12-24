@@ -75,6 +75,25 @@ export async function editProfile(
   }
 }
 
+
+export async function getProfile(
+  request: RequestWithCredential,
+  response: Response
+) {
+  try {
+    const id = request.auth?.id ?? "";
+    const user = await User.findById(id);
+
+    if (!user) {
+      response.status(404).json({ message: 'User not found' });
+      return;
+    }
+    response.status(200).json(user);
+  } catch (error) {
+    response.status(500).json({ message: (error as Error).message });
+  }
+}
+
 async function hashPassword(password: string): Promise<string> {
   const salt = await genSalt(10);
   return hash(password, salt);

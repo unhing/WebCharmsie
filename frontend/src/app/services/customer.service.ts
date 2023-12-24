@@ -14,51 +14,31 @@ export class CustomerService {
     return throwError(()=>new Error(error.message))
   }
 
-  getCustomer():Observable<any> {
-    const headers=new HttpHeaders().set("Content-Type","application/json;charset=utf-8")
+  getCustomerDetail(token: string):Observable<any> {
+    const headers=new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    })
     const requestOptions:Object={
       headers:headers,
       responseType:"text"
     }
-
-    return this.http.get<any>("http://localhost:3001/customers",requestOptions).pipe(
-      map(res=>JSON.parse(res) as Array<User>),
-      retry(3),
-      catchError(this.handleError)
-    )
-  }
-
-  getCustomerDetail(id:string):Observable<any> {
-    const headers=new HttpHeaders().set("Content-Type","text/plain;charset=utf-8")
-    const requestOptions:Object={
-      headers:headers,
-      responseType:"text"
-    }
-    return this.http.get<any>("http://localhost:3001/customers/"+id,requestOptions).pipe(
+    return this.http.get<any>("http://localhost:3001/auth/profile/",requestOptions).pipe(
       map(res=>JSON.parse(res) as User),
       retry(3),
       catchError(this.handleError))
   }
 
-  putCustomer(id:string, aCustomer:any):Observable<any> {
-    const headers=new HttpHeaders().set("Content-Type","application/json;charset=utf-8")
+  patchCustomer(aCustomer:any, token: string):Observable<any> {
+    const headers=new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    })
     const requestOptions:Object={
       headers:headers,
       responseType:"text"
     }
-    return this.http.put<any>("http://localhost:3001/customers/"+id,JSON.stringify(aCustomer),requestOptions).pipe(
-      map(res=>JSON.parse(res) as User),
-      retry(3),
-      catchError(this.handleError))
-  }
-
-  getCustomerDetailToken(token:string):Observable<any> {
-    const headers=new HttpHeaders().set('Authorization', `Bearer ${token}`)
-    const requestOptions:Object={
-      headers:headers,
-      responseType:"text"
-    }
-    return this.http.get<any>("http://localhost:3001/customers/",requestOptions).pipe(
+    return this.http.patch<any>("http://localhost:3001/auth/profile/",JSON.stringify(aCustomer),requestOptions).pipe(
       map(res=>JSON.parse(res) as User),
       retry(3),
       catchError(this.handleError))
