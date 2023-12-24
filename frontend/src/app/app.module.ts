@@ -41,8 +41,10 @@ import { CartComponent } from './cart/cart.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { UserOrdersComponent } from './user-orders/user-orders.component';
+import { PolicyTermsComponent } from './policy-terms/policy-terms.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { Page404notfoundComponent } from './page404notfound/page404notfound.component';
+
 
 @NgModule({
   declarations: [
@@ -63,6 +65,7 @@ import { Page404notfoundComponent } from './page404notfound/page404notfound.comp
     ProductDetailComponent,
     UserAccountComponent,
     UserOrdersComponent,
+    PolicyTermsComponent,
     CheckoutComponent,
     Page404notfoundComponent
   ],
