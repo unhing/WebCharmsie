@@ -186,16 +186,6 @@ textarea {
 }
 
 
-.g-2,
-.gx-2 {
-    --bs-gutter-x: 0.5rem
-}
-
-.g-2,
-.gy-2 {
-    --bs-gutter-y: 0.5rem
-}
-
 .g-3,
 .gx-3 {
     --bs-gutter-x: 1rem
@@ -205,9 +195,6 @@ textarea {
 .gy-3 {
     --bs-gutter-y: 1rem
 }
-
-
-
 
 
 .table {
@@ -404,21 +391,7 @@ fieldset:disabled .btn {
     border-color: #4a5260
 }
 
-.collapse:not(.show) {
-    display: none
-}
 
-.collapsing {
-    height: 0;
-    overflow: hidden;
-    transition: height .35s ease
-}
-
-@media(prefers-reduced-motion: reduce) {
-    .collapsing {
-        transition: none
-    }
-}
 
 .justify-content-between {
     -webkit-justify-content: space-between !important;
@@ -856,40 +829,10 @@ body {
     color: #5d6778
 }
 
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-    color: #252930;
-    font-weight: 600
-}
 
 hr {
     background: #adb4c0
 }
-
-.text-muted {
-    color: #9fa7b5 !important
-}
-
-.table-dark {
-    background: #252930;
-    color: #fff
-}
-
-.table-bordered th,
-.table-bordered td {
-    border-color: #e7e9ed
-}
-
 .table th,
 .table td {
     border-color: #e7e9ed
@@ -901,12 +844,6 @@ hr {
 
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: #f5f5f5
-}
-
-.table-dark th,
-.table-dark td,
-.table-dark thead th {
-    border-color: #515a6a
 }
 
 .table-hover>tbody>tr:hover {
@@ -1068,13 +1005,14 @@ button.close:focus {
         transition: none
     }
 }
-
 .app-page-title {
     color: #ef9595;
     font-size: 1.5rem;
     font-weight: bolder;
-    margin-bottom: 1.5rem
+    margin-top: 1rem;
+    margin-bottom: 3.5rem;
 }
+
 .selectoption {
     padding: 10px; /* Adjust the padding as needed */
 }

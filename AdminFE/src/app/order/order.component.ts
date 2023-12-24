@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { slideInOutAnimation } from '../services/slide-in-out.animation';
 import { OrderAdminService } from '../services/order-admin.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
@@ -7,7 +8,8 @@ import { OrderdeleteComponent } from '../orderdelete/orderdelete.component';
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
-  styleUrls: ['./order.component.css']
+  styleUrls: ['./order.component.css'],
+  animations: [slideInOutAnimation],
 })
 export class OrderComponent {
   _id: string=''

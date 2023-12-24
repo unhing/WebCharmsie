@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { Product } from '../models/product.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductAdminService } from '../services/product-admin.service';
+import { fadeInOutAnimation } from '../services/fade-in-out.animation';
 
 @Component({
   selector: 'app-productupdate',
   templateUrl: './productupdate.component.html',
-  styleUrls: ['./productupdate.component.css']
+  styleUrls: ['./productupdate.component.css'],
+  animations: [fadeInOutAnimation],
 })
 export class ProductupdateComponent {
   product = new Product();

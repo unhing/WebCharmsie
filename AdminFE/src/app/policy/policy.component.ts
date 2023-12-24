@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { slideInOutAnimation } from '../services/slide-in-out.animation';
 
 @Component({
   selector: 'app-policy',
   templateUrl: './policy.component.html',
-  styleUrls: ['./policy.component.css']
+  styleUrls: ['./policy.component.css'],
+  animations: [slideInOutAnimation],
 })
 export class PolicyComponent {
   isClickedOption1 = false;

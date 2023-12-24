@@ -3,11 +3,13 @@ import { ProductAdminService } from '../services/product-admin.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductdeleteComponent } from '../productdelete/productdelete.component';
+import { slideInOutAnimation } from '../services/slide-in-out.animation';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
+  animations: [slideInOutAnimation],
 })
 export class ProductsComponent {
   _id: string=''

@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 </head>
-
 <body class="app">
     <header class="app-header fixed-top" style="background: color #ef9595;">
         <div class="app-header-inner">
             <div class="container-fluid py-2">
                 <div class="app-header-content">
                     <div class="row justify-content-between align-items-center">
-
                         <!-- ĐÂY LÀ NÚT HAMBURGER -->
                         <div class="col-auto">
                             <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
@@ -23,7 +20,6 @@
                                 </span>
                             </a>
                         </div>
-
                         <!-- ĐÂY LÀ CÁI CỤC NOTI VÀ NỘI DUNG CỘT NOTI -->
                         <div class="app-utilities col-auto custom-right-align">
                             <div class="app-utility-item app-notifications-dropdown dropdown">
@@ -88,7 +84,7 @@
         </div>
 
         <!-- ĐÂY LÀ SIDE PANEL -->
-        <div id="app-sidepanel" class="app-sidepanel">
+        <div id="app-sidepanel" class="app-sidepanel" >
             <div id="sidepanel-drop" class="sidepanel-drop"></div>
             <div class="sidepanel-inner d-flex flex-column">
                 <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
@@ -103,11 +99,9 @@
                         ADMIN CHARMSIE
                     </span>
                 </div>
-                <hr>
-
-
+                <hr class="divide">
                 <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
-                    <ul class="app-menu list-unstyled accordion" id="menu-accordion">
+                    <ul class="app-menu list-unstyled accordion" id="menu-accordion" style="text-align: left;">
                         <!-- ADMIN DASHBOARD  -->
                         <li class="nav-item">
                             <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">
@@ -123,13 +117,9 @@
                             </a>
                         </li>
 
-
-                        <!-- QUẢN TRỊ SẢN PHẨM  -->
-                        <li class="nav-item has-submenu" [ngClass]="{'clicked': isClickedOption1}"
-                            (click)="toggleSubmenuOption1()">
-                            <a class="nav-link submenu-toggle" data-bs-target="#submenu-3" aria-expanded="false"
-                                aria-controls="submenu-3">
-                                <!-- ICON -->
+                        <!-- QUẢN TRỊ SẢN PHẨM -->
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/product" routerLinkActive="active">
                                 <span class="nav-icon">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-files"
                                         fill="#ef9595">
@@ -139,29 +129,10 @@
                                             d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z" />
                                     </svg>
                                 </span>
-                                <span class="nav-link-text">Products</span>
-                                <!-- Sub menu của sản phẩm -->
-                                <!-- cái thanh bên cạnh submenu -->
-                                <span class="submenu-arrow">
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down"
-                                        fill="#ef9595" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                                    </svg>
-                                </span>
+                                <span class="nav-link-text">Product Management</span>
                             </a>
-                            <!-- LIST SUBMENU CỦA SẢN PHẨM -->
-                            <div id="submenu-3" class="submenu submenu-3" data-bs-parent="#menu-accordion">
-                                <ul class="submenu-list list-unstyled">
-                                    <li class="submenu-item"><a class="submenu-link" routerLink="/category"
-                                            routerLinkActive="active">Category</a></li>
-                                    <li class="submenu-item"><a class="submenu-link" routerLink="/product"
-                                            routerLinkActive="active">Product</a> </li>
-                                </ul>
-                            </div>
                         </li>
-
-
+                       
                         <!-- QUẢN TRỊ ĐƠN HÀNG-->
                         <li class="nav-item">
                             <a class="nav-link" routerLink="/order" routerLinkActive="active">
@@ -190,6 +161,7 @@
                                 <span class="nav-link-text">Customer Management</span>
                             </a>
                         </li>
+
 
 
                         <!-- QUẢN TRỊ CONTACT FORM-->
@@ -294,12 +266,8 @@
             </div>
         </div>
     </header>
-
-    <router-outlet></router-outlet>
-
-    <script src="assets/plugins/popper.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/app.js"></script>
+    <div class="page-container">
+        <router-outlet></router-outlet>
+    </div>
 </body>
-
 </html>

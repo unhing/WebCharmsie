@@ -3,11 +3,13 @@ import { ContactAdminService } from '../services/contact-admin.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactformdeleteComponent } from '../contactformdelete/contactformdelete.component';
+import { slideInOutAnimation } from '../services/slide-in-out.animation';
 
 @Component({
   selector: 'app-contactform',
   templateUrl: './contactform.component.html',
-  styleUrls: ['./contactform.component.css']
+  styleUrls: ['./contactform.component.css'],
+  animations: [slideInOutAnimation],
 })
 export class ContactformComponent {
   _id: string='';

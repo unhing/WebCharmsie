@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
+import { slideInOutAnimation } from '../services/slide-in-out.animation';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrderAdminService } from '../services/order-admin.service';
 import { MatDialog } from '@angular/material/dialog';
 import { OrderdeleteComponent } from '../orderdelete/orderdelete.component';
 import { OrderupdateComponent } from '../orderupdate/orderupdate.component';
 
+
 @Component({
   selector: 'app-orderdetails',
   templateUrl: './orderdetails.component.html',
-  styleUrls: ['./orderdetails.component.css']
+  styleUrls: ['./orderdetails.component.css'],
+  animations: [slideInOutAnimation],
 })
 export class OrderdetailsComponent {
   order:any;

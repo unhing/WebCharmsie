@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { BlogPost } from '../models/blog.model';
 import tinymce from 'tinymce';
 import { BlogAdminService } from '../services/blog-admin.service';
-
+import { fadeInOutAnimation } from '../services/fade-in-out.animation';
 
 @Component({
   selector: 'app-postnew',
   templateUrl: './postnew.component.html',
-  styleUrls: ['./postnew.component.css']
+  styleUrls: ['./postnew.component.css'],
+  animations: [fadeInOutAnimation],
 })
 export class PostnewComponent {
   blog = new BlogPost;
