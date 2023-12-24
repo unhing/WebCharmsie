@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ContactService } from '../services/contact.service';
-import { ContactForm } from '../models/contact-form.model';
+import { ContactService } from '../../services/contact.service';
+import { ContactForm } from '../../models/contact-form.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({

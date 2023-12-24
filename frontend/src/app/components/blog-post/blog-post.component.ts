@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BlogService } from '../services/blog.service';
+import { BlogService } from '../../services/blog.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({

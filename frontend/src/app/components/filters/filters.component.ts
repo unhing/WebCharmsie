@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { StoreService } from '../services/store.service';
+import { StoreService } from '../../services/store.service';
 import { Subscription } from 'rxjs';
-import { Product } from '../models/product.model';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-filters',

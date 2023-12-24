@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { WorkshopForm } from '../models/workshop-form.model';
-import { WorkshopService } from '../services/workshop.service';
+import { WorkshopForm } from '../../models/workshop-form.model';
+import { WorkshopService } from '../../services/workshop.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
