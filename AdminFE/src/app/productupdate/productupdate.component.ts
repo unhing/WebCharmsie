@@ -14,17 +14,7 @@ export class ProductupdateComponent {
   product = new Product();
   errMessage:string=''
   _id: string='';
-  constructor(private activateRoute:ActivatedRoute,private _service:ProductAdminService,private router:Router) {
-    // activateRoute.paramMap.subscribe(
-    //   (param)=>{
-    //     let id=param.get('id')
-    //     if(id!=null) {
-    //       this._id = id;
-    //       this.loadProductDetails(id)
-    //     }
-    //   }
-    // )
-  }
+  constructor(private activateRoute:ActivatedRoute,private _service:ProductAdminService,private router:Router) { }
 
   ngOnInit() {
     this.activateRoute.paramMap.subscribe((param) => {

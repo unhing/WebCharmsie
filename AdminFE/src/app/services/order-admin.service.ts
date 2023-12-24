@@ -40,13 +40,13 @@ export class OrderAdminService {
       catchError(this.handleError))
   }
 
-  putOrder(id:string, aProduct:any):Observable<any> {
+  patchOrder(id:string, updatedFields:any):Observable<any> {
     const headers=new HttpHeaders().set("Content-Type","application/json;charset=utf-8")
     const requestOptions:Object={
       headers:headers,
       responseType:"text"
     }
-    return this.http.put<any>("http://localhost:3001/orders/"+id,JSON.stringify(aProduct),requestOptions).pipe(
+    return this.http.patch<any>("http://localhost:3001/orders/"+id,JSON.stringify(updatedFields),requestOptions).pipe(
       map(res=>JSON.parse(res) as Order),
       retry(3),
       catchError(this.handleError))
