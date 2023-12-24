@@ -120,3 +120,8 @@ button.edit-mode {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.disabled-button {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

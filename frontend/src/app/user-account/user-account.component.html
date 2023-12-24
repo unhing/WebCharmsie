@@ -7,7 +7,7 @@
       </div>
       <div class="avatar-info">
         <h3>{{ user.name }}</h3>
-        <button (click)="toggleEditMode()">EDIT PROFILE</button>
+        <button (click)="toggleEditMode()" [ngClass]="{'edit-mode': !isEditMode, 'disabled-button': isEditMode}" [disabled]="isEditMode">EDIT PROFILE</button>
       </div>
     </div>
     <div class="user-info">
@@ -24,10 +24,10 @@
       <div class="info-field">
         <label for="dob"><strong>Date of Birth:</strong></label>
         <ng-container *ngIf="!isEditMode; else dobEditMode">
-          <input type="date" id="dob" [value]="user.dob" readonly>
+          <input type="date" id="dob" [value]="user.dateOfBirth" readonly>
         </ng-container>
         <ng-template #dobEditMode>
-          <input type="date" id="dob" [(ngModel)]="editedUser.dob" class="edit-mode">
+          <input type="date" id="dob" [(ngModel)]="editedUser.dateOfBirth" class="edit-mode">
         </ng-template>
       </div>
       <div class="info-field">
@@ -51,13 +51,13 @@
       <div class="info-field">
         <label for="phone"><strong>Phone:</strong></label>
         <ng-container *ngIf="!isEditMode; else phoneEditMode">
-          <input type="tel" id="phone" [value]="user.phone" readonly>
+          <input type="tel" id="phone" [value]="user.phoneNumber" readonly>
         </ng-container>
         <ng-template #phoneEditMode>
-          <input type="tel" id="phone" [(ngModel)]="editedUser.phone" class="edit-mode">
+          <input type="tel" id="phone" [(ngModel)]="editedUser.phoneNumber" class="edit-mode">
         </ng-template>
       </div>
-      <button [ngClass]="{'edit-mode': isEditMode}">Save Changes</button>
+      <button (click)="saveChanges()" [ngClass]="{'edit-mode': isEditMode, 'disabled-button': !isEditMode}" [disabled]="!isEditMode">Save Changes</button>
     </div>
   </div>
 </div>
