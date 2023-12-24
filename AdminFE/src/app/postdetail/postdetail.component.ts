@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogAdminService } from '../services/blog-admin.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { slideInOutAnimation } from '../services/slide-in-out.animation';
 
 @Component({
   selector: 'app-postdetail',
   templateUrl: './postdetail.component.html',
-  styleUrls: ['./postdetail.component.css']
+  styleUrls: ['./postdetail.component.css'],
+  animations: [slideInOutAnimation],
 })
 export class PostdetailComponent {
   blog:any;

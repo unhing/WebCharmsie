@@ -1,4 +1,4 @@
-<div class="app-wrapper">
+<div class="app-wrapper" [@slideInOut]>
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
             <div class="row g-3 mb-4 align-items-center justify-content-between">
@@ -78,17 +78,17 @@
                         </div>
                     </div>
                     <!-- details -->
-                    <h3 style="color: #ef9595;">Order Details</h3>
+                    <h5>Order Details</h5>
                     <div  class="app-card-body table-responsive" style="background-color: #FFEEEE;">
                         <table class="table app-table-hover mb-0 text-left detailstable">
-                            <thead>
-                                <tr style="color: #ef9595">
-                                    <th class="cell" style="color: #ef9595">No.</th>
-                                    <th class="cell" style="color: #ef9595">SKU</th>
-                                    <th class="cell" style="color: #ef9595">Item Name</th>
-                                    <th class="cell" style="color: #ef9595">Price</th>
-                                    <th class="cell" style="color: #ef9595">Quantity</th>
-                                    <th class="cell" style="color: #ef9595">Total</th>
+                            <thead class="editcolor">
+                                <tr>
+                                    <th class="cell">No.</th>
+                                    <th class="cell">SKU</th>
+                                    <th class="cell">Item Name</th>
+                                    <th class="cell">Price</th>
+                                    <th class="cell">Quantity</th>
+                                    <th class="cell">Total</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -103,7 +103,7 @@
                             </tbody>
                         </table>
                         <hr>
-                        <table class=" app-table-hover totaltable" >
+                        <table class="app-table-hover totaltable" >
                             <tr>
                                 <th>Sub Total</th>
                                 <td>25.000VND</td>
@@ -120,11 +120,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="container">
-                    <p>
-                        {{errMessage}}
-                    </p>
-            </div> -->
 
         </div>
     </div>

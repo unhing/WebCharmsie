@@ -3,11 +3,13 @@ import { BlogAdminService } from '../services/blog-admin.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { PostdeleteComponent } from '../postdelete/postdelete.component';
+import { slideInOutAnimation } from '../services/slide-in-out.animation';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css']
+  styleUrls: ['./post.component.css'],
+  animations: [slideInOutAnimation],
 })
 export class PostComponent {
   _id: string=''

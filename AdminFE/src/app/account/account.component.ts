@@ -1,19 +1,11 @@
 import { Component } from '@angular/core';
+import { slideInOutAnimation } from '../services/slide-in-out.animation';
 
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
-  styleUrls: ['./account.component.css']
+  styleUrls: ['./account.component.css'],
+  animations: [slideInOutAnimation],
 })
 export class AccountComponent {
-  isClickedOption1 = false;
-  isClickedOption2 = false;
-
-  toggleSubmenuOption1() {
-    this.isClickedOption1 = !this.isClickedOption1;
-  }
-
-  toggleSubmenuOption2() {
-    this.isClickedOption2 = !this.isClickedOption2;
-  }
 }
