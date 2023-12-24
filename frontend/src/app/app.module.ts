@@ -24,26 +24,26 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { WorkshopComponent } from './workshop/workshop.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { WorkshopComponent } from './components/workshop/workshop.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductComponent } from './product/product.component';
-import { ProductHeaderComponent } from './product-header/product-header.component';
-import { FiltersComponent } from './filters/filters.component';
-import { ProductBoxComponent } from './product-box/product-box.component';
-import { BlogListComponent } from './blog-list/blog-list.component';
-import { BlogPostComponent } from './blog-post/blog-post.component';
-import { CartComponent } from './cart/cart.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { UserAccountComponent } from './user-account/user-account.component';
-import { UserOrdersComponent } from './user-orders/user-orders.component';
-import { PolicyTermsComponent } from './policy-terms/policy-terms.component';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { Page404notfoundComponent } from './page404notfound/page404notfound.component';
+import { ProductComponent } from './components/product/product.component';
+import { ProductHeaderComponent } from './components/product-header/product-header.component';
+import { FiltersComponent } from './components/filters/filters.component';
+import { ProductBoxComponent } from './components/product-box/product-box.component';
+import { BlogListComponent } from './components/blog-list/blog-list.component';
+import { BlogPostComponent } from './components/blog-post/blog-post.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { UserAccountComponent } from './components/user-account/user-account.component';
+import { UserOrdersComponent } from './components/user-orders/user-orders.component';
+import { PolicyTermsComponent } from './components/policy-terms/policy-terms.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { Page404notfoundComponent } from './components/page404notfound/page404notfound.component';
 
 
 @NgModule({

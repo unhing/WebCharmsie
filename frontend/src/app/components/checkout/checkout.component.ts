@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { CartService } from '../services/cart.service';
+import { CartService } from '../../services/cart.service';
 import { Router } from '@angular/router';
-import { CheckoutService } from '../services/checkout.service';
-import { Order } from '../models/order.model';
+import { CheckoutService } from '../../services/checkout.service';
+import { Order } from '../../models/order.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({

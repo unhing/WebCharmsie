@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CustomerService } from '../services/customer.service';
+import { CustomerService } from '../../services/customer.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
