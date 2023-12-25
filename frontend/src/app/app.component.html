@@ -36,7 +36,7 @@
                 <div class="tw-p-4 tw-divide-y tw-divide-x-0 tw-divide-solid">
                     <div class="tw-pb-4 tw-flex tw-justify-between ">
                         <span class="tw-mr-16">{{itemsQuantity}} Item(s)</span>
-                        <a routerLink="cart">View Cart</a>
+                        <a routerLink="cart" class="viewcart">View Cart</a>
                     </div>
                     <div *ngIf="cart.items.length" class="tw-py-4">
                         <div *ngFor="let item of cart.items" class="tw-flex tw-justify-between tw-font-light tw-mb-2">
