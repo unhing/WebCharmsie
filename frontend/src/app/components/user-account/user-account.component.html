@@ -1,5 +1,4 @@
-<!-- user-account.component.html -->
-<div class="page-container">
+<div class="page-container app-wrapper" [@slideInOut]>
   <div class="user-profile">
     <div class="avatar-container">
       <div class="avatar">
@@ -11,7 +10,7 @@
       </div>
     </div>
     <div class="user-info">
-      <h2>My Information</h2>
+      <h2 class="section-heading">My Information</h2>
       <div class="info-field">
         <label for="name"><strong>Name:</strong></label>
         <ng-container *ngIf="!isEditMode; else nameEditMode">

@@ -359,3 +359,8 @@ span.month.focused.active
 input[type='radio'] {
     color: #EF9595;
 }
+
+.app-wrapper {
+    scroll-behavior: smooth;
+    
+}

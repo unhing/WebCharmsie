@@ -4,28 +4,77 @@
     box-sizing: border-box;
     list-style: none;
     font-family: Nunito;
-  }
+}
+
 .cover-about {
     position: relative;
     margin-top: var(--header-height);
     background-image: url(/assets/images/privacy-terms/cover.png);
     background-size: cover;
-    width: 100%; 
+    width: 100%;
     height: 240px;
-}  
+    transition: transform 0.3s ease;
+}
 
-.privacy_policy h1, .terms_condition h1{
+.cover-about:hover {
+    transform: scale(1.1);
+}
+
+
+.app-wrapper {
+    scroll-behavior: smooth;
+
+}
+
+.privacy_policy h1,
+.terms_condition h1 {
     color: #EF9595;
     font-size: 24px;
-} 
+}
 
-#cover-about > img {
+#cover-about>img {
     width: 100%;
-} 
+}
 
 h3 {
     margin: 16px 0;
 }
+
+
+.section-heading {
+    font-weight: bolder;
+    color: #EF9595;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.section-heading:hover {
+    font-size: 2em;
+    text-shadow: 3px 3px 6px #EF9595;
+    color: #EF9595;
+    /* Add this line to ensure a smooth transition for color on hover */
+}
+
+.section-heading-h3 {
+    font-size: 1em;
+    color: white;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+.section-heading-h3:hover {
+    font-size: 1.2em;
+    color: white;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
 
 /* ABOUT */
 #about-information {
@@ -41,35 +90,66 @@ h3 {
     flex: 30%;
     text-align: left;
     padding: 20px;
-    
+
 }
 
 .cl-left {
     border: 1px solid #EF9595;
     padding: 16px;
-    margin: auto; 
+    margin: auto;
 }
 
 .section-heading {
     color: #EF9595;
-} 
+}
 
 
 .quick-access a {
-    color: #EF9595;
+    color: black;
     text-decoration: none;
-    margin-left: 10px; 
+    margin-left: 10px;
+    margin-bottom: 3px;
 }
 
-.quick-access a:hover {
-    text-decoration: underline;
-    color: #818a91;
+
+.main-title {
+    background-color: #FFEEEE;
+    padding: 4px 10px;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
+.main-title:hover {
+    font-size: 2em;
+    text-shadow: 3px 3px 6px #EF9595;
+    color: #EF9595;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+li::before {
+    content: "\2022";
+    color: #EF9595;
+    margin-right: 0.5em;
+    vertical-align: middle;
+}
+
+
+
+
 .column2 {
     flex: 70%;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -82,34 +162,41 @@ h3 {
 .cl-right {
     border: 1px solid #EF9595;
     padding: 32px;
-    margin: auto; 
-}  
-.cl-right .begin-privacy{
+    margin: auto;
+}
+
+.cl-right .begin-privacy {
     line-height: 1.5;
 }
-.cl-right h1{
-    color:#EF9595;
+
+.cl-right h1 {
+    color: #EF9595;
     font-size: 24px;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 20px;
     font-weight: bold;
-} 
+}
+
 #terms {
     margin-top: 20px;
 }
-.cl-right .in-text{
+
+.cl-right .in-text {
     margin: 0 4px;
 }
-.line{
-    width: 8%; 
-    margin: 8px auto; 
+
+.line {
+    width: 8%;
+    margin: 8px auto;
     background-color: #EF9595;
-    height:0.4px; 
-} 
-.body-in-text{
-    margin-top:12px;
+    height: 0.4px;
 }
+
+.body-in-text {
+    margin-top: 12px;
+}
+
 .column2 .section-heading {
     text-align: center;
 }

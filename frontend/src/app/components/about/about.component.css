@@ -1,3 +1,26 @@
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Subtle box shadow */
+}
+
+.vivid-effect {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.vivid-effect:hover {
+    transform: scale(1.3);
+    filter: brightness(0.8);
+    /* Increase brightness on hover */
+}
+
+
+.app-wrapper {
+    scroll-behavior: smooth;
+    
+}
 /* COVER */
 #cover-about {
     position: relative;
@@ -34,8 +57,36 @@
 }
 
 .section-heading {
+    font-weight: bolder;
     color: #EF9595;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
+
+.section-heading:hover {
+    font-size: 2.5em;
+    text-shadow: 3px 3px 6px #EF9595;
+    color: #EF9595; /* Add this line to ensure a smooth transition for color on hover */
+}
+
+.section-heading-h3 {
+    font-weight: bolder;
+    font-size: 1em;
+    color: white;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+.section-heading-h3:hover {
+    font-size: 1.2em;
+    color: white;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
 
 .quick-access a {
     color: #EF9595;
@@ -43,11 +94,7 @@
     margin-left: 10px;
 }
 
-.quick-access a:hover {
-    text-decoration: underline;
-    color: #818a91;
-    cursor: pointer;
-}
+
 
 .column2 {
     flex: 70%;

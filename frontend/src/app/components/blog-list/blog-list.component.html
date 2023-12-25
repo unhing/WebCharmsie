@@ -1,31 +1,33 @@
-<div id="main">
-    <div class="cover-page">
-        <div class="container-bg"></div>
-        <div class="title-cover-page">CHARMSIE BLOG</div> 
-        <div class="title-text">Where we will tell you the stories</div>
-    </div>
-    <div class="article-contener">
-        <ul class="groups">
-            <li *ngFor="let blog of blogs">
-                <div class="card">
-                    <div class="image-session">
-                        <img class="image" src="{{blog.coverImage}}">
+<div class="app-wrapper" [@slideInOut]>
+    <div id="main">
+        <div class="cover-page">
+            <div class="container-bg"></div>
+            <div class="title-cover-page">CHARMSIE BLOG</div> 
+            <div class="title-text">Where we will tell you the stories</div>
+        </div>
+        <div class="article-contener">
+            <ul class="groups">
+                <li *ngFor="let blog of blogs">
+                    <div class="card">
+                        <div class="image-session">
+                            <img class="image" src="{{blog.coverImage}}">
+                        </div>
+                        <div class="meta-sission">
+                            <div class="head">
+                                <span href="#" class="date-article">{{blog.date}}</span>
+                                <span class="flexone"></span>
+                            </div>
+                            <div class="body">
+                                <h2 class="title">{{blog.title}}</h2>
+                                <p class="desc" [innerHTML]="sanitizer.bypassSecurityTrustHtml(blog.content)"></p>
+                            </div>
+                            <div class="footer">
+                                <a [routerLink]="['/blog/', blog._id]" class="button">Read more →</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="meta-sission">
-                        <div class="head">
-                            <span href="#" class="date-article">{{blog.date}}</span>
-                            <span class="flexone"></span>
-                        </div>
-                        <div class="body">
-                            <h2 class="title">{{blog.title}}</h2>
-                            <p class="desc" [innerHTML]="sanitizer.bypassSecurityTrustHtml(blog.content)"></p>
-                        </div>
-                        <div class="footer">
-                            <a [routerLink]="['/blog/', blog._id]" class="button">Read more →</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

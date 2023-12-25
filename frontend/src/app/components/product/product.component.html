@@ -1,4 +1,4 @@
-<div class="main-content">
+<div class="main-content" [@slideInOut]>
     <mat-drawer-container [autosize]="true" class="tw-min-h-full tw-max-w-7xl tw-mx-auto tw-border-x">
         <mat-drawer mode="side" opened class="tw-p-6">
             <app-filters (showCategory)="onShowCategory($event)"></app-filters>

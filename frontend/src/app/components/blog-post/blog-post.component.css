@@ -154,3 +154,8 @@ main{
 .button-submit{
     text-align: center;
 } 
+
+.app-wrapper {
+  scroll-behavior: smooth;
+  
+}

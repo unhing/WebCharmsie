@@ -11,10 +11,22 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;     /* để header nổi lên hoàn toàn */
+    z-index: 10;
+    /* để header nổi lên hoàn toàn */
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
     text-align: center;
 }
+
+a {
+    transition: all 0.5s ease-out;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
 
 #header .container {
     display: flex;
@@ -37,7 +49,7 @@
     margin: 0;
 }
 
-.header-icon > ul > li {
+.header-icon>ul>li {
     display: inline-block;
 }
 
@@ -51,7 +63,7 @@
 }
 
 .logo {
-    width: 100%;  
+    width: 100%;
     text-align: center;
 }
 
@@ -59,19 +71,37 @@
     height: 100px;
     padding: 12px;
     box-sizing: border-box;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    ;
 }
 
-#nav {
+.logo img:hover {
+    transform: scale(1.4);
+    opacity: 0.8;
+}
+
+.nav {
     display: inline-block;
-    height: var(--height);
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
     padding: 0;
+    margin-bottom: 0;
+    list-style: none;
+    height: var(--height);
+
 }
 
-#nav, .subnav, .subnav-2 {
+.nav_item {
+    font-size: 10pt;
+}
+
+#nav,
+.subnav,
+.subnav-2 {
     list-style-type: none;
 }
 
-#nav > li {
+#nav>li {
     display: inline-block;
 }
 
@@ -80,19 +110,21 @@
     position: relative;
 }
 
-#nav > li > a {
+#nav>li>a {
     color: black;
     text-transform: uppercase;
 }
 
-#nav li a, .header-icon .subnav li a {
+#nav li a,
+.header-icon .subnav li a {
     text-decoration: none;
     line-height: var(--height);
     padding: 2px 24px;
     display: block;
 }
 
-#nav li:hover .subnav, .header-icon li:hover .subnav {
+#nav li:hover .subnav,
+.header-icon li:hover .subnav {
     display: block;
 }
 
@@ -100,20 +132,27 @@
     padding: 0 30px;
 }
 
-#nav .subnav li:hover a, #nav > li:hover > a, .subnav-2 > li:hover,
-.header-icon .subnav li:hover a, .header-icon > li:hover > a  {
+#nav .subnav li:hover a,
+#nav>li:hover>a,
+.subnav-2>li:hover,
+.header-icon .subnav li:hover a,
+.header-icon>li:hover>a {
     color: white;
     background-color: #EF9595;
     width: 100%;
+    border-radius: 15px;
+    font-size: larger;
 }
 
-#nav .subnav, .header-icon .subnav {
+#nav .subnav,
+.header-icon .subnav {
     display: none;
     position: absolute;
     min-width: 250px;
     background-color: white;
     text-align: left;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);    /* tạo shadow */
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+    /* tạo shadow */
 }
 
 .header-icon .subnav {
@@ -127,33 +166,36 @@
     line-height: 38px;
 }
 
-ul.subnav, ul.subnav-2 {
+ul.subnav,
+ul.subnav-2 {
     padding: 0;
 }
 
 /* FOOTER */
 .site-footer {
     background-color: #F7D0D0;
-    padding:45px 0 20px;
-    font-size:15px;
-    line-height:24px;
-    color:#737373;
+    padding: 45px 0 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #737373;
 }
 
 .site-footer hr.small {
-    margin:20px 0
+    margin: 20px 0
 }
 
 .site-footer h6 {
     color: black;
-    font-size:16px;
-    text-transform:uppercase;
-    margin-top:5px;
-    letter-spacing:2px
+    text-shadow: 5px 1px 2px rgba(239, 149, 149, 0.5);
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 1px
 }
 
 .site-footer p {
-    text-align: justify;
+    text-align: left;
 }
 
 .quick-access-footer {
@@ -161,37 +203,38 @@ ul.subnav, ul.subnav-2 {
 }
 
 .footer-links {
-    padding-left:0;
-    list-style:none
+    padding-left: 0;
+    list-style: none
 }
 
 .footer-links li {
-    display:block;
+    display: block;
     margin-bottom: 8px;
 }
 
 .footer-links a {
-    color:#737373;
+    color: #737373;
     text-decoration: none;
 }
 
 .footer-links a:hover {
-    color:white;
-    text-decoration: underline;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
 }
 
 .site-footer .social-icons {
-    text-align:right
+    text-align: right
 }
 
 .site-footer .social-icons a {
-    width:40px;
-    height:40px;
-    line-height:40px;
-    margin-left:6px;
-    margin-right:0;
-    border-radius:100%;
-    background-color:#33353d
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 6px;
+    margin-right: 0;
+    border-radius: 100%;
+    background-color: #33353d
 }
 
 .site-footer .subscribe-footer input {
@@ -201,6 +244,7 @@ ul.subnav, ul.subnav-2 {
     border-radius: 0;
     border: 1px solid #EF9595;
     padding-left: 12px;
+    border-radius: 8px;
 }
 
 .site-footer .subscribe-footer button {
@@ -213,9 +257,10 @@ ul.subnav, ul.subnav-2 {
     font-weight: bold;
     font-size: 10pt;
     margin: 8px 0;
-    -webkit-transition:all .2s linear;
-    -o-transition:all .2s linear;
-    transition:all .2s linear
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+    border-radius: 8px;
 }
 
 .site-footer .subscribe-footer button:hover {
@@ -225,44 +270,45 @@ ul.subnav, ul.subnav-2 {
 }
 
 .copyright-text {
-    margin:0
+    margin: 0
 }
 
 .social-icons {
-    padding-left:0;
-    margin-bottom:0;
-    list-style:none
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none
 }
 
 .social-icons li {
-    display:inline-block;
-    margin-bottom:4px
+    display: inline-block;
+    margin-bottom: 4px
 }
 
 .social-icons a {
-    background-color:#eceeef;
-    color:#818a91;
-    font-size:16px;
-    display:inline-block;
-    line-height:44px;
-    width:44px;
-    height:44px;
-    text-align:center;
-    margin-right:8px;
-    border-radius:100%;
-    -webkit-transition:all .2s linear;
-    -o-transition:all .2s linear;
-    transition:all .2s linear
+    background-color: #eceeef;
+    color: #818a91;
+    font-size: 16px;
+    display: inline-block;
+    line-height: 44px;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    margin-right: 8px;
+    border-radius: 100%;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear
 }
 
 .social-icons a:hover {
-    color:#fff;
-    background-color:#EF9595 !important   /* do nó không chạy nên để cái important vào */
+    color: #fff;
+    background-color: #EF9595 !important
+        /* do nó không chạy nên để cái important vào */
 }
 
 .social-icons.size-sm a {
-    line-height:34px;
-    height:34px;
-    width:34px;
-    font-size:14px
+    line-height: 34px;
+    height: 34px;
+    width: 34px;
+    font-size: 14px
 }

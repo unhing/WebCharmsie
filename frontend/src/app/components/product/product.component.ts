@@ -3,13 +3,15 @@ import { CartService } from '../../services/cart.service';
 import { Product } from '../../models/product.model';
 import { Subscription } from 'rxjs';
 import { StoreService } from '../../services/store.service';
+import { slideInOutAnimation } from 'src/app/models/slide-in-out.animation';
 
 const ROWS_HEIGHT: { [id: number]: number } = { 1: 200, 3: 350, 4: 350 };
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  styleUrls: ['./product.component.css'],
+  animations: [slideInOutAnimation]
 })
 export class ProductComponent {
   cols = 3;

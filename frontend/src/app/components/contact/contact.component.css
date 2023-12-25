@@ -24,6 +24,8 @@ form{
 }
 form p label{
     display:block;
+    font-weight: bold;
+    padding-bottom: 1px;
     
 }
 form input{
@@ -31,12 +33,14 @@ form input{
     width: 400px;
     padding-left: 8px;
     padding-right: 8px;
+    border-radius: 3px;
 }
 form textarea{
     width:400px;
     height:100px;
     border: 1px solid #EF9595;
     padding-left: 8px;
+    border-radius: 3px;
 }
 form button{
     padding: 12px 80px;
@@ -48,7 +52,8 @@ form button{
     text-align: center;
     -webkit-transition:all .2s linear;
     -o-transition:all .2s linear;
-    transition:all .2s linear
+    transition:all .2s linear;
+    border-radius: 3px;
 }
 form button:hover{
     background-color: #FFEEEE;
@@ -67,3 +72,22 @@ p{
     height: 150px;
 }
 
+
+.app-wrapper {
+    scroll-behavior: smooth;
+    
+}
+
+.section-heading {
+    font-weight: bolder;
+    color: #EF9595;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.section-heading:hover {
+    font-size: 1.7em;
+    text-shadow: 3px 3px 6px #EF9595;
+    color: #EF9595; /* Add this line to ensure a smooth transition for color on hover */
+}

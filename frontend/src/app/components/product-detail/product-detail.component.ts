@@ -3,11 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { StoreService } from '../../services/store.service';
 import { Product } from '../../models/product.model';
 import { CartService } from '../../services/cart.service';
+import { slideInOutAnimation } from 'src/app/models/slide-in-out.animation';
 
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  styleUrls: ['./product-detail.component.css'],
+  animations: [slideInOutAnimation]
 })
 export class ProductDetailComponent {
   types: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
