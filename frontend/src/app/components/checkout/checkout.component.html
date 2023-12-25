@@ -85,7 +85,7 @@
                                             &nbsp;
                                             <button class="confirm" (click)="onSubmit()" [disabled]="isSubmitting">
                                                 <span *ngIf="!isSubmitting">Confirm & Pay</span>
-                                                <span *ngIf="isSubmitting">Submitting...</span>
+                                                <span *ngIf="isSubmitting" style="opacity: 0.5;">Submitting...</span>
                                             </button>
                                         </div>
                                     </div>
