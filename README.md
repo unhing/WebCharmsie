@@ -1,3 +1,13 @@
+# About our project
+
+This is our project of Business Website Development course.
+
+We are Group 1 from class 231MI5705, University of Economics and Law, VNU-HCM.
+
+Our team has built a website selling handmade accessories and jewelry made from beads called - Charmsie. Charmsie is an online store specializing in colorful handmade jewelry and accessories crafted from decorative beads, catering to GenZ, especially creative, lovely, and sophisticated young women. 
+
+Thank you for your attention.
+
 # Backend
 Install [Node.js](https://nodejs.org/en/) version 16.16.0
 
