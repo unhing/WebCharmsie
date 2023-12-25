@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { slideInOutAnimation } from 'src/app/models/slide-in-out.animation';
 
 @Component({
   selector: 'app-policy-terms',
   templateUrl: './policy-terms.component.html',
-  styleUrls: ['./policy-terms.component.css']
+  styleUrls: ['./policy-terms.component.css'],
+  animations: [slideInOutAnimation]
 })
 export class PolicyTermsComponent {
   scrollToSection(sectionId: string): void {

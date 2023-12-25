@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { WorkshopForm } from '../../models/workshop-form.model';
 import { WorkshopService } from '../../services/workshop.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { slideInOutAnimation } from 'src/app/models/slide-in-out.animation';
 @Component({
   selector: 'app-workshop',
   templateUrl: './workshop.component.html',
-  styleUrls: ['./workshop.component.css']
+  styleUrls: ['./workshop.component.css'],
+  animations: [slideInOutAnimation]
 })
 export class WorkshopComponent {
   workshopForm = new WorkshopForm;

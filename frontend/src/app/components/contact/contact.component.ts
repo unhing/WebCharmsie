@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { ContactService } from '../../services/contact.service';
 import { ContactForm } from '../../models/contact-form.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { slideInOutAnimation } from 'src/app/models/slide-in-out.animation';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css'],
+  animations: [slideInOutAnimation]
 })
 export class ContactComponent {
   contactForm = new ContactForm;

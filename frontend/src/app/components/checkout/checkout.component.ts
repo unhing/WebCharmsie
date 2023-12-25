@@ -4,11 +4,13 @@ import { Router } from '@angular/router';
 import { CheckoutService } from '../../services/checkout.service';
 import { Order } from '../../models/order.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { fadeInOutAnimation } from 'src/app/models/fade-in-out.animation';
 
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.css']
+  styleUrls: ['./checkout.component.css'],
+  animations: [fadeInOutAnimation]
 })
 export class CheckoutComponent {
   cart: any;

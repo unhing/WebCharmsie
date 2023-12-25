@@ -4,7 +4,10 @@
     max-width: 100%;
     font-family: sans-serif;
 }
-
+.app-wrapper {
+    scroll-behavior: smooth;
+    
+}
 .flexone{flex: 1;}
 
 #cover > img {

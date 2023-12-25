@@ -1,28 +1,12 @@
 <!-- HEADER -->
 <div id="header">
     <div class="container">
-        <div class="filler"></div>
-        
+        <div class="filler"></div>        
         <!-- LOGO -->
         <div class="logo">
-            <a routerLink=""><img src="/assets/images/logo.png" alt="Logo"></a>
+            <a routerLink="/home" ><img src="/assets/images/logo.png" alt="Logo"></a>
         </div>
-
-        <!-- ICON -->
-        <!-- <div class="filler header-icon">
-            <ul>
-                <li>
-                    <a routerLink="/login"><i class="fa-solid fa-user"></i></a>
-                    <ul class="subnav">
-                        <li><a routerLink="/login">Log in</a></li>
-                        <li><a routerLink="/signup">Sign up</a></li>
-                    </ul>
-                </li>
-                <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
-            </ul>
-        </div> -->
-
+        <!-- app ultility -->
         <mat-toolbar class="filler header-icon">
             <button mat-icon-button [matMenuTriggerFor]="menu">
                 <ng-container *ngIf="!isLoggedIn; else loggedInAccount">
@@ -40,8 +24,8 @@
                 </ng-container>
                 <ng-template #loggedInMenu>
                     <!-- Display these items when the user is logged in -->
-                    <button mat-menu-item routerLink="/customer">Customer Info</button>
-                    <button mat-menu-item (click)="logout()">Log out</button>
+                    <button mat-menu-item class="mat-menu-item " routerLink="/customer">Customer Information</button>
+                    <button mat-menu-item class="mat-menu-item " (click)="logout()">Log out</button>
                 </ng-template>
             </mat-menu>
             <mat-icon class="icon">search</mat-icon>
@@ -50,9 +34,9 @@
             </button>
             <mat-menu #cartMenu="matMenu">
                 <div class="tw-p-4 tw-divide-y tw-divide-x-0 tw-divide-solid">
-                    <div class="tw-pb-4 tw-flex tw-justify-between">
+                    <div class="tw-pb-4 tw-flex tw-justify-between ">
                         <span class="tw-mr-16">{{itemsQuantity}} Item(s)</span>
-                        <a routerLink="cart">View Cart</a>
+                        <span class="mat-menu-item"> <a routerLink="cart">View Cart</a></span>
                     </div>
                     <div *ngIf="cart.items.length" class="tw-py-4">
                         <div *ngFor="let item of cart.items" class="tw-flex tw-justify-between tw-font-light tw-mb-2">
@@ -76,13 +60,11 @@
             </mat-menu>
         </mat-toolbar>
     </div>
-
-    <!-- NAV -->
     <div id="div-nav">
-        <ul id="nav">
-            <li><a routerLink="">HOMEPAGE</a></li>
-            <li><a routerLink="/about">ABOUT US</a></li>
-            <li>
+        <ul id="nav" class="nav">
+            <li class="nav_item"><a routerLink="">HOMEPAGE</a></li>
+            <li class="nav_item"><a routerLink="/about">ABOUT US</a></li>
+            <li class="nav_item">
                 <a routerLink="/product">OUR ITEMS</a>
                 <!-- <ul class="subnav">
                     <li><a href="#">New Arrivals</a></li>
@@ -98,9 +80,9 @@
                     </ul>
                 </ul> -->
             </li>
-            <li><a routerLink="/blog">BLOG</a></li>
-            <li><a routerLink="/workshop">WORKSHOP</a></li>
-            <li><a routerLink="/contact">CONTACT</a></li>
+            <li class="nav_item"><a routerLink="/blog">BLOG</a></li>
+            <li class="nav_item"><a routerLink="/workshop">WORKSHOP</a></li>
+            <li class="nav_item"><a routerLink="/contact">CONTACT</a></li>
         </ul>
     </div>
 </div>
@@ -112,8 +94,10 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-4 about-footer">
+            <a routerLink="/about">
                 <h6>About</h6>
                 <p>Charmsie is an online store specializing in handmade jewelry and accessories crafted from vibrant decorative beads, catering to Gen Z, especially young creative, lovely, and elegant women.</p>
+            </a>    
             </div>
     
             <div class="col-xs-6 col-md-4 quick-access-footer">
@@ -131,8 +115,8 @@
                         <ul class="footer-links">
                             <li><a routerLink="/workshop">Workshop</a></li>
                             <li><a routerLink="/contact">Contact</a></li>
-                            <li><a href="#">Privacy policy</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a routerLink="/policy">Privacy policy</a></li>
+                            <li><a routerLink="/policy">Terms & Conditions</a></li>
                         </ul>
                     </div>
                 </div>

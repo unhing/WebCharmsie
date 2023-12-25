@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { BlogService } from '../../services/blog.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { slideInOutAnimation } from 'src/app/models/slide-in-out.animation';
 
 @Component({
   selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',
-  styleUrls: ['./blog-list.component.css']
+  styleUrls: ['./blog-list.component.css'],
+  animations: [slideInOutAnimation]
 })
 export class BlogListComponent {
   _id: string=''

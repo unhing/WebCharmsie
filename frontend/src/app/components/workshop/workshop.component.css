@@ -54,11 +54,7 @@
     height: 400px; 
     width: 100%;
 }     
-#workshopinfo h2 {
-    font-size: 20px;
-    font-weight: normal;
-    text-align: center;
-} 
+
 #workshopinfo .workshop_component{
     position: relative;
     max-width: 100%; 
@@ -115,6 +111,7 @@
     display: flex; 
     flex-direction: column; 
     column-gap: 0.4px;
+    
 }
 #workshopoverall #workshopregister .input_field label{
     width:100%;  
@@ -122,6 +119,7 @@
     font-size:16px;  
     display: block; 
     margin-top: 4px; 
+    font-weight: bold;
 }  
 #workshopoverall #workshopregister .input_field .input,#workshopoverall #workshopregister .input_field  textarea{
     width:320px; 
@@ -132,15 +130,18 @@
     display: block; 
     margin-bottom: 4px;
     padding: 0 4px;
+    border-radius: 3px;
 }
 #workshopoverall #workshopregister .input_field  .textarea{ 
     margin-top: 4px;
+    border-radius: 3px;
 } 
 #workshopoverall #workshopregister .input_field  .custom_choice{
     position: 100%;
     height: 40px; 
     /* margin-top: 20px;  */
     width: 100%;
+    border-radius: 3px;
 } 
 /* #workshopoverall #workshopregister .input_field  .custom_choice .custom_file{
     display: none;
@@ -155,6 +156,7 @@
     background-color: #FEE; 
     text-align: center; 
     display: block;
+    border-radius: 3px;
 }   
 #workshopoverall #workshopregister .input_field button{
     padding: 12px 80px;
@@ -167,7 +169,8 @@
     text-align: center;
     -webkit-transition:all .2s linear;
     -o-transition:all .2s linear;
-    transition:all .2s linear
+    transition:all .2s linear;
+    border-radius: 3px;
 }  
 #workshopoverall #workshopregister .input_field button:hover{
     background-color: #FEE;
@@ -258,3 +261,23 @@ input[type=file]::file-selector-button {
     border: 1px solid #EF9595;
     color: white;
   }
+
+.app-wrapper {
+    scroll-behavior: smooth;
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #EF9595;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.section-heading:hover {
+    font-size:2em;
+    text-shadow: 3px 3px 6px #EF9595;
+    color: #EF9595; /* Add this line to ensure a smooth transition for color on hover */
+}

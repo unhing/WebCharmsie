@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { slideInOutAnimation } from 'src/app/models/slide-in-out.animation';
 
 @Component({
   selector: 'app-user-account',
   templateUrl: './user-account.component.html',
-  styleUrls: ['./user-account.component.css']
+  styleUrls: ['./user-account.component.css'],
+  animations: [slideInOutAnimation]
 })
 export class UserAccountComponent {
   isEditMode = false;
