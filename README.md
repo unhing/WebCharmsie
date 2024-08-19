@@ -1,6 +1,6 @@
 # About our project
 
-This is our project of Business Website Development course.
+This is our project of Business Website Development course. You can view our full project report [HERE](https://drive.google.com/file/d/1k6eTVNX26CbCblToS0DbWbazpjfY-o_c/view?usp=drive_link).
 
 We are Group 1 from class 231MI5705, University of Economics and Law, VNU-HCM.
 
@@ -34,7 +34,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `npm start` to install dependencies.
+Run `npm install` to install dependencies.
 
 Run `ng serve` for a dev server on both Client and Administrator side. Navigate to `http://localhost:4200/` (Client) and `http://localhost:4201/` (Administrator). The application will automatically reload if you change any of the source files.
 
